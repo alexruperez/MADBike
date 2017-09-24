@@ -4,6 +4,8 @@
 [![Twitter](https://img.shields.io/badge/contact-@alexruperez-0FABFF.svg?style=flat)](http://twitter.com/alexruperez)
 [![GitHub Issues](http://img.shields.io/github/issues/alexruperez/MADBike.svg?style=flat)](http://github.com/alexruperez/MADBike/issues)
 
+[![AppStore](https://www.madbikeapp.com/images/App_Store_Badge_US-300x89.png)](https://itunes.apple.com/us/app/madbike/id1067596651?ls=1&mt=8&at=1000ln7E&pt=89791805&ct=MADBike)
+
 ## Requirements
 
 - iOS 10.0+
@@ -21,6 +23,7 @@
 ## Etc.
 
 * Contributions are very welcome.
+* Check out [Android version](https://github.com/Mun0n/MADBike) by [Mun0n](https://github.com/Mun0n)!
 
 ## Authors
 
