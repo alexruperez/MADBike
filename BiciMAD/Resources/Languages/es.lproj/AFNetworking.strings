@@ -1,0 +1,39 @@
+
+/*Fallback Error Failure Reason Format*/
+"%@ Error: %ld" = "%@ Error: %ld";
+
+/*No comment provided by engineer.*/
+"Could not decode string: %@" = "No puedo decodificar: %@";
+
+/*No comment provided by engineer.*/
+"Data failed decoding as a UTF-8 string" = "Fallo al decodificar como UTF-8";
+
+/*UIAlertView Cancel Button Title*/
+"Dismiss" = "Ok";
+
+/*Fallback Error Description*/
+"Error" = "Error";
+
+/*No comment provided by engineer.*/
+"Expected URL to be a file URL" = "Esperaba que fuese un fichero";
+
+/*No comment provided by engineer.*/
+"File URL not reachable." = "Sin acceso al fichero";
+
+/*No comment provided by engineer.*/
+"Not Reachable" = "No tienes conexión";
+
+/*No comment provided by engineer.*/
+"Reachable via WiFi" = "Tienes conexión WiFi";
+
+/*No comment provided by engineer.*/
+"Reachable via WWAN" = "Tienes conexión WWAN";
+
+/*No comment provided by engineer.*/
+"Request failed: %@ (%ld)" = "Solicitud fallida: %@ (%ld)";
+
+/*No comment provided by engineer.*/
+"Request failed: unacceptable content-type: %@" = "Solicitud fallida: contenido inaceptable: %@";
+
+/*No comment provided by engineer.*/
+"Unknown" = "Desconocido";

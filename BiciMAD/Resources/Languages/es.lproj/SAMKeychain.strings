@@ -1,0 +1,33 @@
+
+/*No comment provided by engineer.*/
+"errSecAllocate" = "Error al asignar";
+
+/*No comment provided by engineer.*/
+"errSecAuthFailed" = "Error de autorización";
+
+/*No comment provided by engineer.*/
+"errSecDecode" = "Error al decodificar";
+
+/*No comment provided by engineer.*/
+"errSecDefault" = "Error de seguridad";
+
+/*No comment provided by engineer.*/
+"errSecDuplicateItem" = "Error de item duplicado";
+
+/*No comment provided by engineer.*/
+"errSecInteractionNotAllowed" = "Error de interacción no permitida";
+
+/*No comment provided by engineer.*/
+"errSecItemNotFound" = "Error de elemento no encontrado";
+
+/*No comment provided by engineer.*/
+"errSecNotAvailable" = "Error, no disponible";
+
+/*No comment provided by engineer.*/
+"errSecParam" = "Error de parámetro";
+
+/*No comment provided by engineer.*/
+"errSecUnimplemented" = "Error, no implementado";
+
+/*No comment provided by engineer.*/
+"SAMKeychainErrorBadArguments" = "Error en los argumentos";

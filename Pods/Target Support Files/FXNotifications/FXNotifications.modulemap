@@ -1,0 +1,6 @@
+framework module FXNotifications {
+  umbrella header "FXNotifications-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BMShareViewController">
+            <connections>
+                <outlet property="activityIndicatorView" destination="okr-th-Fph" id="1NB-2A-Igr"/>
+                <outlet property="creditsLabel" destination="aPU-3Q-XuR" id="TSQ-tU-OwG"/>
+                <outlet property="descriptionLabel" destination="taC-R2-EJ3" id="WXQ-0F-Odf"/>
+                <outlet property="promotionsButton" destination="MWc-cW-1oY" id="R9S-Uy-h14"/>
+                <outlet property="shareButton" destination="l0J-v6-6qi" id="zNi-dq-oZt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="BMShakingView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="tjZ-oQ-8WW">
+                    <rect key="frame" x="87.5" y="63.5" width="200" height="200"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="fVU-lB-eQo"/>
+                        <constraint firstAttribute="width" secondItem="tjZ-oQ-8WW" secondAttribute="height" multiplier="1:1" id="gIk-wH-PA4"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPU-3Q-XuR">
+                    <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Zjv-ox-d1F"/>
+                        <constraint firstAttribute="width" constant="100" id="erA-gO-cbc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="okr-th-Fph">
+                    <rect key="frame" x="169" y="315" width="37" height="37"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </activityIndicatorView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0J-v6-6qi">
+                    <rect key="frame" x="137.5" y="403.5" width="100" height="30"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="pJm-id-BYC"/>
+                        <constraint firstAttribute="width" constant="100" id="wd2-fe-75B"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="tintColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Share">
+                        <color key="titleColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="HuS-D4-w1v"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWc-cW-1oY">
+                    <rect key="frame" x="137.5" y="453.5" width="100" height="30"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Jje-bp-PZ7"/>
+                        <constraint firstAttribute="height" constant="30" id="yrI-1Q-HH1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="tintColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Rewards">
+                        <color key="titleColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="showPromotions:" destination="-1" eventType="touchUpInside" id="AZF-n8-PCD"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MADPoints" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="taC-R2-EJ3">
+                    <rect key="frame" x="20" y="503.5" width="335" height="143.5"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aPU-3Q-XuR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="7ML-NF-pIw"/>
+                <constraint firstItem="l0J-v6-6qi" firstAttribute="top" secondItem="aPU-3Q-XuR" secondAttribute="bottom" constant="20" id="8eS-mP-mu5"/>
+                <constraint firstItem="aPU-3Q-XuR" firstAttribute="centerX" secondItem="l0J-v6-6qi" secondAttribute="centerX" id="IuJ-i3-9WP"/>
+                <constraint firstItem="l0J-v6-6qi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Iwz-cV-pud"/>
+                <constraint firstItem="tjZ-oQ-8WW" firstAttribute="centerX" secondItem="l0J-v6-6qi" secondAttribute="centerX" id="KoX-mv-fIZ"/>
+                <constraint firstItem="tjZ-oQ-8WW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" priority="750" constant="20" id="MQ3-Z6-aE9"/>
+                <constraint firstItem="taC-R2-EJ3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Pr7-xX-a5q"/>
+                <constraint firstItem="aPU-3Q-XuR" firstAttribute="top" secondItem="tjZ-oQ-8WW" secondAttribute="bottom" constant="20" id="SHN-db-v0h"/>
+                <constraint firstAttribute="trailing" secondItem="taC-R2-EJ3" secondAttribute="trailing" constant="20" id="Sq6-3f-Ym6"/>
+                <constraint firstItem="MWc-cW-1oY" firstAttribute="centerX" secondItem="l0J-v6-6qi" secondAttribute="centerX" id="ey6-td-I1h"/>
+                <constraint firstItem="okr-th-Fph" firstAttribute="centerY" secondItem="aPU-3Q-XuR" secondAttribute="centerY" id="iIJ-A3-vVU"/>
+                <constraint firstAttribute="bottom" secondItem="taC-R2-EJ3" secondAttribute="bottom" constant="20" id="k8h-95-p9Z"/>
+                <constraint firstItem="taC-R2-EJ3" firstAttribute="top" secondItem="MWc-cW-1oY" secondAttribute="bottom" constant="20" id="o9a-uQ-0eM"/>
+                <constraint firstItem="MWc-cW-1oY" firstAttribute="top" secondItem="l0J-v6-6qi" secondAttribute="bottom" constant="20" id="vcM-lt-FCm"/>
+                <constraint firstItem="okr-th-Fph" firstAttribute="centerX" secondItem="aPU-3Q-XuR" secondAttribute="centerX" id="vgj-cE-BPS"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_logo" width="66" height="106"/>
+    </resources>
+</document>

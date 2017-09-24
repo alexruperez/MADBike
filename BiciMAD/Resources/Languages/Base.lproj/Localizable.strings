@@ -1,0 +1,663 @@
+
+/*No comment provided by engineer.*/
+"%1$@ could not be parsed because its entity attribute mapping contains illegal property keys." = "%1$@ could not be parsed because its entity attribute mapping contains illegal property keys.";
+
+/*No comment provided by engineer.*/
+"%@ can't be empty" = "%@ can't be empty";
+
+/*No comment provided by engineer.*/
+"%@ could not be created because an invalid JSON array was provided: %@" = "%@ could not be created because an invalid JSON array was provided: %@";
+
+/*%@ must be the same as %@*/
+"%@ must be the same as %@" = "%@ must be the same as %@";
+
+/*%ld Stations*/
+"%ld Stations" = "%zd Stations";
+
+/*A new password has been sent to your email.*/
+"A new password has been sent to your email." = "A new password has been sent to your email.";
+
+/*Add balance*/
+"Add balance" = "Add balance";
+
+/*Are you sure?*/
+"Are you sure?" = "Are you sure?";
+
+/*Balance*/
+"Balance" = "Balance";
+
+/*Bikes*/
+"Bikes" = "Bikes";
+
+/*Cancel*/
+"Cancel" = "Cancel";
+
+/*Change password*/
+"Change password" = "Change password";
+
+/*Close*/
+"Close" = "Close";
+
+/*Comments*/
+"Comments" = "Comments";
+
+/*Confirm password*/
+"Confirm password" = "Confirm password";
+
+/*No comment provided by engineer.*/
+"Could not convert JSON array to model array" = "Could not convert JSON array to model array";
+
+/*No comment provided by engineer.*/
+"Could not convert JSON dictionary to model object" = "Could not convert JSON dictionary to model object";
+
+/*No comment provided by engineer.*/
+"Could not convert model array to JSON array" = "Could not convert model array to JSON array";
+
+/*No comment provided by engineer.*/
+"Could not convert model object to JSON dictionary" = "Could not convert model object to JSON dictionary";
+
+/*No comment provided by engineer.*/
+"Could not convert number to boolean-backed number or vice-versa" = "Could not convert number to boolean-backed number or vice-versa";
+
+/*No comment provided by engineer.*/
+"Could not convert string to URL" = "Could not convert string to URL";
+
+/*No comment provided by engineer.*/
+"Could not convert URL to string" = "Could not convert URL to string";
+
+/*No comment provided by engineer.*/
+"Could not deserialize managed object" = "Could not deserialize managed object";
+
+/*No comment provided by engineer.*/
+"Could not parse JSON" = "Could not parse JSON";
+
+/*No comment provided by engineer.*/
+"Could not serialize managed object" = "Could not serialize managed object";
+
+/*No comment provided by engineer.*/
+"Could not transform array" = "Could not transform array";
+
+/*No comment provided by engineer.*/
+"Could not transform non-array type" = "Could not transform non-array type";
+
+/*No comment provided by engineer.*/
+"Could not transform value at index %d" = "Could not transform value at index %d";
+
+/*Current password*/
+"Current password" = "Current password";
+
+/*D'oh*/
+"D'oh" = "D'oh!";
+
+/*DNI*/
+"DNI" = "DNI";
+
+/*DNI missing.*/
+"DNI missing." = "DNI missing.";
+
+/*Email*/
+"Email" = "Email";
+
+/*Email missing.*/
+"Email missing." = "Email missing.";
+
+/*Error*/
+"Error" = "D'oh!";
+
+/*No comment provided by engineer.*/
+"Expected %1$@ to be of class %2$@ but got %3$@" = "Expected %1$@ to be of class %2$@ but got %3$@";
+
+/*No comment provided by engineer.*/
+"Expected a MTLModel object conforming to <MTLJSONSerializing>, got: %@." = "Expected a MTLModel object conforming to <MTLJSONSerializing>, got: %@.";
+
+/*No comment provided by engineer.*/
+"Expected a MTLModel or an NSNull, got: %@." = "Expected a MTLModel or an NSNull, got: %@.";
+
+/*No comment provided by engineer.*/
+"Expected an NSArray, got: %@." = "Expected an NSArray, got: %@.";
+
+/*No comment provided by engineer.*/
+"Expected an NSDictionary or an NSNull, got: %@." = "Expected an NSDictionary or an NSNull, got: %@.";
+
+/*No comment provided by engineer.*/
+"Expected an NSDictionary, got: %@" = "Expected an NSDictionary, got: %@";
+
+/*No comment provided by engineer.*/
+"Expected an NSNumber, got: %@." = "Expected an NSNumber, got: %@.";
+
+/*No comment provided by engineer.*/
+"Expected an NSString, got: %@." = "Expected an NSString, got: %@.";
+
+/*No comment provided by engineer.*/
+"Expected an NSURL, got: %@." = "Expected an NSURL, got: %@.";
+
+/*No comment provided by engineer.*/
+"Failed to fetch a managed object for uniqing predicate \"%@\"." = "Failed to fetch a managed object for uniqing predicate \"%@\".";
+
+/*No comment provided by engineer.*/
+"Failed to initialize a managed object from entity named \"%@\"." = "Failed to initialize a managed object from entity named \"%@\".";
+
+/*Favorite*/
+"Favorite" = "Favorite";
+
+/*Favorite stations*/
+"Favorite stations" = "Favorite stations";
+
+/*First Surname*/
+"First Surname" = "First Surname";
+
+/*Forgot your password?*/
+"Forgot your password?" = "Forgot your password?";
+
+/*Free*/
+"Free" = "Anchorages";
+
+/*Incidence*/
+"Incidence" = "Incidence";
+
+/*Incidence missing.*/
+"Incidence missing." = "Incidence missing.";
+
+/*No comment provided by engineer.*/
+"Input URL string %@ was malformed" = "Input URL string %@ was malformed";
+
+/*No comment provided by engineer.*/
+"Invalid email address" = "Invalid email address";
+
+/*No comment provided by engineer.*/
+"Invalid entity attribute mapping" = "Invalid entity attribute mapping";
+
+/*No comment provided by engineer.*/
+"Invalid JSON dictionary" = "Invalid JSON dictionary";
+
+/*No comment provided by engineer.*/
+"JSON key path %1$@ could not resolved because an incompatible JSON dictionary was supplied: \"%2$@\"" = "JSON key path %1$@ could not resolved because an incompatible JSON dictionary was supplied: \"%2$@\"";
+
+/*Login*/
+"Login" = "Login";
+
+/*Logout*/
+"Logout" = "Logout";
+
+/*MADBike*/
+"MADBike" = "MADBike";
+
+/*InAppSettingsKit*/
+"Mail not configured" = "Mail not configured";
+
+/*Menu*/
+"Menu" = "Menu";
+
+/*No comment provided by engineer.*/
+"Missing JSON array" = "Missing JSON array";
+
+/*More details*/
+"More details" = "More details";
+
+/*Name*/
+"Name" = "Name";
+
+/*New password*/
+"New password" = "New password";
+
+/*New password missing.*/
+"New password missing." = "New password missing.";
+
+/*No*/
+"No" = "No";
+
+/*No comment provided by engineer.*/
+"No model class could be found to deserialize the object." = "No model class could be found to deserialize the object.";
+
+/*No comment provided by engineer.*/
+"No model class could be found to parse the JSON dictionary." = "No model class could be found to parse the JSON dictionary.";
+
+/*No comment provided by engineer.*/
+"No property by name \"%@\" exists on the entity." = "No property by name \"%@\" exists on the entity.";
+
+/*Off*/
+"Off" = "Off";
+
+/*Ok*/
+"Ok" = "OK";
+
+/*InAppSettingsKit*/
+"OK" = "OK";
+
+/*Old password missing.*/
+"Old password missing." = "Old password missing.";
+
+/*On*/
+"On" = "On";
+
+/*Open in maps*/
+"Open in maps" = "Open in maps";
+
+/*Password*/
+"Password" = "Password";
+
+/*Password missing.*/
+"Password missing." = "Password missing.";
+
+/*Password visibility*/
+"Password visibility" = "Password visibility";
+
+/*Phone Number*/
+"Phone Number" = "Phone Number";
+
+/*Postal Code*/
+"Postal Code" = "Postal Code";
+
+/*Profile*/
+"Profile" = "Profile";
+
+/*No comment provided by engineer.*/
+"Property descriptions of class %@ are unsupported." = "Property descriptions of class %@ are unsupported.";
+
+/*No comment provided by engineer.*/
+"Property of class %@ cannot be encoded into a to-many relationship." = "Property of class %@ cannot be encoded into a to-many relationship.";
+
+/*No comment provided by engineer.*/
+"Property of class %@ cannot be encoded into an NSManagedObject." = "Property of class %@ cannot be encoded into an NSManagedObject.";
+
+/*Reload stations*/
+"Reload stations" = "Reload stations";
+
+/*Remember your password*/
+"Remember your password" = "Remember your password";
+
+/*Report an incidence*/
+"Report an incidence" = "Report an incidence.";
+
+/*Report incidence*/
+"Report incidence" = "Report incidence.";
+
+/*Reported incidence.*/
+"Reported incidence." = "Reported incidence.\nThanks!";
+
+/*Second Surname*/
+"Second Surname" = "Second Surname";
+
+/*Settings*/
+"Settings" = "Settings";
+
+/*Should be done in the official website.*/
+"Should be done in the official website." = "To evade legal troubles, this action must be completed on the official website.";
+
+/*Sign up*/
+"Sign up" = "Sign up";
+
+/*Sorry*/
+"Sorry" = "Sorry";
+
+/*Stations*/
+"Stations" = "Stations";
+
+/*Still don't have favorite stations.*/
+"Still don't have favorite stations." = "Still don't have favorite stations.\nMark most used stations as favorites in the station detail.";
+
+/*Street*/
+"Street" = "Street";
+
+/*Succeed*/
+"Succeed" = "Succeed";
+
+/*The password has been changed successfully.*/
+"The password has been changed successfully." = "The password has been changed successfully.";
+
+/*InAppSettingsKit*/
+"This device is not configured for sending Email. Please configure the Mail settings in the Settings app." = "This device is not configured for sending Email.\nPlease configure the Mail settings in the Settings app.";
+
+/*Town*/
+"Town" = "Town";
+
+/*Unavailable*/
+"Unavailable" = "Unavailable";
+
+/*No comment provided by engineer.*/
+"Value did not match expected type" = "Value did not match expected type";
+
+/*Weather*/
+"Weather" = "Weather";
+
+/*Welcome*/
+"Welcome" = "Welcome";
+
+/*Yes*/
+"Yes" = "Yes";
+
+/*Your favorites*/
+"Your favorites" = "Your favorite stations";
+
+/*Your location*/
+"Your location" = "Your location";
+
+/*Potentially outdated information.*/
+"\nPotentially outdated information." = "\nIt is possible that the information shown is outdated.";
+
+/*No comment provided by engineer.*/
+"Choose From Library" = "Choose From Library";
+
+/*Show map*/
+"Show map" = "Map";
+
+/*No comment provided by engineer.*/
+"Take Photo" = "Take Photo";
+
+/*BiciMAD*/
+"BiciMAD" = "BiciMAD";
+
+/*bicycle*/
+"bicycle" = "bicycle";
+
+/*bicycles*/
+"bicycles" = "bicycles";
+
+/*bike*/
+"bike" = "bike";
+
+/*bikes*/
+"bikes" = "bikes";
+
+/*Bonopark*/
+"Bonopark" = "Bonopark";
+
+/*center*/
+"center" = "center";
+
+/*city*/
+"city" = "city";
+
+/*downtown*/
+"downtown" = "downtown";
+
+/*Madrid*/
+"Madrid" = "Madrid";
+
+/*map*/
+"map" = "map";
+
+/*move*/
+"move" = "move";
+
+/*stations*/
+"stations" = "stations";
+
+/*Format for the string to return to a calling app.*/
+"Touch to return to %1$@" = "Touch to return to %1$@";
+
+/*News*/
+"News" = "News";
+
+/*Tips*/
+"Tips" = "Tips";
+
+/*The Internet connection appears to be offline.*/
+"The Internet connection appears to be offline." = "The Internet connection appears to be offline.";
+
+/*Navigation*/
+"Navigation" = "Navigation";
+
+/*Apple Maps*/
+"Apple Maps" = "Apple Maps";
+
+/*Google Maps*/
+"Google Maps" = "Google Maps";
+
+/*Citymapper*/
+"Citymapper" = "Citymapper";
+
+/*Navigon*/
+"Navigon" = "Navigon";
+
+/*Transit App*/
+"Transit App" = "Transit App";
+
+/*Waze*/
+"Waze" = "Waze";
+
+/*Yandex*/
+"Yandex" = "Yandex";
+
+/*Location permissions needed.*/
+"Location permissions needed." = "We need permission to know your location.\nYou can enable them in system settings.";
+
+/*Back*/
+"Back" = "Back";
+
+/*MADPoints*/
+"MADPoints" = "MADPoints";
+
+/*Maps SDK Demos*/
+"Maps SDK Demos" = "Maps SDK Demos";
+
+/*Samples*/
+"Samples" = "Samples";
+
+/*Seems like a friend has installed MADBike using your link and with that, you've won 2 MADPoints!*/
+"Seems like a friend has installed MADBike using your link and with that, you've won 2 MADPoints!" = "Seems like a friend has installed MADBike using your link and with that, you've won 2 MADPoints!";
+
+/*Seems like a friend has recommended MADBike to you and with that, you've won a MADPoint.
+
+Share MADBike with friends and earn even more MADPoints that you can redeem for sweet prizes!*/
+"Seems like a friend has recommended MADBike to you and with that, you've won a MADPoint.\n\nShare MADBike with friends and earn even more MADPoints that you can redeem for sweet prizes!" = "Seems like a friend has recommended MADBike to you and with that, you've won a MADPoint.\n\nShare MADBike with friends and earn even more MADPoints that you can redeem for sweet prizes!";
+
+/*Share*/
+"Share" = "Share";
+
+/*Share MADBike with friends and earn MADPoints that you can redeem for sweet prizes!*/
+"Share MADBike with friends and earn MADPoints that you can redeem for sweet prizes!" = "Share MADBike with friends and earn MADPoints that you can redeem for sweet prizes!";
+
+/*No comment provided by engineer.*/
+"Could not convert %@ to string" = "Could not convert %@ to string";
+
+/*No comment provided by engineer.*/
+"Could not convert string to %@" = "Could not convert string to %@";
+
+/*No comment provided by engineer.*/
+"Expected an %@ as input, got: %@." = "Expected an %@ as input, got: %@.";
+
+/*No comment provided by engineer.*/
+"Expected an %@ as output from the formatter, got: %@." = "Expected an %@ as output from the formatter, got: %@.";
+
+/*No comment provided by engineer.*/
+"Expected an NSString as input, got: %@." = "Expected an NSString as input, got: %@.";
+
+/*Favorites*/
+"Favorites" = "Favorites";
+
+/*places*/
+"places" = "places";
+
+/*promotions*/
+"promotions" = "rewards";
+
+/*Rewards*/
+"Rewards" = "Rewards";
+
+/*You must be logged in in order to report an incident.*/
+"You must be logged in in order to report an incident." = "You must be logged in in order to report an incident.";
+
+/*Air Quality*/
+"Air Quality" = "Air Quality";
+
+/*(activityType()!) Title*/
+"Facebook Invite" = "Facebook Invite";
+
+/*(activityType()!) Title*/
+"Facebook Share" = "Facebook Share";
+
+/*(activityType()!) Title*/
+"Facebook Upload" = "Facebook Upload";
+
+/*Green Tips*/
+"Green Tips" = "Green Tips";
+"CO" = "Carbon monoxide";
+"PM10" = "Particles\n< 10 microns";
+"TOL" = "Toluene";
+"HR" = "Relative humidity";
+"TMP" = "Temperature";
+"UV" = "Ultraviolet radiation";
+"CH₄" = "Methane";
+"DV" = "Wind";
+"TCH" = "Total hydrocarbons";
+"BEN" = "Benzene";
+"NOX" = "Nitrogen oxides";
+"MNHC" = "Non-methane hydrocarbons";
+"VV" = "Wind speed";
+"O₃" = "Ozone";
+"SO₂" = "Sulfur dioxide";
+"RS" = "Solar radiation";
+"PM2.5" = "Particles\n< 2.5 microns";
+"EBE" = "Ethylbenzene";
+"LL" = "Rainfall";
+"NO" = "Nitrogen oxide";
+"NO₂" = "Nitrogen dioxide";
+"PRB" = "Atmospheric pressure";
+
+/*Cache was successfully cleaned.*/
+"Cache was successfully cleaned." = "Cache was successfully cleaned.";
+
+/*Hey there! Would you be so cool as to give us a thumbs up on the App Store? 👻*/
+"Hey there! Would you be so cool as to give us a thumbs up on the App Store? 👻" = "Hey there! Would you be so cool as to give us a thumbs up on the App Store? 👻";
+
+/*Later*/
+"Later" = "Later";
+
+/*Review*/
+"Review" = "Review";
+
+/*@madbikeapp #MADBikeLost %@*/
+"@madbikeapp #MADBikeLost %@" = "@BiciMAD @Lineamadrid @EMTmadrid @madbikeapp #MADBikeLost %@ ";
+
+/*Acquiring location...*/
+"Acquiring location..." = "Acquiring location...";
+
+/*Camera ask message*/
+"Camera ask message" = "Here’s where you can report to BiciMAD in just a few seconds any abandoned bikes that you’ve spotted. Do we have your permission to use your camera to take a photo?";
+
+/*Camera ask title*/
+"Camera ask title" = "Can we use your camera?";
+
+/*Camera demand message*/
+"Camera demand message" = "Here’s where you can quickly send a report to BiciMAD for any bike that you find abandoned. We’ll need you to allow us to use your camera to take the photo.";
+
+/*Camera demand title*/
+"Camera demand title" = "We need to use your camera.";
+
+/*Close to me*/
+"Close to me" = "Close to me";
+
+/*Find the closest stations*/
+"Find the closest stations" = "Find the nearest stations";
+
+/*Location ask message*/
+"Location ask message" = "We’ll use your location, only whilst you’re using MADBike, in order to find you on the map, search for nearby stations and locate any abandoned bikes that you have reported.";
+
+/*Location ask title*/
+"Location ask title" = "Can we use your location?";
+
+/*Location demand message*/
+"Location demand message" = "We need your location, only whilst you’re using MADBike, in order to find you on the map, search for nearby stations and locate any abandoned bikes that you have reported.";
+
+/*Location demand title*/
+"Location demand title" = "We need to use your location.";
+
+/*Places*/
+"Places" = "Places";
+
+/*Push ask message*/
+"Push ask message" = "We will only send you occasional notifications, for example when a favorite station is temporarily unavailable. You can choose which ones you want to receive in Settings.";
+
+/*Push ask title*/
+"Push ask title" = "Can we send you notifications?";
+
+/*Report*/
+"Report" = "Report";
+
+/*Reported!*/
+"Reported!" = "Reported!";
+
+/*Reporting...*/
+"Reporting..." = "Reporting...";
+
+/*Twitter ask message*/
+"Twitter ask message" = "So that BiciMAD can pick up the bikes that you reported as abandoned, we will automatically send a tweet with the photo you sent, along with the location of the bike, the address and mentioning BiciMAD in the tweet.";
+
+/*Twitter ask title*/
+"Twitter ask title" = "Can we use your twitter account?";
+
+/*Twitter session was properly closed.*/
+"Twitter session was properly closed." = "Twitter session was properly closed.";
+
+/*Uploading image...*/
+"Uploading image..." = "Uploading image...";
+
+/*MADBike Search*/
+"MADBike Search" = "MADBike Search";
+
+/*e.g. Puerta del Sol*/
+"e.g. Puerta del Sol" = "e.g. Puerta del Sol";
+
+/*#MADBikeApp*/
+"#MADBikeApp" = "#MADBikeApp";
+
+/*Filter*/
+"Filter" = "Filter";
+
+/*Gray stations*/
+"Gray stations" = "Gray stations";
+
+/*Green stations*/
+"Green stations" = "Green stations";
+
+/*Red stations*/
+"Red stations" = "Red stations";
+
+/*Tweeted!*/
+"Tweeted!" = "Tweeted!";
+
+/*Yellow stations*/
+"Yellow stations" = "Yellow stations";
+
+/*No comment provided by engineer.*/
+"Could not convert string to UUID" = "Could not convert string to UUID";
+
+/*No comment provided by engineer.*/
+"Could not convert UUID to string" = "Could not convert UUID to string";
+
+/*No comment provided by engineer.*/
+"Expected an NSUUID, got: %@." = "Expected an NSUUID, got: %@.";
+
+/*History*/
+"History" = "History";
+
+/*No comment provided by engineer.*/
+"Input UUID string %@ was malformed" = "Input UUID string %@ was malformed";
+
+/*Report incidence directly to BiciMAD.*/
+"Report incidence directly to BiciMAD." = "Report incidence directly to BiciMAD.";
+
+/*Reserved*/
+"Reserved" = "Reserved";
+
+/*Share station*/
+"Share station" = "Share station";
+
+/*No comment provided by engineer.*/
+"failed to convert data to string" = "failed to convert data to string";
+
+/*No comment provided by engineer.*/
+"failed to convert string to data" = "failed to convert string to data";
+
+/*Proposals*/
+"Proposals" = "Proposals";
+
+/*No comment provided by engineer.*/
+"the key must not to be nil" = "the key must not to be nil";
+
+/*No comment provided by engineer.*/
+"the server property must not to be nil, should use 'keyChainStoreWithServer:protocolType:' initializer to instantiate keychain store" = "the server property must not to be nil, should use 'keyChainStoreWithServer:protocolType:' initializer to instantiate keychain store";
+
+/*No comment provided by engineer.*/
+"Unexpected error has occurred." = "Unexpected error has occurred.";

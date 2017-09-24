@@ -1,0 +1,9 @@
+
+/*A single strings file, whose title is specified in your preferences schema. The strings files provide the localized content to display to the user for each of your preferences.*/
+"Enable notifications" = "Enable notifications";
+"Important information" = "Important information";
+"Unavailable stations" = "Unavailable stations";
+"Available stations" = "Available stations";
+"New stations" = "New stations";
+"Air quality alerts" = "Air quality alerts";
+"MADPoints friends" = "MADPoints friends";

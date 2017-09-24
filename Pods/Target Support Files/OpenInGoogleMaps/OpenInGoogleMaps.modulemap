@@ -1,0 +1,6 @@
+framework module OpenInGoogleMaps {
+  umbrella header "OpenInGoogleMaps-umbrella.h"
+
+  export *
+  module * { export * }
+}

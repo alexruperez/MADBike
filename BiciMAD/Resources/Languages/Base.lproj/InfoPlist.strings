@@ -1,0 +1,25 @@
+
+/*No comment provided by engineer.*/
+"Stations" = "Stations";
+
+/*No comment provided by engineer.*/
+"Report" = "Report";
+
+/*No comment provided by engineer.*/
+"News" = "News";
+
+/*No comment provided by engineer.*/
+"Air Quality" = "Air Quality";
+
+/*No comment provided by engineer.*/
+"NSLocationWhenInUseUsageDescription" = "We’ll use your location, only whilst you’re using MADBike, in order to find you on the map, search for nearby stations and locate any abandoned bikes that you have reported.";
+
+/*No comment provided by engineer.*/
+"NSCameraUsageDescription" = "Here’s where you can report to BiciMAD in just a few seconds any abandoned bikes that you’ve spotted. Do we have your permission to use your camera to take a photo?";
+
+/*No comment provided by engineer.*/
+"NSPhotoLibraryUsageDescription" = "Here’s where you can quickly send a report to BiciMAD for any bike that you find abandoned. We’ll need you to allow us to use your photos.";
+
+/*No comment provided by engineer.*/
+"NSSiriUsageDescription" = "";
+"Search" = "Search";

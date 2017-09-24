@@ -1,0 +1,5 @@
+clean true
+silent true
+
+buildlog_path './fastlane/logs/'
+output_directory './fastlane/builds/'

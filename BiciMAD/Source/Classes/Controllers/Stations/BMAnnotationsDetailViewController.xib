@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BMAnnotationsDetailViewController">
+            <connections>
+                <outlet property="tableView" destination="yth-jg-bZ0" id="Chm-cg-7BV"/>
+                <outlet property="view" destination="vaH-m7-i6z" id="Hkn-q2-Bff"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <visualEffectView opaque="NO" contentMode="scaleToFill" id="vaH-m7-i6z">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PEm-H3-cPL">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yth-jg-bZ0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <connections>
+                            <outlet property="dataSource" destination="-1" id="0b1-LO-IKP"/>
+                            <outlet property="delegate" destination="-1" id="fCP-mV-AfK"/>
+                        </connections>
+                    </tableView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="yth-jg-bZ0" secondAttribute="bottom" id="0QK-aj-4i8"/>
+                    <constraint firstItem="yth-jg-bZ0" firstAttribute="top" secondItem="PEm-H3-cPL" secondAttribute="top" id="1gT-vW-4QU"/>
+                    <constraint firstAttribute="trailing" secondItem="yth-jg-bZ0" secondAttribute="trailing" id="Zen-3M-fcJ"/>
+                    <constraint firstItem="yth-jg-bZ0" firstAttribute="leading" secondItem="PEm-H3-cPL" secondAttribute="leading" id="by1-rS-c5p"/>
+                </constraints>
+            </view>
+            <blurEffect style="light"/>
+        </visualEffectView>
+    </objects>
+</document>

@@ -1,0 +1,6 @@
+framework module SmileWeather {
+  umbrella header "SmileWeather-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Notifications</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+        <dict>
+            <key>Title</key>
+            <string>Enable notifications</string>
+            <key>Key</key>
+            <string>enableNotifications</string>
+            <key>Type</key>
+            <string>IASKButtonSpecifier</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Important information</string>
+            <key>Key</key>
+            <string>ImportantInformation</string>
+            <key>DefaultValue</key>
+            <true/>
+        </dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Unavailable stations</string>
+			<key>Key</key>
+			<string>UnavailableStations</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Available stations</string>
+            <key>Key</key>
+            <string>AvailableStations</string>
+            <key>DefaultValue</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>New stations</string>
+            <key>Key</key>
+            <string>NewStations</string>
+            <key>DefaultValue</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Air quality alerts</string>
+            <key>Key</key>
+            <string>AirQualityAlerts</string>
+            <key>DefaultValue</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>MADPoints friends</string>
+            <key>Key</key>
+            <string>MADPointsFriends</string>
+            <key>DefaultValue</key>
+            <true/>
+        </dict>
+	</array>
+</dict>
+</plist>

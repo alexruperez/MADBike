@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Climacons.ttf">
+            <string>Climacons-Font</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Left Menu View Controller-->
+        <scene sceneID="kZJ-Eh-XLY">
+            <objects>
+                <viewController storyboardIdentifier="leftMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XV6-Ti-vYU" customClass="BMLeftMenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CC7-FL-gHA"/>
+                        <viewControllerLayoutGuide type="bottom" id="lGA-Gw-wsh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ct3-ia-quq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x6Z-xE-ZtT">
+                                <rect key="frame" x="0.0" y="179.5" width="375" height="308"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="308" id="ZI8-MZ-4Xn"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BMLeftMenuCell" textLabel="yi7-kW-RzC" style="IBUITableViewCellStyleDefault" id="Och-OG-iBU">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Och-OG-iBU" id="aFy-Am-gv6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="yi7-kW-RzC">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="XV6-Ti-vYU" id="DUL-yR-WNR"/>
+                                    <outlet property="delegate" destination="XV6-Ti-vYU" id="Hoj-Xo-o1d"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="x6Z-xE-ZtT" firstAttribute="centerY" secondItem="Ct3-ia-quq" secondAttribute="centerY" id="Onp-v7-zha"/>
+                            <constraint firstItem="x6Z-xE-ZtT" firstAttribute="leading" secondItem="Ct3-ia-quq" secondAttribute="leading" id="Ywr-GD-55L"/>
+                            <constraint firstAttribute="trailing" secondItem="x6Z-xE-ZtT" secondAttribute="trailing" id="rko-GQ-OA4"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="tableView" destination="x6Z-xE-ZtT" id="XRZ-gF-EMh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVJ-1p-SoQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="194" y="-1307"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="rootViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="BMRootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contentViewStoryboardID" value="contentViewController"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="leftMenuViewStoryboardID" value="leftMenuViewController"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="contentViewShadowEnabled" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="scaleMenuView" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="fadeMenuView" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="194" y="-541"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zT6-oP-ISX">
+            <objects>
+                <navigationController storyboardIdentifier="contentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bFg-ok-zr0" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vad-pX-XMy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MJR-XX-cmZ" kind="relationship" relationship="rootViewController" id="XYg-tQ-yVt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0LN-bX-5ru" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="184"/>
+        </scene>
+        <!--Stations View Controller-->
+        <scene sceneID="fLB-yb-auX">
+            <objects>
+                <viewController id="MJR-XX-cmZ" customClass="BMStationsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="efM-wS-WLx"/>
+                        <viewControllerLayoutGuide type="bottom" id="frv-UC-D6W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mvE-29-8HH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qh0-qY-BGe">
+                                <rect key="frame" x="87.5" y="201.5" width="200" height="200"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="gyS-rh-Rh5"/>
+                                    <constraint firstAttribute="height" constant="200" id="kEm-vN-949"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kuZ-Iu-ZX7">
+                                <rect key="frame" x="0.0" y="599" width="375" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="3ph-HF-1Vq"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" id="GGN-3d-RMv">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tfo-Oc-5AC">
+                                            <rect key="frame" x="16" y="16" width="36" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <state key="normal" image="ic_refresh"/>
+                                            <connections>
+                                                <action selector="reloadAllStations:" destination="MJR-XX-cmZ" eventType="touchUpInside" id="Htd-M4-i34"/>
+                                            </connections>
+                                        </button>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5ow-bc-qQj"/>
+                                    <barButtonItem style="plain" id="dzD-EK-myA">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HEj-sP-6aw" customClass="DOFavoriteButton" customModule="DOFavoriteButton">
+                                            <rect key="frame" x="112.5" y="0.0" width="60" height="68"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="ic_favorite"/>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="imageColorOn">
+                                                    <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="imageColorOff">
+                                                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="switchFavorites:" destination="MJR-XX-cmZ" eventType="touchUpInside" id="dh3-cF-xeq"/>
+                                            </connections>
+                                        </button>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="UKt-YH-AAX"/>
+                                    <barButtonItem style="plain" id="jZo-Fe-yTl" customClass="BBBadgeBarButtonItem">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OQL-ai-Fee">
+                                            <rect key="frame" x="232.5" y="7.5" width="30" height="53"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Climacons-Font" family="Climacons-Font" pointSize="35"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <state key="normal" title="!">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="showWeather:" destination="MJR-XX-cmZ" eventType="touchUpInside" id="aSZ-MU-Ghb"/>
+                                            </connections>
+                                        </button>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="z1o-Ul-Zwe"/>
+                                    <barButtonItem style="plain" id="gfS-ca-Dhc">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3p7-Ei-pvo">
+                                            <rect key="frame" x="323" y="16" width="36" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <state key="normal" image="ic_my_location">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="showUserLocation:" destination="MJR-XX-cmZ" eventType="touchUpInside" id="4rf-xE-13n"/>
+                                            </connections>
+                                        </button>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kuZ-Iu-ZX7" secondAttribute="trailing" id="G6F-su-THh"/>
+                            <constraint firstAttribute="bottom" secondItem="kuZ-Iu-ZX7" secondAttribute="bottom" id="XKH-52-3DA"/>
+                            <constraint firstItem="Qh0-qY-BGe" firstAttribute="centerX" secondItem="mvE-29-8HH" secondAttribute="centerX" id="cRn-0v-CeU"/>
+                            <constraint firstItem="Qh0-qY-BGe" firstAttribute="centerY" secondItem="mvE-29-8HH" secondAttribute="centerY" constant="-32" id="myG-Rc-Ijy"/>
+                            <constraint firstItem="kuZ-Iu-ZX7" firstAttribute="leading" secondItem="mvE-29-8HH" secondAttribute="leading" id="tmn-vA-gxQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Pp-5K-rdf">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu" id="Qbf-dj-Xlg">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="presentLeftMenuViewController:" destination="MJR-XX-cmZ" id="OhP-z6-JYf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ic_layers" id="OEM-jB-VC7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="showFilter:" destination="MJR-XX-cmZ" id="keK-pU-K3a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="favoritesButton" destination="HEj-sP-6aw" id="AAT-Cz-Ezx"/>
+                        <outlet property="filterBarButtonItem" destination="OEM-jB-VC7" id="IcB-HP-P4b"/>
+                        <outlet property="reloadAllStationsButton" destination="Tfo-Oc-5AC" id="1XJ-gz-JHM"/>
+                        <outlet property="showUserLocationButton" destination="3p7-Ei-pvo" id="faW-lI-9Yx"/>
+                        <outlet property="toolBar" destination="kuZ-Iu-ZX7" id="dsy-jv-9xI"/>
+                        <outlet property="weatherBarButtonItem" destination="jZo-Fe-yTl" id="Fup-AU-XNZ"/>
+                        <outlet property="weatherButton" destination="OQL-ai-Fee" id="Ig0-0y-n4X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mIz-jH-p0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1805" y="184"/>
+        </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="7Nd-XD-3WL">
+            <objects>
+                <viewController storyboardIdentifier="changePasswordViewStoryboardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zrQ-S6-ajc" customClass="BMChangePasswordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yvi-99-PYu"/>
+                        <viewControllerLayoutGuide type="bottom" id="BLS-8d-l0e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D4m-ag-Haw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EBD-62-Xbo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="zrQ-S6-ajc" id="FJN-Se-E6b"/>
+                                    <outlet property="delegate" destination="zrQ-S6-ajc" id="rYT-lb-MWF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EBD-62-Xbo" firstAttribute="leading" secondItem="D4m-ag-Haw" secondAttribute="leading" id="IVu-JM-ESh"/>
+                            <constraint firstItem="EBD-62-Xbo" firstAttribute="top" secondItem="D4m-ag-Haw" secondAttribute="top" id="OdB-FA-eyD"/>
+                            <constraint firstAttribute="bottom" secondItem="EBD-62-Xbo" secondAttribute="bottom" id="hVM-Eb-TpR"/>
+                            <constraint firstAttribute="trailing" secondItem="EBD-62-Xbo" secondAttribute="trailing" id="lHS-Ew-hyN"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="tableView" destination="EBD-62-Xbo" id="d0v-Gp-rVU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SPr-yu-z1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="-1307"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_favorite" width="36" height="36"/>
+        <image name="ic_layers" width="36" height="36"/>
+        <image name="ic_logo" width="66" height="106"/>
+        <image name="ic_menu" width="36" height="36"/>
+        <image name="ic_my_location" width="36" height="36"/>
+        <image name="ic_refresh" width="36" height="36"/>
+    </resources>
+</document>

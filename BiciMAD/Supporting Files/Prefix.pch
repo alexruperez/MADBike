@@ -1,0 +1,16 @@
+//
+//  Prefix.pch
+//  BiciMAD
+//
+//  Created by alexruperez on 8/10/15.
+//  Copyright © 2015 alexruperez. All rights reserved.
+//
+
+@import libextobjc;
+@import CocoaLumberjack;
+
+#import "UIView+BMUtils.h"
+#import "NSObject+BMUtils.h"
+#import "UIColor+BMColors.h"
+
+static const DDLogLevel ddLogLevel = DDLogLevelInfo;

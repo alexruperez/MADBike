@@ -1,0 +1,27 @@
+
+/*The title of the label to dismiss the alert when presenting user facing error messages*/
+"ErrorRecovery.Alert.OK" = "OK";
+
+/*The title of the label to decline attempting error recovery*/
+"ErrorRecovery.Cancel" = "Cancelar";
+
+/*The fallback message to display to recover invalidated tokens*/
+"ErrorRecovery.Login.Suggestion" = "Por favor, inicia sesión en MADBike de nuevo para volver a conectar tu cuenta de Facebook.";
+
+/*The title of the label to start attempting error recovery*/
+"ErrorRecovery.OK" = "OK";
+
+/*The fallback message to display to retry transient errors*/
+"ErrorRecovery.Transient.Suggestion" = "El servidor está ocupado temporalmente, por favor inténtalo de nuevo.";
+
+/*The label for the FBSDKLikeButton when the object is not currently liked.*/
+"LikeButton.Like" = "Me gusta";
+
+/*The label for the FBSDKLikeButton when the object is currently liked.*/
+"LikeButton.Liked" = "Me gusta";
+
+/*The label for FBSDKSendButton*/
+"SendButton.Send" = "Enviar";
+
+/*The label for FBSDKShareButton*/
+"ShareButton.Share" = "Compartir";

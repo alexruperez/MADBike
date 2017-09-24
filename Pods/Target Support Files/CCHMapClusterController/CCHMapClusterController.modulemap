@@ -1,0 +1,6 @@
+framework module CCHMapClusterController {
+  umbrella header "CCHMapClusterController-umbrella.h"
+
+  export *
+  module * { export * }
+}

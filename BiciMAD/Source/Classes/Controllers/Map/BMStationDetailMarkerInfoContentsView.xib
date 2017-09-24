@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BMStationDetailMarkerInfoContentsView">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="84"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbX-1h-CKc">
+                    <rect key="frame" x="0.0" y="44" width="280" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Lry-8n-YjI"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 - Station" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hf4-SC-D8c">
+                    <rect key="frame" x="0.0" y="0.0" width="280" height="20"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="1is-Md-OUI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UAP-A1-s1j">
+                    <rect key="frame" x="0.0" y="24" width="280" height="16"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="wDV-sN-QUz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="UAP-A1-s1j" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0ij-t6-dgl"/>
+                <constraint firstItem="UAP-A1-s1j" firstAttribute="top" secondItem="Hf4-SC-D8c" secondAttribute="bottom" constant="4" id="9VX-cR-ubT"/>
+                <constraint firstItem="hbX-1h-CKc" firstAttribute="top" secondItem="UAP-A1-s1j" secondAttribute="bottom" constant="4" id="Hgm-Ic-QUq"/>
+                <constraint firstItem="Hf4-SC-D8c" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MI8-Um-CDd"/>
+                <constraint firstItem="hbX-1h-CKc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RvC-lq-IsT"/>
+                <constraint firstAttribute="trailing" secondItem="hbX-1h-CKc" secondAttribute="trailing" id="aoW-mG-WTj"/>
+                <constraint firstItem="hbX-1h-CKc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="eVK-mT-ZnL"/>
+                <constraint firstItem="hbX-1h-CKc" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="jRR-AM-92h"/>
+                <constraint firstItem="UAP-A1-s1j" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="kfn-RE-kfi"/>
+                <constraint firstItem="Hf4-SC-D8c" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="sIK-xS-Fwc"/>
+                <constraint firstItem="Hf4-SC-D8c" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="xMT-DO-jCU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="stationDetailContainer" destination="hbX-1h-CKc" id="kep-jj-bEc"/>
+                <outlet property="subtitleLabel" destination="UAP-A1-s1j" id="BQ8-0F-cdW"/>
+                <outlet property="titleLabel" destination="Hf4-SC-D8c" id="fLX-FI-SdY"/>
+            </connections>
+        </view>
+    </objects>
+</document>
