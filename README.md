@@ -25,6 +25,12 @@
 * Contributions are very welcome.
 * Check out [Android version](https://github.com/Mun0n/MADBike) by [Mun0n](https://github.com/Mun0n)!
 
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/drunkcode#backer)]
+
+<a href="https://opencollective.com/drunkcode#backers" target="_blank"><img src="https://opencollective.com/drunkcode/backers.svg?width=890"></a>
+
 ## Authors
 
 [alexruperez](https://github.com/alexruperez), madbike@alexruperez.com
