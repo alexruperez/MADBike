@@ -11,7 +11,6 @@
 @import Fabric;
 @import Crashlytics;
 @import Branch;
-@import FBNotifications;
 @import GoogleMaps;
 @import OneSignal;
 @import TwitterKit;
@@ -79,11 +78,6 @@ static NSDictionary *_oneSignalTags = nil;
 + (Twitter *)twitter
 {
     return Twitter.sharedInstance;
-}
-
-+ (FBNotificationsManager *)notificationsManager
-{
-    return FBNotificationsManager.sharedManager;
 }
 
 + (NSNotificationCenter *)notificationCenter
@@ -282,16 +276,7 @@ static NSDictionary *_oneSignalTags = nil;
 {
     [FBSDKAppEvents logPushNotificationOpen:userInfo action:action];
     [self.branch handlePushNotification:userInfo];
-    if ([self.notificationsManager canPresentPushCardFromRemoteNotificationPayload:userInfo])
-    {
-        [self.notificationsManager presentPushCardForRemoteNotificationPayload:userInfo fromViewController:nil completion:^(FBNCardViewController *viewController, NSError *error) {
-            if (completionHandler)
-            {
-                completionHandler(!error ? UIBackgroundFetchResultNewData : UIBackgroundFetchResultFailed);
-            }
-        }];
-    }
-    else if (completionHandler)
+    if (completionHandler)
     {
         [self handleFetchCompletionHandler:completionHandler application:application];
     }
@@ -507,7 +492,9 @@ static NSDictionary *_oneSignalTags = nil;
 {
     DDLogInfo(@"Content view: %@ - %@ - %@", contentName, contentType, contentId);
     [Answers logContentViewWithName:contentName contentType:contentType contentId:contentId customAttributes:customAttributes];
-    [self.branch registerViewWithParams:customAttributes andCallback:nil];
+    BranchEvent *event = [BranchEvent standardEvent:BranchStandardEventViewItem];
+    event.customData = customAttributes.mutableCopy;
+    [event logEvent];
     [self increaseTag:contentName shouldDelete:NO];
     [self trackEvent:contentName parameters:customAttributes];
     [self trackEvent:FBSDKAppEventNameViewedContent parameters:customAttributes];

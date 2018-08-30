@@ -78,7 +78,6 @@ PODS:
   - DOFavoriteButton (0.0.4)
   - DTMHeatmap (1.0)
   - Fabric (1.7.11)
-  - FBNotifications (1.0.1)
   - FBSDKCoreKit (4.36.0):
     - Bolts (~> 1.7)
   - FBSDKShareKit (4.36.0):
@@ -177,7 +176,6 @@ DEPENDENCIES:
   - DOFavoriteButton (from `https://github.com/okmr-d/DOFavoriteButton.git`)
   - DTMHeatmap (~> 1.0)
   - Fabric (~> 1.6)
-  - FBNotifications (~> 1.0)
   - FBSDKCoreKit (~> 4.23)
   - FXNotifications (~> 1.1)
   - GearRefreshControl (~> 1.0)
@@ -217,7 +215,6 @@ SPEC REPOS:
     - DGRunkeeperSwitch
     - DTMHeatmap
     - Fabric
-    - FBNotifications
     - FBSDKCoreKit
     - FBSDKShareKit
     - FXNotifications
@@ -286,7 +283,6 @@ SPEC CHECKSUMS:
   DOFavoriteButton: 866e15af173d2dd5233971a1f657a5f31d2491d5
   DTMHeatmap: f5588af0730fbfe78c75d6d013f1932d7d327ab2
   Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
-  FBNotifications: 3f1a9e43ffa2979a685eec29c960ca6a15c70be9
   FBSDKCoreKit: 3b8e6570eedb443f9fc4af196a7bf39f18e3a3d8
   FBSDKShareKit: 7090fdd55c39b03941efddb64c83a64ff6b3949f
   FXNotifications: 5b4a90a3ae5bccce93d33070bed79da27c8c811e
@@ -314,6 +310,6 @@ SPEC CHECKSUMS:
   Typhoon: 551cc8fae881d0f4b20ddafc6d276da3e867f61f
   Zephyr: 9620401cbbd18305b1b4e2752dd67cc283bae30a
 
-PODFILE CHECKSUM: 735a42d3faded782e6f0a053ae073214a29b9ad7
+PODFILE CHECKSUM: b32dba8fc0e7c495fdc62d86219f9e63e0ffbce2
 
 COCOAPODS: 1.5.3

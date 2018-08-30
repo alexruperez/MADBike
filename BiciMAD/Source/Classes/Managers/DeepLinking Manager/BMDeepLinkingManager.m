@@ -8,7 +8,7 @@
 
 @import CoreSpotlight;
 @import MapKit;
-
+@import StoreKit;
 @import Branch;
 
 #import "BMDeepLinkingManager.h"
@@ -107,7 +107,7 @@ NSString * const kBMMADBikeDeepLinkSearchNotification = @"BMMADBikeDeepLinkSearc
                 }
                 else if ([url.absoluteString hasPrefix:[NSString stringWithFormat:@"%@://%@", kBMMADBikeDeepLinkPrefix, kBMMADBikeDeepLinkReview]])
                 {
-                    // TODO: Rating
+                    [SKStoreReviewController requestReview];
                 }
             });
             return YES;

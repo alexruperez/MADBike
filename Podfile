@@ -21,7 +21,6 @@ def app_pods
     pod 'DOFavoriteButton', :git => 'https://github.com/okmr-d/DOFavoriteButton.git'
     pod 'DTMHeatmap', '~> 1.0'
     pod 'Fabric', '~> 1.6'
-    pod 'FBNotifications', '~> 1.0'
     pod 'FBSDKCoreKit', '~> 4.23'
     pod 'FXNotifications', '~> 1.1'
     pod 'GearRefreshControl', '~> 1.0'

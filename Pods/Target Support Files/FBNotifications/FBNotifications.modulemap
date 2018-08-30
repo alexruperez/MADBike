@@ -1,6 +1,0 @@
-framework module FBNotifications {
-  umbrella header "FBNotifications-umbrella.h"
-
-  export *
-  module * { export * }
-}

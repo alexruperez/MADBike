@@ -141,7 +141,7 @@ static NSString * const kBMBackgroundSessionIdentifier = @"org.drunkcode.MADBike
         return nil;
     }
     
-    return [background ? self.backgroundSessionManager : self.sessionManager dataTaskWithRequest:request completionHandler:completionHandler];
+    return [background ? self.backgroundSessionManager : self.sessionManager dataTaskWithRequest:request uploadProgress:^(NSProgress * _Nonnull uploadProgress) {} downloadProgress:^(NSProgress * _Nonnull downloadProgress) {} completionHandler:completionHandler];
 }
 
 @end

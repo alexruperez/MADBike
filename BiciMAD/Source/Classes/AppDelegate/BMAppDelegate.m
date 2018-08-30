@@ -114,7 +114,7 @@
     return [BMAnalyticsManager handleOpenURL:url application:app options:options];
 }
 
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *))restorationHandler
+- (BOOL)application:(UIApplication *)application continueUserActivity:(nonnull NSUserActivity *)userActivity restorationHandler:(nonnull void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler
 {
     return [BMAnalyticsManager handleUserActivity:userActivity application:application restorationHandler:restorationHandler];
 }
