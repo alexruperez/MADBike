@@ -24,7 +24,7 @@ typedef void (^BMPrePermissionCompletionHandler)(BOOL success);
 
 - (void)camera:(BMPrePermissionCompletionHandler)completionHandler;
 
-- (void)twitter:(BMPrePermissionCompletionHandler)completionHandler;
+- (void)twitterWithViewController:(nullable UIViewController *)viewController completion:(BMPrePermissionCompletionHandler)completionHandler;
 
 - (void)push:(BMPrePermissionCompletionHandler)completionHandler;
 

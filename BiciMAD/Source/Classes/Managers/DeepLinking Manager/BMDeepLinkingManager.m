@@ -10,7 +10,6 @@
 @import MapKit;
 
 @import Branch;
-@import iRate;
 
 #import "BMDeepLinkingManager.h"
 #import "BMAnalyticsManager.h"
@@ -22,7 +21,6 @@ static NSString * const kBMMADBikeDeepLinkNews = @"news";
 static NSString * const kBMMADBikeDeepLinkReport = @"report";
 static NSString * const kBMMADBikeDeepLinkSettings = @"settings";
 static NSString * const kBMMADBikeDeepLinkShare = @"share";
-static NSString * const kBMMADBikeDeepLinkProposals = @"proposal";
 static NSString * const kBMMADBikeDeepLinkSearch = @"search";
 static NSString * const kBMMADBikeDeepLinkReview = @"review";
 static NSString * const kBMMADBikeDeepLinkWeather = @"weather";
@@ -38,7 +36,6 @@ NSString * const kBMMADBikeDeepLinkNewsNotification = @"BMMADBikeDeepLinkNewsNot
 NSString * const kBMMADBikeDeepLinkReportNotification = @"BMMADBikeDeepLinkReportNotification";
 NSString * const kBMMADBikeDeepLinkSettingsNotification = @"BMMADBikeDeepLinkSettingsNotification";
 NSString * const kBMMADBikeDeepLinkShareNotification = @"BMMADBikeDeepLinkShareNotification";
-NSString * const kBMMADBikeDeepLinkProposalsNotification = @"BMMADBikeDeepLinkProposalsNotification";
 NSString * const kBMMADBikeDeepLinkDirectionsRequestNotification = @"BMMADBikeDeepLinkDirectionsRequestNotification";
 NSString * const kBMMADBikeDeepLinkSearchNotification = @"BMMADBikeDeepLinkSearchNotification";
 
@@ -47,11 +44,6 @@ NSString * const kBMMADBikeDeepLinkSearchNotification = @"BMMADBikeDeepLinkSearc
 + (NSNotificationCenter *)notificationCenter
 {
     return NSNotificationCenter.defaultCenter;
-}
-
-+ (iRate *)iRate
-{
-    return iRate.sharedInstance;
 }
 
 + (NSString *)identifierForURL:(NSURL *)url
@@ -108,10 +100,6 @@ NSString * const kBMMADBikeDeepLinkSearchNotification = @"BMMADBikeDeepLinkSearc
                 {
                     [self.notificationCenter postNotificationName:kBMMADBikeDeepLinkShareNotification object:identifier userInfo:options];
                 }
-                else if ([url.absoluteString hasPrefix:[NSString stringWithFormat:@"%@://%@", kBMMADBikeDeepLinkPrefix, kBMMADBikeDeepLinkProposals]])
-                {
-                    [self.notificationCenter postNotificationName:kBMMADBikeDeepLinkProposalsNotification object:identifier userInfo:options];
-                }
                 else if ([url.absoluteString hasPrefix:[NSString stringWithFormat:@"%@://%@", kBMMADBikeDeepLinkPrefix, kBMMADBikeDeepLinkSearch]])
                 {
                     [self.notificationCenter postNotificationName:kBMMADBikeDeepLinkStationNotification object:nil userInfo:options];
@@ -119,7 +107,7 @@ NSString * const kBMMADBikeDeepLinkSearchNotification = @"BMMADBikeDeepLinkSearc
                 }
                 else if ([url.absoluteString hasPrefix:[NSString stringWithFormat:@"%@://%@", kBMMADBikeDeepLinkPrefix, kBMMADBikeDeepLinkReview]])
                 {
-                    [self.iRate promptIfNetworkAvailable];
+                    // TODO: Rating
                 }
             });
             return YES;

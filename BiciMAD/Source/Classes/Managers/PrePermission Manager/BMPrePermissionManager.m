@@ -8,8 +8,7 @@
 
 #import "BMPrePermissionManager.h"
 
-#import <TwitterKit/TwitterKit.h>
-
+@import TwitterKit;
 @import CoreLocation;
 @import AVFoundation;
 
@@ -159,7 +158,7 @@ static NSString * const kBMTwitterCreateFriendshipsTrueValue = @"true";
     }
 }
 
-- (void)twitter:(BMPrePermissionCompletionHandler)completionHandler
+- (void)twitterWithViewController:(nullable UIViewController *)viewController completion:(BMPrePermissionCompletionHandler)completionHandler
 {
     if (!self.twitter.sessionStore.session)
     {
@@ -169,10 +168,10 @@ static NSString * const kBMTwitterCreateFriendshipsTrueValue = @"true";
             [BMAnalyticsManager logContentViewWithName:NSStringFromClass(BMDraggableDialogManager.class) contentType:NSStringFromClass(TWTRSession.class) contentId:nil customAttributes:@{FBSDKAppEventParameterNameContentType: NSStringFromClass(TWTRSession.class)}];
             if (buttonIndex == 0)
             {
-                [self.twitter logInWithCompletion:^(TWTRSession *session, NSError *error) {
+                [self.twitter logInWithViewController:viewController completion:^(TWTRSession *session, NSError *error) {
                     [BMAnalyticsManager logLoginWithMethod:kBMTwitterLoginMethodKey success:@(!error) customAttributes:@{kBMLoginIDKey: session.userID ? session.userID : NSNull.null, kBMLoginNameKey: session.userName ? session.userName : NSNull.null, FBSDKAppEventParameterNameSuccess: !error ? FBSDKAppEventParameterValueYes : FBSDKAppEventParameterValueNo}];
                     NSError *requestError = nil;
-                    NSURLRequest *request = [self.APIClient URLRequestWithMethod:kBMTwitterPOSTMethod URL:kBMTwitterCreateFriendshipsURLString parameters:@{kBMTwitterCreateFriendshipsScreenNameKey: kBMTwitterCreateFriendshipsScreenNameValue, kBMTwitterCreateFriendshipsFollowKey: kBMTwitterCreateFriendshipsTrueValue} error:&requestError];
+                    NSURLRequest *request = [self.APIClient URLRequestWithMethod:kBMTwitterPOSTMethod URLString:kBMTwitterCreateFriendshipsURLString parameters:@{kBMTwitterCreateFriendshipsScreenNameKey: kBMTwitterCreateFriendshipsScreenNameValue, kBMTwitterCreateFriendshipsFollowKey: kBMTwitterCreateFriendshipsTrueValue} error:&requestError];
                     [self.APIClient sendTwitterRequest:request completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                         if (completionHandler)
                         {

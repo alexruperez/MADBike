@@ -17,7 +17,6 @@ extern NSString * const kBMMADBikeDeepLinkNewsNotification;
 extern NSString * const kBMMADBikeDeepLinkReportNotification;
 extern NSString * const kBMMADBikeDeepLinkSettingsNotification;
 extern NSString * const kBMMADBikeDeepLinkShareNotification;
-extern NSString * const kBMMADBikeDeepLinkProposalsNotification;
 extern NSString * const kBMMADBikeDeepLinkDirectionsRequestNotification;
 extern NSString * const kBMMADBikeDeepLinkSearchNotification;
 

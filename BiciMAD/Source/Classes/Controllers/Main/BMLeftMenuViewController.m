@@ -37,7 +37,6 @@ static NSString * const kBMLeftMenuCellIdentifier = @"BMLeftMenuCell";
 @property (nonatomic, strong) BMTwitterReportViewController *twitterReportViewController;
 @property (nonatomic, strong) BMAirQualityViewController *airQualityViewController;
 @property (nonatomic, strong) BMShareViewController *shareViewController;
-@property (nonatomic, strong) UIViewController *proposalsViewController;
 @property (nonatomic, strong) UIApplication *application;
 
 @end
@@ -80,10 +79,6 @@ static NSString * const kBMLeftMenuCellIdentifier = @"BMLeftMenuCell";
     [self.notificationCenter addObserver:self forName:kBMMADBikeDeepLinkShareNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification *note, id observer) {
         @strongify(self)
         [self showShareAnimated:NO];
-    }];
-    [self.notificationCenter addObserver:self forName:kBMMADBikeDeepLinkProposalsNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification *note, id observer) {
-        @strongify(self)
-        [self showProposalsAnimated:NO];
     }];
 }
 
@@ -166,14 +161,6 @@ static NSString * const kBMLeftMenuCellIdentifier = @"BMLeftMenuCell";
     return _shareViewController;
 }
 
-- (UIViewController *)proposalsViewController
-{
-    _proposalsViewController = [self.viewControllersAssembly safariViewControllerWithURLString:kBMProposalsURLString onLoad:nil onFinish:nil];
-    _proposalsViewController.view.tintColor = UIColor.bm_tintColor;
-
-    return _proposalsViewController;
-}
-
 - (UIApplication *)application
 {
     if (!_application)
@@ -220,7 +207,7 @@ static NSString * const kBMLeftMenuCellIdentifier = @"BMLeftMenuCell";
                 if (locationSuccess)
                 {
                     @strongify(self)
-                    [self.prePermissionManager twitter:^(BOOL twitterSuccess) {
+                    [self.prePermissionManager twitterWithViewController:self.sideMenuViewController completion:^(BOOL twitterSuccess) {
                         if (twitterSuccess)
                         {
                             @strongify(self)
@@ -253,30 +240,11 @@ static NSString * const kBMLeftMenuCellIdentifier = @"BMLeftMenuCell";
     [self.sideMenuViewController hideMenuViewController];
 }
 
-- (void)showProposalsAnimated:(BOOL)animated
-{
-    [self.sideMenuViewController hideMenuViewController];
-    UIViewController *proposalsViewController = self.proposalsViewController;
-    UIApplication *application = self.application;
-    NSURL *proposalsURL = [NSURL URLWithString:kBMProposalsDeepLinkString];
-    if ([application canOpenURL:proposalsURL])
-    {
-        NSString *bundle = NSBundle.mainBundle.bundleIdentifier;
-        NSDictionary *options = bundle ? @{UIApplicationOpenURLOptionsSourceApplicationKey: bundle} : @{};
-        [application openURL:proposalsURL options:options completionHandler:nil];
-    }
-    else
-    {
-        [self.sideMenuViewController showViewController:proposalsViewController sender:self];
-    }
-    [BMAnalyticsManager logContentViewWithName:kBMProposalsKey contentType:proposalsViewController.bm_className contentId:nil customAttributes:@{kBMSourceKey: proposalsViewController.bm_className}];
-}
-
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -320,10 +288,6 @@ static NSString * const kBMLeftMenuCellIdentifier = @"BMLeftMenuCell";
             cell.textLabel.text = NSLocalizedString(@"MADPoints", @"MADPoints");
             cell.imageView.image = [UIImage imageNamed:@"ic_share"];
             break;
-        case 6:
-            cell.textLabel.text = NSLocalizedString(@"Proposals", @"Proposals");
-            cell.imageView.image = [UIImage imageNamed:@"ic_proposals"];
-            break;
         default:
             cell.textLabel.text = @"";
             break;
@@ -365,9 +329,6 @@ static NSString * const kBMLeftMenuCellIdentifier = @"BMLeftMenuCell";
             break;
         case 5:
             [self showShareAnimated:YES];
-            break;
-        case 6:
-            [self showProposalsAnimated:YES];
             break;
         default:
             break;

@@ -29,6 +29,7 @@
 #import "FBSDKProfilePictureView.h"
 #import "FBSDKSettings.h"
 #import "FBSDKTestUsersManager.h"
+#import "FBSDKUserDataStore.h"
 #import "FBSDKUtility.h"
 
 FOUNDATION_EXPORT double FBSDKCoreKitVersionNumber;

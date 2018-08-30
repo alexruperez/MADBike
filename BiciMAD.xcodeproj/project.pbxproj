@@ -12,14 +12,10 @@
 		21B4E1C426C01AEEA02D00A8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB1B7827D3B05D2D6CC5371 /* QuartzCore.framework */; };
 		284AEAD535378EB82BB232E0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90E926F13C928D9C5DB5F9B /* CoreTelephony.framework */; };
 		4299C54E33AF7EA907CE1D0B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC383C3B99AB83AB45F4BC8 /* SystemConfiguration.framework */; };
-		50E8EB69A4D3C424E0244BD8 /* Pods_BiciMADTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80169CC68D820930CF788C2F /* Pods_BiciMADTests.framework */; };
 		52D7C9A40B942D8C83801496 /* Pods_BiciMAD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D4076BEDF682C9AB303A4D /* Pods_BiciMAD.framework */; };
-		77382A26DF708917FC4B35B3 /* Pods_Notifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B4EE1786F7BBAEC7D8FA1C /* Pods_Notifications.framework */; };
-		7BA8F4987A1E12491C57DB02 /* Pods_BiciMADUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D41427BC656A427590E191 /* Pods_BiciMADUITests.framework */; };
 		817351E91E0809DF009E627A /* RNCryptorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817351E81E0809DF009E627A /* RNCryptorManager.swift */; };
 		819CCB041E13C1F100B54A1A /* DeepLinkingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819CCB031E13C1F100B54A1A /* DeepLinkingExtensions.swift */; };
 		ACD19BA8266F6D54E5AD403D /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6322830C4A2B99F938076C /* CoreText.framework */; };
-		B251604B843CEA6B00F4B1F0 /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B10087D812EEA7E2A9ADFA7 /* BuddyBuildSDK.framework */; };
 		B92D4B01B8C83784A67E24B7 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F05A451DA1396D1D3AEFC7F /* AssetsLibrary.framework */; };
 		D1605FF31A74B85A7B36ABB8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5939CE35B5506947BEBED7A5 /* AVFoundation.framework */; };
 		D50736B11D6C920300E8A038 /* BMDraggableDialogCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = D50736B01D6C920300E8A038 /* BMDraggableDialogCustomView.m */; };
@@ -33,14 +29,11 @@
 		D50BA3181D6B3C260079DBD7 /* SAMKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = D50BA3161D6B3C260079DBD7 /* SAMKeychain.strings */; };
 		D50C94631EEEAE4400710CFB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50C94621EEEAE4400710CFB /* StoreKit.framework */; };
 		D50FECFF1DDB8F580053CAE7 /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50FECFE1DDB8F580053CAE7 /* ShareManager.swift */; };
-		D510B4E41ED76BF000D8A5FD /* BMDeepLinkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D54C93A41C4ED03400E07602 /* BMDeepLinkingManager.m */; };
-		D510B4E51ED76BF800D8A5FD /* DeepLinkingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819CCB031E13C1F100B54A1A /* DeepLinkingExtensions.swift */; };
 		D512B4FC1C896D8D00923F99 /* BMPlacesSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D512B4FB1C896D8D00923F99 /* BMPlacesSearchPresenter.m */; };
 		D512B4FF1C896EF100923F99 /* BMPlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D512B4FD1C896EF100923F99 /* BMPlacesTableViewController.m */; };
 		D512B5051C896F0600923F99 /* BMClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D512B5011C896F0600923F99 /* BMClusterAnnotationView.m */; };
 		D512B5061C896F0600923F99 /* BMStationDetailCalloutAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = D512B5031C896F0600923F99 /* BMStationDetailCalloutAccessoryView.m */; };
 		D512B5071C896F0600923F99 /* BMStationDetailCalloutAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D512B5041C896F0600923F99 /* BMStationDetailCalloutAccessoryView.xib */; };
-		D512F46E1C22331100060EA4 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D512F46D1C22331100060EA4 /* SnapshotHelper.swift */; };
 		D51310541CC570F100949A6B /* BMStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = D51310531CC570F100949A6B /* BMStorage.m */; };
 		D51310581CC571CC00949A6B /* BMStoragesAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = D51310571CC571CC00949A6B /* BMStoragesAssembly.m */; };
 		D513105B1CC5724C00949A6B /* BMPointsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = D513105A1CC5724C00949A6B /* BMPointsStorage.m */; };
@@ -51,8 +44,6 @@
 		D514D2F71BD6535D00E72348 /* BMStationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D514D2F61BD6535D00E72348 /* BMStationsViewController.m */; };
 		D514D2FD1BD6956C00E72348 /* BMStation.m in Sources */ = {isa = PBXBuildFile; fileRef = D514D2FC1BD6956C00E72348 /* BMStation.m */; };
 		D51B257C1D07751C00EE30E6 /* BMHeatmapRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D51B257B1D07751C00EE30E6 /* BMHeatmapRenderer.m */; };
-		D51DAB3B1F0C46FD009DD9EF /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51DAB3A1F0C46FD009DD9EF /* NotificationService.swift */; };
-		D51DAB3F1F0C46FD009DD9EF /* Notifications.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D51DAB381F0C46FD009DD9EF /* Notifications.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D522DBB91D999B970001C9A2 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D522DBB81D999B970001C9A2 /* Intents.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D522DBC01D9B03300001C9A2 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D522DBBF1D9B03300001C9A2 /* CoreSpotlight.framework */; };
 		D52335521C97601E00E266D4 /* BMShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D52335501C97601E00E266D4 /* BMShareViewController.m */; };
@@ -63,9 +54,7 @@
 		D52684BD1BD93503009E3E92 /* BMPlacesService.m in Sources */ = {isa = PBXBuildFile; fileRef = D52684BC1BD93503009E3E92 /* BMPlacesService.m */; };
 		D52684C01BD93562009E3E92 /* BMPlacesTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D52684BF1BD93562009E3E92 /* BMPlacesTask.m */; };
 		D528EA8B1EEEBD6A00BDEF57 /* BMEMTIncidencesTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D528EA8A1EEEBD6A00BDEF57 /* BMEMTIncidencesTask.m */; };
-		D53663AF1C7E407A009E1DDF /* BMTwitterTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CD142D1C7CFBB900E33A07 /* BMTwitterTimelineViewController.m */; };
-		D53663B01C7E407A009E1DDF /* BMTipsTimelineDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CD14301C7CFCDF00E33A07 /* BMTipsTimelineDataSource.m */; };
-		D53663B11C7E407A009E1DDF /* BMNewsTimelineDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CD14331C7D005100E33A07 /* BMNewsTimelineDataSource.m */; };
+		D542F194213845CA00A5F4E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D542F193213845CA00A5F4E0 /* Assets.xcassets */; };
 		D54555591D8157D200F1706B /* UITableViewCell+BMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D54555581D8157D200F1706B /* UITableViewCell+BMUtils.m */; };
 		D545555C1D815E8B00F1706B /* UIView+BMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D545555B1D815E8B00F1706B /* UIView+BMUtils.m */; };
 		D545555F1D815E9700F1706B /* NSArray+BMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D545555E1D815E9700F1706B /* NSArray+BMUtils.m */; };
@@ -88,64 +77,21 @@
 		D558EEED1CC0270C00149874 /* MTLValueTransformer+BMValueTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = D558EEEC1CC0270C00149874 /* MTLValueTransformer+BMValueTransformers.m */; };
 		D55F91741D89337C008E7D01 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55F91731D89337C008E7D01 /* SafariServices.framework */; };
 		D563F9EA1D87BC1F003F3C30 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D563F9E91D87BC1F003F3C30 /* MapKit.framework */; };
-		D565C02B1E0913BD00511D1D /* BMFavoritesManager+Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A62B5A1DCFD10E00C33EB8 /* BMFavoritesManager+Analytics.swift */; };
-		D565C02C1E09148B00511D1D /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50FECFE1DDB8F580053CAE7 /* ShareManager.swift */; };
-		D565C02D1E0914B100511D1D /* RNCryptorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817351E81E0809DF009E627A /* RNCryptorManager.swift */; };
-		D565C02E1E09154200511D1D /* TweetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57157FF1DA6A23D009EF31A /* TweetPresenter.swift */; };
-		D565C02F1E09158600511D1D /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE8DD21D9255050007D0C0 /* FilterView.swift */; };
-		D565C0301E09158A00511D1D /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DE8DD41D9255410007D0C0 /* FilterView.xib */; };
-		D565C0311E09162D00511D1D /* BMEMTServiceTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A360521DFC348C001634C7 /* BMEMTServiceTask.m */; };
-		D565C0321E09163000511D1D /* BMEMTAllStationsTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A360551DFC3593001634C7 /* BMEMTAllStationsTask.m */; };
-		D565C0331E09163300511D1D /* BMEMTSingleStationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A360581DFC36F1001634C7 /* BMEMTSingleStationTask.m */; };
-		D565C0341E09180D00511D1D /* FacebookSDK.strings in Resources */ = {isa = PBXBuildFile; fileRef = D50BA3131D6B3C1D0079DBD7 /* FacebookSDK.strings */; };
-		D565C0351E09181000511D1D /* SAMKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = D50BA3161D6B3C260079DBD7 /* SAMKeychain.strings */; };
-		D565C0361E09181400511D1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D50BA3091D66F9A20079DBD7 /* InfoPlist.strings */; };
 		D565FEBE1BC6B8E400FE9914 /* BMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D565FEB91BC6B8E400FE9914 /* BMAppDelegate.m */; };
 		D565FEBF1BC6B8E400FE9914 /* BMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D565FEBD1BC6B8E400FE9914 /* BMRootViewController.m */; };
-		D565FECC1BC6BB6900FE9914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D565FEC51BC6BB6900FE9914 /* Assets.xcassets */; };
 		D565FECF1BC6BBBE00FE9914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D565FED11BC6BBBE00FE9914 /* LaunchScreen.storyboard */; };
 		D565FED21BC6BBCC00FE9914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D565FED41BC6BBCC00FE9914 /* Main.storyboard */; };
 		D565FEE01BC6BDDE00FE9914 /* BMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D565FEDF1BC6BDDE00FE9914 /* BMHTTPClient.m */; };
 		D565FEE21BC6C3EE00FE9914 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D565FED81BC6BD3D00FE9914 /* main.m */; };
-		D56AB4221C454322002AAB8F /* BMSafariViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D553D9461C3CAD2E004A44C5 /* BMSafariViewController.m */; };
 		D56AB4241C45674C002AAB8F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56AB4231C45674C002AAB8F /* AdSupport.framework */; };
 		D57158001DA6A23D009EF31A /* TweetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57157FF1DA6A23D009EF31A /* TweetPresenter.swift */; };
-		D572CD581C5838AF0082D870 /* BMSpotlightManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D54C93A81C4EDECA00E07602 /* BMSpotlightManager.m */; };
 		D572CD5C1C583A210082D870 /* BMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D572CD5B1C583A210082D870 /* BMSettingsViewController.m */; };
-		D572CD5D1C583A280082D870 /* BMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D572CD5B1C583A210082D870 /* BMSettingsViewController.m */; };
 		D57DD4881CE262D7001288BD /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D57DD4871CE262D7001288BD /* PassKit.framework */; };
-		D5803EBD1BC586DB000C0E26 /* BiciMADTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5803EBC1BC586DB000C0E26 /* BiciMADTests.m */; };
-		D5803EC81BC586DB000C0E26 /* BiciMADUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5803EC71BC586DB000C0E26 /* BiciMADUITests.m */; };
 		D5803EDB1BC58831000C0E26 /* NSString+BMSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = D5803EDA1BC58831000C0E26 /* NSString+BMSecurity.m */; };
 		D5803EE71BC59308000C0E26 /* BMHTTPClientConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D5803EE61BC59308000C0E26 /* BMHTTPClientConstants.m */; };
 		D586EF121BFD42DE004F7BA2 /* BMWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D586EF111BFD42DE004F7BA2 /* BMWeatherViewController.m */; };
 		D586EF131BFD539A004F7BA2 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D586EF061BFD3A1C004F7BA2 /* Climacons.ttf */; };
 		D586EF191C02570A004F7BA2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D586EF181C02570A004F7BA2 /* Settings.bundle */; };
-		D58E08B61C220A3D00A96E1F /* BMApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DDA8B01BC6E00000CCD546 /* BMApplicationAssembly.m */; };
-		D58E08B71C220A3D00A96E1F /* BMServicesAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = D59818BC1BCD26E9001F1278 /* BMServicesAssembly.m */; };
-		D58E08B81C220A3D00A96E1F /* BMManagersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = D514D2E31BD544B000E72348 /* BMManagersAssembly.m */; };
-		D58E08B91C220A3D00A96E1F /* BMViewControllersAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = D514D2E61BD544CF00E72348 /* BMViewControllersAssembly.m */; };
-		D58E08BA1C220A3D00A96E1F /* BMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D565FEB91BC6B8E400FE9914 /* BMAppDelegate.m */; };
-		D58E08BC1C220A3D00A96E1F /* BMStation.m in Sources */ = {isa = PBXBuildFile; fileRef = D514D2FC1BD6956C00E72348 /* BMStation.m */; };
-		D58E08BD1C220A3D00A96E1F /* BMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D6251D1C16580500300D4E /* BMBaseViewController.m */; };
-		D58E08BE1C220A3D00A96E1F /* BMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D565FEBD1BC6B8E400FE9914 /* BMRootViewController.m */; };
-		D58E08BF1C220A3D00A96E1F /* BMLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D54E155F1BEAB30100CFF97A /* BMLeftMenuViewController.m */; };
-		D58E08C11C220A3D00A96E1F /* BMStationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D514D2F61BD6535D00E72348 /* BMStationsViewController.m */; };
-		D58E08C31C220A3D00A96E1F /* BMAnnotationsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B955131BD80EBA005DA0DC /* BMAnnotationsDetailViewController.m */; };
-		D58E08C51C220A3D00A96E1F /* BMStationDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D59B322D1BDA4DFB00384364 /* BMStationDetailTableViewCell.m */; };
-		D58E08C71C220A3D00A96E1F /* BMWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D586EF111BFD42DE004F7BA2 /* BMWeatherViewController.m */; };
-		D58E08C81C220A3D00A96E1F /* BMWeatherDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A4A8A11C1DAB9C00DBE17F /* BMWeatherDownloader.m */; };
-		D58E08CD1C220A3D00A96E1F /* BMNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = D59818E81BCEB208001F1278 /* BMNetworkService.m */; };
-		D58E08D51C220A3D00A96E1F /* BMStationsService.m in Sources */ = {isa = PBXBuildFile; fileRef = D514D2EF1BD6504000E72348 /* BMStationsService.m */; };
-		D58E08DA1C220A3D00A96E1F /* BMPlacesService.m in Sources */ = {isa = PBXBuildFile; fileRef = D52684BC1BD93503009E3E92 /* BMPlacesService.m */; };
-		D58E08DB1C220A3D00A96E1F /* BMPlacesTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D52684BF1BD93562009E3E92 /* BMPlacesTask.m */; };
-		D58E08DC1C220A3D00A96E1F /* BMAnalyticsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D552F3231C18FC5E00F7DC0D /* BMAnalyticsManager.m */; };
-		D58E08DD1C220A3D00A96E1F /* BMFavoritesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EAD9391BFBE99800F565B2 /* BMFavoritesManager.m */; };
-		D58E08E01C220A3D00A96E1F /* BMCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DDA8A81BC6DCD900CCD546 /* BMCoreDataManager.m */; };
-		D58E08E11C220A3D00A96E1F /* BMUserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D55327DE1BCEDC89006511E2 /* BMUserDefaultsManager.m */; };
-		D58E08E21C220A3D00A96E1F /* BMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D565FEDF1BC6BDDE00FE9914 /* BMHTTPClient.m */; };
-		D58E08E31C220A3D00A96E1F /* BMMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D59818B11BCD0607001F1278 /* BMMutableURLRequest.m */; };
-		D58E08E41C220A3D00A96E1F /* BMHTTPClientConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D5803EE61BC59308000C0E26 /* BMHTTPClientConstants.m */; };
 		D5916B1D1CDB98B5005DBC80 /* BMPromotionDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5916B1B1CDB98B5005DBC80 /* BMPromotionDetailTableViewCell.m */; };
 		D5916B1E1CDB98B5005DBC80 /* BMPromotionDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5916B1C1CDB98B5005DBC80 /* BMPromotionDetailTableViewCell.xib */; };
 		D59818B21BCD0607001F1278 /* BMMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D59818B11BCD0607001F1278 /* BMMutableURLRequest.m */; };
@@ -171,9 +117,6 @@
 		D5C2D96F1CBE212A00B4FAD2 /* BMPartner.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C2D96E1CBE212A00B4FAD2 /* BMPartner.m */; };
 		D5C2D9721CBE213B00B4FAD2 /* BMPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C2D9711CBE213B00B4FAD2 /* BMPlace.m */; };
 		D5C2D9751CBE215300B4FAD2 /* BMPromotion.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C2D9741CBE215300B4FAD2 /* BMPromotion.m */; };
-		D5C9E7121C2717FC00EBD8F7 /* AFNetworking.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5A4A8941C1DA02A00DBE17F /* AFNetworking.strings */; };
-		D5C9E7131C2717FF00EBD8F7 /* IASKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5A4A8961C1DA02A00DBE17F /* IASKLocalizable.strings */; };
-		D5C9E7151C27180600EBD8F7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D514D2DF1BD539A300E72348 /* Localizable.strings */; };
 		D5CD142E1C7CFBB900E33A07 /* BMTwitterTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CD142D1C7CFBB900E33A07 /* BMTwitterTimelineViewController.m */; };
 		D5CD14311C7CFCDF00E33A07 /* BMTipsTimelineDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CD14301C7CFCDF00E33A07 /* BMTipsTimelineDataSource.m */; };
 		D5CD14341C7D005100E33A07 /* BMNewsTimelineDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CD14331C7D005100E33A07 /* BMNewsTimelineDataSource.m */; };
@@ -184,13 +127,6 @@
 		D5D6252A1C1672DC00300D4E /* MFMailComposeViewController+BMChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D625291C1672DC00300D4E /* MFMailComposeViewController+BMChildViewController.m */; };
 		D5D6252E1C16E48600300D4E /* UINavigationController+BMChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D6252D1C16E48600300D4E /* UINavigationController+BMChildViewController.m */; };
 		D5D76B181D7ABB9000FA9C93 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D76B171D7ABB9000FA9C93 /* Photos.framework */; };
-		D5D76B1A1D7ACEA600FA9C93 /* BMClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D512B5011C896F0600923F99 /* BMClusterAnnotationView.m */; };
-		D5D76B1B1D7ACEB600FA9C93 /* BMDraggableDialogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D5077FD31D5DB999004C892B /* BMDraggableDialogManager.m */; };
-		D5D76B1C1D7ACEC000FA9C93 /* BMPrePermissionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D5077FD71D5DD062004C892B /* BMPrePermissionManager.m */; };
-		D5D76B1D1D7ACED000FA9C93 /* BMTwitterReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F7598D1D5348C100202196 /* BMTwitterReportViewController.m */; };
-		D5D76B1E1D7ACEE100FA9C93 /* BMTwitterTimelinePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50977F01D60F2F2005FE739 /* BMTwitterTimelinePageViewController.m */; };
-		D5D76B1F1D7ACEF300FA9C93 /* DDCLSLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BA3031D66E20A0079DBD7 /* DDCLSLogger.m */; };
-		D5D76B211D7ACF3300FA9C93 /* BMDraggableDialogCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = D50736B01D6C920300E8A038 /* BMDraggableDialogCustomView.m */; };
 		D5DDA8A91BC6DCD900CCD546 /* BMCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DDA8A81BC6DCD900CCD546 /* BMCoreDataManager.m */; };
 		D5DDA8B11BC6E00000CCD546 /* BMApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DDA8B01BC6E00000CCD546 /* BMApplicationAssembly.m */; };
 		D5DDA8B51BC6E89800CCD546 /* BiciMAD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D565FEC21BC6BB6900FE9914 /* BiciMAD.xcdatamodeld */; };
@@ -208,27 +144,7 @@
 		D5E029CB1C8F72C900BECBFF /* BMStationDetailMarkerInfoContentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E029CA1C8F72C900BECBFF /* BMStationDetailMarkerInfoContentsView.xib */; };
 		D5E4E3DE1C0E3E50009F6583 /* MTLModel+BMMerge.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E4E3DD1C0E3E50009F6583 /* MTLModel+BMMerge.m */; };
 		D5EAD93A1BFBE99800F565B2 /* BMFavoritesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EAD9391BFBE99800F565B2 /* BMFavoritesManager.m */; };
-		D5EB3BD01D21516900127674 /* BMAirQualityService.m in Sources */ = {isa = PBXBuildFile; fileRef = D55731961D0494F200038CF1 /* BMAirQualityService.m */; };
-		D5EB3BD11D21517200127674 /* BMAirQualityTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D55731991D04951C00038CF1 /* BMAirQualityTask.m */; };
-		D5EB3BD21D21517C00127674 /* BMAirQualityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55731901D048D6B00038CF1 /* BMAirQualityViewController.m */; };
-		D5EB3BD31D21518800127674 /* BMAllPartnersTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F36BC61CB6F5D3006B6783 /* BMAllPartnersTask.m */; };
-		D5EB3BD51D21519700127674 /* BMGreenTipsTimelineDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D59EA5C81CFE1C2000DB02AD /* BMGreenTipsTimelineDataSource.m */; };
-		D5EB3BD71D2151AC00127674 /* BMNavigationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D5238D741CBE9B4B0049011E /* BMNavigationManager.m */; };
-		D5EB3BD81D2151B400127674 /* BMPartner.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C2D96E1CBE212A00B4FAD2 /* BMPartner.m */; };
-		D5EB3BD91D2151BC00127674 /* BMPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C2D9711CBE213B00B4FAD2 /* BMPlace.m */; };
-		D5EB3BDA1D2151C900127674 /* BMPlaceDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D52660391CC80E0A008B7860 /* BMPlaceDetailTableViewCell.m */; };
-		D5EB3BDB1D2151D200127674 /* BMPlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D512B4FD1C896EF100923F99 /* BMPlacesTableViewController.m */; };
-		D5EB3BDC1D2151DC00127674 /* BMPointsService.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F36BC31CB6F3A3006B6783 /* BMPointsService.m */; };
-		D5EB3BDD1D2151E300127674 /* BMPromotion.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C2D9741CBE215300B4FAD2 /* BMPromotion.m */; };
-		D5EB3BDE1D2151F400127674 /* BMPromotionDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5916B1B1CDB98B5005DBC80 /* BMPromotionDetailTableViewCell.m */; };
-		D5EB3BE11D21520E00127674 /* BMShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D52335501C97601E00E266D4 /* BMShareViewController.m */; };
-		D5EB3BE21D21522C00127674 /* BMAirQuality.m in Sources */ = {isa = PBXBuildFile; fileRef = D557319C1D049EE000038CF1 /* BMAirQuality.m */; };
-		D5EB3BE31D21523500127674 /* BMDrunkcodeServiceTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F36BBF1CB6EC72006B6783 /* BMDrunkcodeServiceTask.m */; };
-		D5EB3BE41D21523E00127674 /* BMFormulaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D41E601D05A34700B39D10 /* BMFormulaCollectionViewCell.m */; };
-		D5EB3BE51D21524700127674 /* BMHeatmapRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D51B257B1D07751C00EE30E6 /* BMHeatmapRenderer.m */; };
-		D5EB3BE71D21527000127674 /* BMAirQualityMetric.m in Sources */ = {isa = PBXBuildFile; fileRef = D557319F1D04A01E00038CF1 /* BMAirQualityMetric.m */; };
 		D5F36BBC1CB59356006B6783 /* BMServiceTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F36BBB1CB59356006B6783 /* BMServiceTask.m */; };
-		D5F36BBD1CB59356006B6783 /* BMServiceTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F36BBB1CB59356006B6783 /* BMServiceTask.m */; };
 		D5F36BC01CB6EC72006B6783 /* BMDrunkcodeServiceTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F36BBF1CB6EC72006B6783 /* BMDrunkcodeServiceTask.m */; };
 		D5F36BC41CB6F3A3006B6783 /* BMPointsService.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F36BC31CB6F3A3006B6783 /* BMPointsService.m */; };
 		D5F36BC71CB6F5D3006B6783 /* BMAllPartnersTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F36BC61CB6F5D3006B6783 /* BMAllPartnersTask.m */; };
@@ -240,60 +156,16 @@
 		D5F91FFB1DB767940038EC13 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F91FFA1DB767940038EC13 /* ImageIO.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		D51DAB3D1F0C46FD009DD9EF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D5803E941BC586DB000C0E26 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D51DAB371F0C46FD009DD9EF;
-			remoteInfo = Notifications;
-		};
-		D5803EB91BC586DB000C0E26 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D5803E941BC586DB000C0E26 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D5803E9B1BC586DB000C0E26;
-			remoteInfo = BiciMAD;
-		};
-		D5803EC41BC586DB000C0E26 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D5803E941BC586DB000C0E26 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D5803E9B1BC586DB000C0E26;
-			remoteInfo = BiciMAD;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		D518B34E1D117A4B0033E884 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				D51DAB3F1F0C46FD009DD9EF /* Notifications.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		040EF3619728A6B49D7E7FEB /* Pods-Notifications.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notifications.release.xcconfig"; path = "Pods/Target Support Files/Pods-Notifications/Pods-Notifications.release.xcconfig"; sourceTree = "<group>"; };
 		2B3432330102D8ACC7461AD8 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		43D416A0CF47CCEC3748E462 /* Pods-Notifications.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notifications.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Notifications/Pods-Notifications.debug.xcconfig"; sourceTree = "<group>"; };
 		5939CE35B5506947BEBED7A5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		5B10087D812EEA7E2A9ADFA7 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
-		69B4EE1786F7BBAEC7D8FA1C /* Pods_Notifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AB1B7827D3B05D2D6CC5371 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6C6322830C4A2B99F938076C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		80169CC68D820930CF788C2F /* Pods_BiciMADTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BiciMADTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		817351E81E0809DF009E627A /* RNCryptorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCryptorManager.swift; sourceTree = "<group>"; };
 		819CCB031E13C1F100B54A1A /* DeepLinkingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkingExtensions.swift; sourceTree = "<group>"; };
 		8FC383C3B99AB83AB45F4BC8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9F05A451DA1396D1D3AEFC7F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		B1D4076BEDF682C9AB303A4D /* Pods_BiciMAD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BiciMAD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1D41427BC656A427590E191 /* Pods_BiciMADUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BiciMADUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D50736AF1D6C920300E8A038 /* BMDraggableDialogCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDraggableDialogCustomView.h; sourceTree = "<group>"; };
 		D50736B01D6C920300E8A038 /* BMDraggableDialogCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BMDraggableDialogCustomView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D50736B21D6C921800E8A038 /* BMDraggableDialogCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMDraggableDialogCustomView.xib; sourceTree = "<group>"; };
@@ -324,8 +196,6 @@
 		D512B5021C896F0600923F99 /* BMStationDetailCalloutAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMStationDetailCalloutAccessoryView.h; sourceTree = "<group>"; };
 		D512B5031C896F0600923F99 /* BMStationDetailCalloutAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BMStationDetailCalloutAccessoryView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D512B5041C896F0600923F99 /* BMStationDetailCalloutAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMStationDetailCalloutAccessoryView.xib; sourceTree = "<group>"; };
-		D512F46C1C22331000060EA4 /* BiciMADUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BiciMADUITests-Bridging-Header.h"; sourceTree = "<group>"; };
-		D512F46D1C22331100060EA4 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		D51310521CC570F100949A6B /* BMStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMStorage.h; sourceTree = "<group>"; };
 		D51310531CC570F100949A6B /* BMStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMStorage.m; sourceTree = "<group>"; };
 		D51310561CC571CC00949A6B /* BMStoragesAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMStoragesAssembly.h; sourceTree = "<group>"; };
@@ -346,9 +216,6 @@
 		D514D2FC1BD6956C00E72348 /* BMStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMStation.m; sourceTree = "<group>"; };
 		D51B257A1D07751C00EE30E6 /* BMHeatmapRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMHeatmapRenderer.h; sourceTree = "<group>"; };
 		D51B257B1D07751C00EE30E6 /* BMHeatmapRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMHeatmapRenderer.m; sourceTree = "<group>"; };
-		D51DAB381F0C46FD009DD9EF /* Notifications.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Notifications.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		D51DAB3A1F0C46FD009DD9EF /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		D51DAB3C1F0C46FD009DD9EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D522DBB81D999B970001C9A2 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		D522DBBF1D9B03300001C9A2 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
 		D523354F1C97601E00E266D4 /* BMShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMShareViewController.h; sourceTree = "<group>"; };
@@ -366,6 +233,7 @@
 		D52684BF1BD93562009E3E92 /* BMPlacesTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BMPlacesTask.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D528EA891EEEBD6A00BDEF57 /* BMEMTIncidencesTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEMTIncidencesTask.h; sourceTree = "<group>"; };
 		D528EA8A1EEEBD6A00BDEF57 /* BMEMTIncidencesTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEMTIncidencesTask.m; sourceTree = "<group>"; };
+		D542F193213845CA00A5F4E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D54555571D8157D200F1706B /* UITableViewCell+BMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+BMUtils.h"; sourceTree = "<group>"; };
 		D54555581D8157D200F1706B /* UITableViewCell+BMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+BMUtils.m"; sourceTree = "<group>"; };
 		D545555A1D815E8B00F1706B /* UIView+BMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BMUtils.h"; sourceTree = "<group>"; };
@@ -416,7 +284,6 @@
 		D565FEBC1BC6B8E400FE9914 /* BMRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BMRootViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		D565FEBD1BC6B8E400FE9914 /* BMRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BMRootViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D565FEC31BC6BB6900FE9914 /* BiciMAD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BiciMAD.xcdatamodel; sourceTree = "<group>"; };
-		D565FEC51BC6BB6900FE9914 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D565FED01BC6BBBE00FE9914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D565FED31BC6BBCC00FE9914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D565FED71BC6BD3D00FE9914 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -428,12 +295,6 @@
 		D56AB42A1C47CFD2002AAB8F /* BiciMAD-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "BiciMAD-Debug.xcconfig"; sourceTree = "<group>"; };
 		D56AB42B1C47CFD2002AAB8F /* BiciMAD-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "BiciMAD-Release.xcconfig"; sourceTree = "<group>"; };
 		D56AB42C1C47CFD2002AAB8F /* BiciMAD-Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "BiciMAD-Shared.xcconfig"; sourceTree = "<group>"; };
-		D56AB42D1C47CFD2002AAB8F /* BiciMADTests-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "BiciMADTests-Debug.xcconfig"; sourceTree = "<group>"; };
-		D56AB42E1C47CFD2002AAB8F /* BiciMADTests-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "BiciMADTests-Release.xcconfig"; sourceTree = "<group>"; };
-		D56AB42F1C47CFD2002AAB8F /* BiciMADTests-Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "BiciMADTests-Shared.xcconfig"; sourceTree = "<group>"; };
-		D56AB4301C47CFD2002AAB8F /* BiciMADUITests-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "BiciMADUITests-Debug.xcconfig"; sourceTree = "<group>"; };
-		D56AB4311C47CFD2002AAB8F /* BiciMADUITests-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "BiciMADUITests-Release.xcconfig"; sourceTree = "<group>"; };
-		D56AB4321C47CFD2002AAB8F /* BiciMADUITests-Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "BiciMADUITests-Shared.xcconfig"; sourceTree = "<group>"; };
 		D56AB4331C47CFD2002AAB8F /* Project-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
 		D56AB4341C47CFD2002AAB8F /* Project-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Project-Release.xcconfig"; sourceTree = "<group>"; };
 		D56AB4351C47CFD2002AAB8F /* Project-Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Project-Shared.xcconfig"; sourceTree = "<group>"; };
@@ -443,12 +304,6 @@
 		D57DD4871CE262D7001288BD /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		D57E57C41C2213150003EB1D /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		D5803E9C1BC586DB000C0E26 /* MADBike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MADBike.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5803EB81BC586DB000C0E26 /* BiciMADTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiciMADTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5803EBC1BC586DB000C0E26 /* BiciMADTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BiciMADTests.m; sourceTree = "<group>"; };
-		D5803EBE1BC586DB000C0E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D5803EC31BC586DB000C0E26 /* BiciMADUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiciMADUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5803EC71BC586DB000C0E26 /* BiciMADUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BiciMADUITests.m; sourceTree = "<group>"; };
-		D5803EC91BC586DB000C0E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5803ED91BC58831000C0E26 /* NSString+BMSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BMSecurity.h"; sourceTree = "<group>"; };
 		D5803EDA1BC58831000C0E26 /* NSString+BMSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSString+BMSecurity.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D5803EE51BC59308000C0E26 /* BMHTTPClientConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMHTTPClientConstants.h; sourceTree = "<group>"; };
@@ -581,14 +436,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D51DAB351F0C46FD009DD9EF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				77382A26DF708917FC4B35B3 /* Pods_Notifications.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D5803E991BC586DB000C0E26 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -606,7 +453,6 @@
 				D563F9EA1D87BC1F003F3C30 /* MapKit.framework in Frameworks */,
 				D5A64B921C9825E100C2B0F3 /* Security.framework in Frameworks */,
 				52D7C9A40B942D8C83801496 /* Pods_BiciMAD.framework in Frameworks */,
-				B251604B843CEA6B00F4B1F0 /* BuddyBuildSDK.framework in Frameworks */,
 				B92D4B01B8C83784A67E24B7 /* AssetsLibrary.framework in Frameworks */,
 				ACD19BA8266F6D54E5AD403D /* CoreText.framework in Frameworks */,
 				284AEAD535378EB82BB232E0 /* CoreTelephony.framework in Frameworks */,
@@ -615,22 +461,6 @@
 				D1605FF31A74B85A7B36ABB8 /* AVFoundation.framework in Frameworks */,
 				20650D0BB3101A44BF7B98D4 /* CoreMedia.framework in Frameworks */,
 				1BEB09918D04D03B1CBF25E8 /* CoreVideo.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D5803EB51BC586DB000C0E26 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				50E8EB69A4D3C424E0244BD8 /* Pods_BiciMADTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D5803EC01BC586DB000C0E26 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7BA8F4987A1E12491C57DB02 /* Pods_BiciMADUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,9 +484,6 @@
 				D5A64B911C9825E100C2B0F3 /* Security.framework */,
 				D57E57C41C2213150003EB1D /* Pods.framework */,
 				B1D4076BEDF682C9AB303A4D /* Pods_BiciMAD.framework */,
-				80169CC68D820930CF788C2F /* Pods_BiciMADTests.framework */,
-				B1D41427BC656A427590E191 /* Pods_BiciMADUITests.framework */,
-				5B10087D812EEA7E2A9ADFA7 /* BuddyBuildSDK.framework */,
 				9F05A451DA1396D1D3AEFC7F /* AssetsLibrary.framework */,
 				6C6322830C4A2B99F938076C /* CoreText.framework */,
 				D90E926F13C928D9C5DB5F9B /* CoreTelephony.framework */,
@@ -665,7 +492,6 @@
 				5939CE35B5506947BEBED7A5 /* AVFoundation.framework */,
 				E8A4AD196DE17CF26862D179 /* CoreMedia.framework */,
 				2B3432330102D8ACC7461AD8 /* CoreVideo.framework */,
-				69B4EE1786F7BBAEC7D8FA1C /* Pods_Notifications.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -673,8 +499,6 @@
 		AA2C18E1348D045946C67C13 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				43D416A0CF47CCEC3748E462 /* Pods-Notifications.debug.xcconfig */,
-				040EF3619728A6B49D7E7FEB /* Pods-Notifications.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -805,15 +629,6 @@
 				D5DE8DD41D9255410007D0C0 /* FilterView.xib */,
 			);
 			path = Stations;
-			sourceTree = "<group>";
-		};
-		D51DAB391F0C46FD009DD9EF /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				D51DAB3A1F0C46FD009DD9EF /* NotificationService.swift */,
-				D51DAB3C1F0C46FD009DD9EF /* Info.plist */,
-			);
-			path = Notifications;
 			sourceTree = "<group>";
 		};
 		D523354E1C975FAD00E266D4 /* Share */ = {
@@ -1044,7 +859,7 @@
 		D565FEC41BC6BB6900FE9914 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D565FEC51BC6BB6900FE9914 /* Assets.xcassets */,
+				D542F193213845CA00A5F4E0 /* Assets.xcassets */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1116,12 +931,6 @@
 				D56AB42A1C47CFD2002AAB8F /* BiciMAD-Debug.xcconfig */,
 				D56AB42B1C47CFD2002AAB8F /* BiciMAD-Release.xcconfig */,
 				D56AB42C1C47CFD2002AAB8F /* BiciMAD-Shared.xcconfig */,
-				D56AB42D1C47CFD2002AAB8F /* BiciMADTests-Debug.xcconfig */,
-				D56AB42E1C47CFD2002AAB8F /* BiciMADTests-Release.xcconfig */,
-				D56AB42F1C47CFD2002AAB8F /* BiciMADTests-Shared.xcconfig */,
-				D56AB4301C47CFD2002AAB8F /* BiciMADUITests-Debug.xcconfig */,
-				D56AB4311C47CFD2002AAB8F /* BiciMADUITests-Release.xcconfig */,
-				D56AB4321C47CFD2002AAB8F /* BiciMADUITests-Shared.xcconfig */,
 				D56AB4331C47CFD2002AAB8F /* Project-Debug.xcconfig */,
 				D56AB4341C47CFD2002AAB8F /* Project-Release.xcconfig */,
 				D56AB4351C47CFD2002AAB8F /* Project-Shared.xcconfig */,
@@ -1142,9 +951,6 @@
 			isa = PBXGroup;
 			children = (
 				D5803E9E1BC586DB000C0E26 /* BiciMAD */,
-				D5803EBB1BC586DB000C0E26 /* BiciMADTests */,
-				D5803EC61BC586DB000C0E26 /* BiciMADUITests */,
-				D51DAB391F0C46FD009DD9EF /* Notifications */,
 				D5803E9D1BC586DB000C0E26 /* Products */,
 				D56AB4291C47CFD2002AAB8F /* Configs */,
 				7FD91EAE12A756E6414A503F /* Frameworks */,
@@ -1156,9 +962,6 @@
 			isa = PBXGroup;
 			children = (
 				D5803E9C1BC586DB000C0E26 /* MADBike.app */,
-				D5803EB81BC586DB000C0E26 /* BiciMADTests.xctest */,
-				D5803EC31BC586DB000C0E26 /* BiciMADUITests.xctest */,
-				D51DAB381F0C46FD009DD9EF /* Notifications.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1171,26 +974,6 @@
 				D565FED61BC6BD3D00FE9914 /* Supporting Files */,
 			);
 			path = BiciMAD;
-			sourceTree = "<group>";
-		};
-		D5803EBB1BC586DB000C0E26 /* BiciMADTests */ = {
-			isa = PBXGroup;
-			children = (
-				D5803EBC1BC586DB000C0E26 /* BiciMADTests.m */,
-				D5803EBE1BC586DB000C0E26 /* Info.plist */,
-			);
-			path = BiciMADTests;
-			sourceTree = "<group>";
-		};
-		D5803EC61BC586DB000C0E26 /* BiciMADUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D5803EC91BC586DB000C0E26 /* Info.plist */,
-				D512F46D1C22331100060EA4 /* SnapshotHelper.swift */,
-				D512F46C1C22331000060EA4 /* BiciMADUITests-Bridging-Header.h */,
-				D5803EC71BC586DB000C0E26 /* BiciMADUITests.m */,
-			);
-			path = BiciMADUITests;
 			sourceTree = "<group>";
 		};
 		D5803ED51BC587AF000C0E26 /* Source */ = {
@@ -1537,25 +1320,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D51DAB371F0C46FD009DD9EF /* Notifications */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D51DAB421F0C46FE009DD9EF /* Build configuration list for PBXNativeTarget "Notifications" */;
-			buildPhases = (
-				6EC7055C072B3E47D240B837 /* [CP] Check Pods Manifest.lock */,
-				D51DAB341F0C46FD009DD9EF /* Sources */,
-				D51DAB351F0C46FD009DD9EF /* Frameworks */,
-				D51DAB361F0C46FD009DD9EF /* Resources */,
-				D9E4C28B50BF6BD581276392 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Notifications;
-			productName = Notifications;
-			productReference = D51DAB381F0C46FD009DD9EF /* Notifications.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		D5803E9B1BC586DB000C0E26 /* BiciMAD */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5803ECC1BC586DB000C0E26 /* Build configuration list for PBXNativeTarget "BiciMAD" */;
@@ -1565,63 +1329,18 @@
 				D5803E991BC586DB000C0E26 /* Frameworks */,
 				D5803E9A1BC586DB000C0E26 /* Resources */,
 				815EE23A1DC7783600CF09FC /* Warn for TODO comments */,
-				815EE2391DC7782800CF09FC /* Warn for long classes */,
 				D5922ED51BC6F7EA0067A47E /* Fabric */,
 				DFAF96812149FD2A98233C2A /* [CP] Embed Pods Frameworks */,
 				4C656294B88A1A5C4BD6B1CA /* [CP] Copy Pods Resources */,
-				D518B34E1D117A4B0033E884 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D51DAB3E1F0C46FD009DD9EF /* PBXTargetDependency */,
 			);
 			name = BiciMAD;
 			productName = BiciMAD;
 			productReference = D5803E9C1BC586DB000C0E26 /* MADBike.app */;
 			productType = "com.apple.product-type.application";
-		};
-		D5803EB71BC586DB000C0E26 /* BiciMADTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D5803ECF1BC586DB000C0E26 /* Build configuration list for PBXNativeTarget "BiciMADTests" */;
-			buildPhases = (
-				DBFCAABF78CA4634B001121D /* [CP] Check Pods Manifest.lock */,
-				D5803EB41BC586DB000C0E26 /* Sources */,
-				D5803EB51BC586DB000C0E26 /* Frameworks */,
-				D5803EB61BC586DB000C0E26 /* Resources */,
-				7321049A9CE0024ABBA2E680 /* [CP] Embed Pods Frameworks */,
-				A3FFD900368684FD9F07AEAF /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D5803EBA1BC586DB000C0E26 /* PBXTargetDependency */,
-			);
-			name = BiciMADTests;
-			productName = BiciMADTests;
-			productReference = D5803EB81BC586DB000C0E26 /* BiciMADTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D5803EC21BC586DB000C0E26 /* BiciMADUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D5803ED21BC586DB000C0E26 /* Build configuration list for PBXNativeTarget "BiciMADUITests" */;
-			buildPhases = (
-				F60E1E339B0225ABFD656EAA /* [CP] Check Pods Manifest.lock */,
-				D5803EBF1BC586DB000C0E26 /* Sources */,
-				D5803EC01BC586DB000C0E26 /* Frameworks */,
-				D5803EC11BC586DB000C0E26 /* Resources */,
-				2872D5C02E1FCED696DAE91E /* [CP] Copy Pods Resources */,
-				7275A5C04FE82C1F7E1BAF6F /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D5803EC51BC586DB000C0E26 /* PBXTargetDependency */,
-			);
-			name = BiciMADUITests;
-			productName = BiciMADUITests;
-			productReference = D5803EC31BC586DB000C0E26 /* BiciMADUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -1633,15 +1352,10 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = alexruperez;
 				TargetAttributes = {
-					D51DAB371F0C46FD009DD9EF = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = Q6BEQCNWYM;
-						LastSwiftMigration = 0900;
-					};
 					D5803E9B1BC586DB000C0E26 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = Q6BEQCNWYM;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -1667,18 +1381,6 @@
 							};
 						};
 					};
-					D5803EB71BC586DB000C0E26 = {
-						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = Q6BEQCNWYM;
-						LastSwiftMigration = 0900;
-						TestTargetID = D5803E9B1BC586DB000C0E26;
-					};
-					D5803EC21BC586DB000C0E26 = {
-						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = Q6BEQCNWYM;
-						LastSwiftMigration = 0900;
-						TestTargetID = D5803E9B1BC586DB000C0E26;
-					};
 				};
 			};
 			buildConfigurationList = D5803E971BC586DB000C0E26 /* Build configuration list for PBXProject "BiciMAD" */;
@@ -1696,21 +1398,11 @@
 			projectRoot = "";
 			targets = (
 				D5803E9B1BC586DB000C0E26 /* BiciMAD */,
-				D5803EB71BC586DB000C0E26 /* BiciMADTests */,
-				D5803EC21BC586DB000C0E26 /* BiciMADUITests */,
-				D51DAB371F0C46FD009DD9EF /* Notifications */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D51DAB361F0C46FD009DD9EF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D5803E9A1BC586DB000C0E26 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1718,7 +1410,6 @@
 				D59B32301BDA4DFB00384364 /* BMStationDetailTableViewCell.xib in Resources */,
 				D512B5071C896F0600923F99 /* BMStationDetailCalloutAccessoryView.xib in Resources */,
 				D55731931D048D6B00038CF1 /* BMAirQualityViewController.xib in Resources */,
-				D565FECC1BC6BB6900FE9914 /* Assets.xcassets in Resources */,
 				D5E029CB1C8F72C900BECBFF /* BMStationDetailMarkerInfoContentsView.xib in Resources */,
 				D5DE8DD51D9255410007D0C0 /* FilterView.xib in Resources */,
 				D586EF131BFD539A004F7BA2 /* Climacons.ttf in Resources */,
@@ -1738,54 +1429,14 @@
 				D5A4A89B1C1DA02A00DBE17F /* IASKLocalizable.strings in Resources */,
 				D565FECF1BC6BBBE00FE9914 /* LaunchScreen.storyboard in Resources */,
 				D50BA3151D6B3C1D0079DBD7 /* FacebookSDK.strings in Resources */,
+				D542F194213845CA00A5F4E0 /* Assets.xcassets in Resources */,
 				D5B84BDD1C1CC5C6006CFC78 /* MADBike.entitlements in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D5803EB61BC586DB000C0E26 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D5803EC11BC586DB000C0E26 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D565C0351E09181000511D1D /* SAMKeychain.strings in Resources */,
-				D565C0361E09181400511D1D /* InfoPlist.strings in Resources */,
-				D565C0301E09158A00511D1D /* FilterView.xib in Resources */,
-				D5C9E7121C2717FC00EBD8F7 /* AFNetworking.strings in Resources */,
-				D565C0341E09180D00511D1D /* FacebookSDK.strings in Resources */,
-				D5C9E7151C27180600EBD8F7 /* Localizable.strings in Resources */,
-				D5C9E7131C2717FF00EBD8F7 /* IASKLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2872D5C02E1FCED696DAE91E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BiciMADUITests/Pods-BiciMADUITests-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BiciMADUITests/Pods-BiciMADUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4C656294B88A1A5C4BD6B1CA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1795,220 +1446,16 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-BiciMAD/Pods-BiciMAD-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BiciMAD/Pods-BiciMAD-resources.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		6EC7055C072B3E47D240B837 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Notifications-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7275A5C04FE82C1F7E1BAF6F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BiciMADUITests/Pods-BiciMADUITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworkActivityLogger/AFNetworkActivityLogger.framework",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/BBBadgeBarButtonItem/BBBadgeBarButtonItem.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/Branch/Branch.framework",
-				"${BUILT_PRODUCTS_DIR}/CCHMapClusterController/CCHMapClusterController.framework",
-				"${BUILT_PRODUCTS_DIR}/CMMapLauncher/CMMapLauncher.framework",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
-				"${BUILT_PRODUCTS_DIR}/DGRunkeeperSwitch/DGRunkeeperSwitch.framework",
-				"${BUILT_PRODUCTS_DIR}/DOFavoriteButton/DOFavoriteButton.framework",
-				"${BUILT_PRODUCTS_DIR}/DTMHeatmap/DTMHeatmap.framework",
-				"${BUILT_PRODUCTS_DIR}/FBNotifications/FBNotifications.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FXNotifications/FXNotifications.framework",
-				"${BUILT_PRODUCTS_DIR}/GearRefreshControl/GearRefreshControl.framework",
-				"${BUILT_PRODUCTS_DIR}/INTULocationManager/INTULocationManager.framework",
-				"${BUILT_PRODUCTS_DIR}/InAppSettingsKit/InAppSettingsKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
-				"${BUILT_PRODUCTS_DIR}/MTLManagedObjectAdapter/MTLManagedObjectAdapter.framework",
-				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
-				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
-				"${BUILT_PRODUCTS_DIR}/OpenInGoogleMaps/OpenInGoogleMaps.framework",
-				"${BUILT_PRODUCTS_DIR}/Popover/Popover.framework",
-				"${BUILT_PRODUCTS_DIR}/RESideMenu/RESideMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
-				"${BUILT_PRODUCTS_DIR}/SFDraggableDialogView/SFDraggableDialogView.framework",
-				"${BUILT_PRODUCTS_DIR}/SPGooglePlacesAutocomplete/SPGooglePlacesAutocomplete.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SVPulsingAnnotationView/SVPulsingAnnotationView.framework",
-				"${BUILT_PRODUCTS_DIR}/SmileWeather/SmileWeather.framework",
-				"${BUILT_PRODUCTS_DIR}/Typhoon/Typhoon.framework",
-				"${BUILT_PRODUCTS_DIR}/Zephyr/Zephyr.framework",
-				"${BUILT_PRODUCTS_DIR}/iRate/iRate.framework",
-				"${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworkActivityLogger.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BBBadgeBarButtonItem.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Branch.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCHMapClusterController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CMMapLauncher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGRunkeeperSwitch.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DOFavoriteButton.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTMHeatmap.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBNotifications.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FXNotifications.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GearRefreshControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/INTULocationManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InAppSettingsKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MTLManagedObjectAdapter.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenInGoogleMaps.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Popover.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RESideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SFDraggableDialogView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPGooglePlacesAutocomplete.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPulsingAnnotationView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SmileWeather.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Typhoon.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zephyr.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iRate.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libextobjc.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BiciMADUITests/Pods-BiciMADUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7321049A9CE0024ABBA2E680 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BiciMADTests/Pods-BiciMADTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworkActivityLogger/AFNetworkActivityLogger.framework",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/BBBadgeBarButtonItem/BBBadgeBarButtonItem.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/Branch/Branch.framework",
-				"${BUILT_PRODUCTS_DIR}/CCHMapClusterController/CCHMapClusterController.framework",
-				"${BUILT_PRODUCTS_DIR}/CMMapLauncher/CMMapLauncher.framework",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
-				"${BUILT_PRODUCTS_DIR}/DGRunkeeperSwitch/DGRunkeeperSwitch.framework",
-				"${BUILT_PRODUCTS_DIR}/DOFavoriteButton/DOFavoriteButton.framework",
-				"${BUILT_PRODUCTS_DIR}/DTMHeatmap/DTMHeatmap.framework",
-				"${BUILT_PRODUCTS_DIR}/FBNotifications/FBNotifications.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FXNotifications/FXNotifications.framework",
-				"${BUILT_PRODUCTS_DIR}/GearRefreshControl/GearRefreshControl.framework",
-				"${BUILT_PRODUCTS_DIR}/INTULocationManager/INTULocationManager.framework",
-				"${BUILT_PRODUCTS_DIR}/InAppSettingsKit/InAppSettingsKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
-				"${BUILT_PRODUCTS_DIR}/MTLManagedObjectAdapter/MTLManagedObjectAdapter.framework",
-				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
-				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
-				"${BUILT_PRODUCTS_DIR}/OpenInGoogleMaps/OpenInGoogleMaps.framework",
-				"${BUILT_PRODUCTS_DIR}/Popover/Popover.framework",
-				"${BUILT_PRODUCTS_DIR}/RESideMenu/RESideMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
-				"${BUILT_PRODUCTS_DIR}/SFDraggableDialogView/SFDraggableDialogView.framework",
-				"${BUILT_PRODUCTS_DIR}/SPGooglePlacesAutocomplete/SPGooglePlacesAutocomplete.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SVPulsingAnnotationView/SVPulsingAnnotationView.framework",
-				"${BUILT_PRODUCTS_DIR}/SmileWeather/SmileWeather.framework",
-				"${BUILT_PRODUCTS_DIR}/Typhoon/Typhoon.framework",
-				"${BUILT_PRODUCTS_DIR}/Zephyr/Zephyr.framework",
-				"${BUILT_PRODUCTS_DIR}/iRate/iRate.framework",
-				"${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworkActivityLogger.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BBBadgeBarButtonItem.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Branch.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCHMapClusterController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CMMapLauncher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGRunkeeperSwitch.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DOFavoriteButton.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTMHeatmap.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBNotifications.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FXNotifications.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GearRefreshControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/INTULocationManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InAppSettingsKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MTLManagedObjectAdapter.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenInGoogleMaps.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Popover.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RESideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SFDraggableDialogView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPGooglePlacesAutocomplete.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPulsingAnnotationView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SmileWeather.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Typhoon.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zephyr.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iRate.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libextobjc.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BiciMADTests/Pods-BiciMADTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		815EE2391DC7782800CF09FC /* Warn for long classes */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Warn for long classes";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Scripts/check_number_of_lines.sh\"";
 		};
 		815EE23A1DC7783600CF09FC /* Warn for TODO comments */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2022,27 +1469,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Scripts/highlight_TODOs.sh\"";
-		};
-		A3FFD900368684FD9F07AEAF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BiciMADTests/Pods-BiciMADTests-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BiciMADTests/Pods-BiciMADTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"${SRCROOT}/Scripts/highlight_TODOs.sh\"\n";
 		};
 		D5922ED51BC6F7EA0067A47E /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2056,40 +1483,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" a1279006aa2e224e3e4500bd3e46f2ce1fc052a7 7cd905fa14c8557d31acefcc1fd99b83a6a27b623ddaf689cd8135f1b71c1de6";
-		};
-		D9E4C28B50BF6BD581276392 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Notifications/Pods-Notifications-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DBFCAABF78CA4634B001121D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BiciMADTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" a1279006aa2e224e3e4500bd3e46f2ce1fc052a7 7cd905fa14c8557d31acefcc1fd99b83a6a27b623ddaf689cd8135f1b71c1de6\n";
 		};
 		DFAF96812149FD2A98233C2A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2131,9 +1525,10 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SVPulsingAnnotationView/SVPulsingAnnotationView.framework",
 				"${BUILT_PRODUCTS_DIR}/SmileWeather/SmileWeather.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Typhoon/Typhoon.framework",
 				"${BUILT_PRODUCTS_DIR}/Zephyr/Zephyr.framework",
-				"${BUILT_PRODUCTS_DIR}/iRate/iRate.framework",
 				"${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -2171,32 +1566,15 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPulsingAnnotationView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SmileWeather.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Typhoon.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zephyr.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iRate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libextobjc.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BiciMAD/Pods-BiciMAD-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F60E1E339B0225ABFD656EAA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BiciMADUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FC40354CF1E6A1D3CE51DA23 /* [CP] Check Pods Manifest.lock */ = {
@@ -2220,14 +1598,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D51DAB341F0C46FD009DD9EF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D51DAB3B1F0C46FD009DD9EF /* NotificationService.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D5803E981BC586DB000C0E26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2337,110 +1707,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D5803EB41BC586DB000C0E26 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D5803EBD1BC586DB000C0E26 /* BiciMADTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D5803EBF1BC586DB000C0E26 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D565C02F1E09158600511D1D /* FilterView.swift in Sources */,
-				D5D76B211D7ACF3300FA9C93 /* BMDraggableDialogCustomView.m in Sources */,
-				D565C02C1E09148B00511D1D /* ShareManager.swift in Sources */,
-				D58E08DD1C220A3D00A96E1F /* BMFavoritesManager.m in Sources */,
-				D5F36BBD1CB59356006B6783 /* BMServiceTask.m in Sources */,
-				D58E08B81C220A3D00A96E1F /* BMManagersAssembly.m in Sources */,
-				D510B4E51ED76BF800D8A5FD /* DeepLinkingExtensions.swift in Sources */,
-				D565C02E1E09154200511D1D /* TweetPresenter.swift in Sources */,
-				D5EB3BE21D21522C00127674 /* BMAirQuality.m in Sources */,
-				D58E08E11C220A3D00A96E1F /* BMUserDefaultsManager.m in Sources */,
-				D5D76B1B1D7ACEB600FA9C93 /* BMDraggableDialogManager.m in Sources */,
-				D58E08C71C220A3D00A96E1F /* BMWeatherViewController.m in Sources */,
-				D5EB3BE71D21527000127674 /* BMAirQualityMetric.m in Sources */,
-				D58E08DB1C220A3D00A96E1F /* BMPlacesTask.m in Sources */,
-				D5EB3BDE1D2151F400127674 /* BMPromotionDetailTableViewCell.m in Sources */,
-				D5EB3BE41D21523E00127674 /* BMFormulaCollectionViewCell.m in Sources */,
-				D565C02B1E0913BD00511D1D /* BMFavoritesManager+Analytics.swift in Sources */,
-				D5EB3BDD1D2151E300127674 /* BMPromotion.m in Sources */,
-				D5EB3BDB1D2151D200127674 /* BMPlacesTableViewController.m in Sources */,
-				D565C0321E09163000511D1D /* BMEMTAllStationsTask.m in Sources */,
-				D53663B01C7E407A009E1DDF /* BMTipsTimelineDataSource.m in Sources */,
-				D512F46E1C22331100060EA4 /* SnapshotHelper.swift in Sources */,
-				D53663AF1C7E407A009E1DDF /* BMTwitterTimelineViewController.m in Sources */,
-				D58E08B71C220A3D00A96E1F /* BMServicesAssembly.m in Sources */,
-				D58E08DC1C220A3D00A96E1F /* BMAnalyticsManager.m in Sources */,
-				D58E08E41C220A3D00A96E1F /* BMHTTPClientConstants.m in Sources */,
-				D572CD581C5838AF0082D870 /* BMSpotlightManager.m in Sources */,
-				D58E08B91C220A3D00A96E1F /* BMViewControllersAssembly.m in Sources */,
-				D58E08C51C220A3D00A96E1F /* BMStationDetailTableViewCell.m in Sources */,
-				D5EB3BD01D21516900127674 /* BMAirQualityService.m in Sources */,
-				D510B4E41ED76BF000D8A5FD /* BMDeepLinkingManager.m in Sources */,
-				D58E08D51C220A3D00A96E1F /* BMStationsService.m in Sources */,
-				D5EB3BD91D2151BC00127674 /* BMPlace.m in Sources */,
-				D5D76B1F1D7ACEF300FA9C93 /* DDCLSLogger.m in Sources */,
-				D5D76B1A1D7ACEA600FA9C93 /* BMClusterAnnotationView.m in Sources */,
-				D58E08C31C220A3D00A96E1F /* BMAnnotationsDetailViewController.m in Sources */,
-				D58E08BA1C220A3D00A96E1F /* BMAppDelegate.m in Sources */,
-				D565C02D1E0914B100511D1D /* RNCryptorManager.swift in Sources */,
-				D5EB3BDC1D2151DC00127674 /* BMPointsService.m in Sources */,
-				D58E08DA1C220A3D00A96E1F /* BMPlacesService.m in Sources */,
-				D5EB3BE31D21523500127674 /* BMDrunkcodeServiceTask.m in Sources */,
-				D5D76B1E1D7ACEE100FA9C93 /* BMTwitterTimelinePageViewController.m in Sources */,
-				D5EB3BD51D21519700127674 /* BMGreenTipsTimelineDataSource.m in Sources */,
-				D58E08E21C220A3D00A96E1F /* BMHTTPClient.m in Sources */,
-				D5D76B1D1D7ACED000FA9C93 /* BMTwitterReportViewController.m in Sources */,
-				D5803EC81BC586DB000C0E26 /* BiciMADUITests.m in Sources */,
-				D565C0331E09163300511D1D /* BMEMTSingleStationTask.m in Sources */,
-				D58E08C11C220A3D00A96E1F /* BMStationsViewController.m in Sources */,
-				D5EB3BDA1D2151C900127674 /* BMPlaceDetailTableViewCell.m in Sources */,
-				D58E08BF1C220A3D00A96E1F /* BMLeftMenuViewController.m in Sources */,
-				D58E08C81C220A3D00A96E1F /* BMWeatherDownloader.m in Sources */,
-				D58E08CD1C220A3D00A96E1F /* BMNetworkService.m in Sources */,
-				D5EB3BE11D21520E00127674 /* BMShareViewController.m in Sources */,
-				D572CD5D1C583A280082D870 /* BMSettingsViewController.m in Sources */,
-				D5D76B1C1D7ACEC000FA9C93 /* BMPrePermissionManager.m in Sources */,
-				D5EB3BD31D21518800127674 /* BMAllPartnersTask.m in Sources */,
-				D53663B11C7E407A009E1DDF /* BMNewsTimelineDataSource.m in Sources */,
-				D58E08B61C220A3D00A96E1F /* BMApplicationAssembly.m in Sources */,
-				D58E08E01C220A3D00A96E1F /* BMCoreDataManager.m in Sources */,
-				D5EB3BD21D21517C00127674 /* BMAirQualityViewController.m in Sources */,
-				D58E08BE1C220A3D00A96E1F /* BMRootViewController.m in Sources */,
-				D58E08BC1C220A3D00A96E1F /* BMStation.m in Sources */,
-				D5EB3BD71D2151AC00127674 /* BMNavigationManager.m in Sources */,
-				D565C0311E09162D00511D1D /* BMEMTServiceTask.m in Sources */,
-				D56AB4221C454322002AAB8F /* BMSafariViewController.m in Sources */,
-				D5EB3BE51D21524700127674 /* BMHeatmapRenderer.m in Sources */,
-				D58E08BD1C220A3D00A96E1F /* BMBaseViewController.m in Sources */,
-				D5EB3BD11D21517200127674 /* BMAirQualityTask.m in Sources */,
-				D58E08E31C220A3D00A96E1F /* BMMutableURLRequest.m in Sources */,
-				D5EB3BD81D2151B400127674 /* BMPartner.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D51DAB3E1F0C46FD009DD9EF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D51DAB371F0C46FD009DD9EF /* Notifications */;
-			targetProxy = D51DAB3D1F0C46FD009DD9EF /* PBXContainerItemProxy */;
-		};
-		D5803EBA1BC586DB000C0E26 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D5803E9B1BC586DB000C0E26 /* BiciMAD */;
-			targetProxy = D5803EB91BC586DB000C0E26 /* PBXContainerItemProxy */;
-		};
-		D5803EC51BC586DB000C0E26 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D5803E9B1BC586DB000C0E26 /* BiciMAD */;
-			targetProxy = D5803EC41BC586DB000C0E26 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D50BA3091D66F9A20079DBD7 /* InfoPlist.strings */ = {
@@ -2516,50 +1783,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D51DAB401F0C46FE009DD9EF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43D416A0CF47CCEC3748E462 /* Pods-Notifications.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Q6BEQCNWYM;
-				INFOPLIST_FILE = Notifications/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.drunkcode.MADBike.Notifications;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "MADBike Notifications Development";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		D51DAB411F0C46FE009DD9EF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 040EF3619728A6B49D7E7FEB /* Pods-Notifications.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Q6BEQCNWYM;
-				INFOPLIST_FILE = Notifications/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.drunkcode.MADBike.Notifications;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "MADBike Notifications App Store";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		D5803ECA1BC586DB000C0E26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D56AB4331C47CFD2002AAB8F /* Project-Debug.xcconfig */;
@@ -2711,7 +1934,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D56AB42A1C47CFD2002AAB8F /* BiciMAD-Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = Q6BEQCNWYM;
@@ -2732,7 +1954,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D56AB42B1C47CFD2002AAB8F /* BiciMAD-Release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = Q6BEQCNWYM;
@@ -2748,81 +1969,9 @@
 			};
 			name = Release;
 		};
-		D5803ED01BC586DB000C0E26 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D56AB42D1C47CFD2002AAB8F /* BiciMADTests-Debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				GCC_PREFIX_HEADER = "BiciMAD/Supporting Files/Prefix.pch";
-				INFOPLIST_FILE = BiciMADTests/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = org.drunkcode.MADBikeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MADBike.app/MADBike";
-			};
-			name = Debug;
-		};
-		D5803ED11BC586DB000C0E26 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D56AB42E1C47CFD2002AAB8F /* BiciMADTests-Release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				GCC_PREFIX_HEADER = "BiciMAD/Supporting Files/Prefix.pch";
-				INFOPLIST_FILE = BiciMADTests/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = org.drunkcode.MADBikeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MADBike.app/MADBike";
-			};
-			name = Release;
-		};
-		D5803ED31BC586DB000C0E26 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D56AB4301C47CFD2002AAB8F /* BiciMADUITests-Debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				GCC_PREFIX_HEADER = "BiciMAD/Supporting Files/Prefix.pch";
-				INFOPLIST_FILE = BiciMADUITests/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = org.drunkcode.MADBikeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "BiciMAD/Supporting Files/Bridging-Header.h";
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "MADBike-Swift.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_TARGET_NAME = BiciMAD;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		D5803ED41BC586DB000C0E26 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D56AB4311C47CFD2002AAB8F /* BiciMADUITests-Release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				GCC_PREFIX_HEADER = "BiciMAD/Supporting Files/Prefix.pch";
-				INFOPLIST_FILE = BiciMADUITests/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = org.drunkcode.MADBikeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "BiciMAD/Supporting Files/Bridging-Header.h";
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "MADBike-Swift.h";
-				TEST_TARGET_NAME = BiciMAD;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D51DAB421F0C46FE009DD9EF /* Build configuration list for PBXNativeTarget "Notifications" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D51DAB401F0C46FE009DD9EF /* Debug */,
-				D51DAB411F0C46FE009DD9EF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		D5803E971BC586DB000C0E26 /* Build configuration list for PBXProject "BiciMAD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2837,24 +1986,6 @@
 			buildConfigurations = (
 				D5803ECD1BC586DB000C0E26 /* Debug */,
 				D5803ECE1BC586DB000C0E26 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D5803ECF1BC586DB000C0E26 /* Build configuration list for PBXNativeTarget "BiciMADTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D5803ED01BC586DB000C0E26 /* Debug */,
-				D5803ED11BC586DB000C0E26 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D5803ED21BC586DB000C0E26 /* Build configuration list for PBXNativeTarget "BiciMADUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D5803ED31BC586DB000C0E26 /* Debug */,
-				D5803ED41BC586DB000C0E26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

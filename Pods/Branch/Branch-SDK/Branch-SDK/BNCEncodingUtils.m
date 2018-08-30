@@ -11,7 +11,47 @@
 #import "BNCLog.h"
 #import <CommonCrypto/CommonDigest.h>
 
-#pragma mark BNCKeyValue
+#pragma mark BNCWireFormat
+
+NSDate* BNCDateFromWireFormat(id object) {
+    NSDate *date = nil;
+    if ([object respondsToSelector:@selector(doubleValue)]) {
+        NSTimeInterval t = [object doubleValue];
+        date = [NSDate dateWithTimeIntervalSince1970:t/1000.0];
+    }
+    return date;
+}
+
+NSNumber* BNCWireFormatFromDate(NSDate *date) {
+    NSNumber *number = nil;
+    NSTimeInterval t = [date timeIntervalSince1970];
+    if (date && t != 0.0 ) {
+        number = [NSNumber numberWithLongLong:(long long)(t*1000.0)];
+    }
+    return number;
+}
+
+NSNumber* BNCWireFormatFromBool(BOOL b) {
+    return (b) ? (__bridge NSNumber*) kCFBooleanTrue : nil;
+}
+
+NSString* BNCStringFromWireFormat(id object) {
+    if ([object isKindOfClass:NSString.class])
+        return object;
+    else
+    if ([object respondsToSelector:@selector(stringValue)])
+        return [object stringValue];
+    else
+    if ([object respondsToSelector:@selector(description)])
+        return [object description];
+    return nil;
+}
+
+NSString* BNCWireFormatFromString(NSString *string) {
+    return string;
+}
+
+#pragma mark - BNCKeyValue
 
 @implementation BNCKeyValue
 
@@ -26,7 +66,8 @@
     return [NSString stringWithFormat:@"<%@, %@>", self.key, self.value];
 }
 
-- (BOOL) isEqual:(BNCKeyValue*)object {
+- (BOOL) isEqual:(id)rawObject {
+    BNCKeyValue *object = rawObject;
     return
         [object isKindOfClass:[BNCKeyValue class]] &&
         [self.key isEqualToString:object.key] &&
@@ -101,11 +142,11 @@
 }
 
 + (NSString *)sanitizedStringFromString:(NSString *)dirtyString {
-    NSString *cleanString = [[[[dirtyString stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""]
-                                            stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"]
-                                            stringByReplacingOccurrencesOfString:@"’" withString:@"'"]
-                                            stringByReplacingOccurrencesOfString:@"\r" withString:@"\\r"];
-
+    NSString *dirtyCopy = [dirtyString copy]; // dirtyString seems to get dealloc'ed sometimes. Make a copy.
+    NSString *cleanString = [[[[dirtyCopy stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""]
+                                          stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"]
+                                          stringByReplacingOccurrencesOfString:@"’" withString:@"'"]
+                                          stringByReplacingOccurrencesOfString:@"\r" withString:@"\\r"];
     return cleanString;
 }
 
@@ -288,6 +329,11 @@
     return [string stringByRemovingPercentEncoding];
 }
 
++ (NSString*) stringByPercentEncodingStringForQuery:(NSString *)string {
+    return [string stringByAddingPercentEncodingWithAllowedCharacters:
+                [NSCharacterSet URLQueryAllowedCharacterSet]];
+}
+
 #pragma mark - Param Decoding Methods
 
 + (NSDictionary *)decodeJsonDataToDictionary:(NSData *)jsonData {
@@ -391,8 +437,8 @@
     if (!bytes) goto exit;
 
     int highValue = -1;
-    uint8_t *p = (uint8_t*) [inputData bytes];
-    for (long i = 0; i < inputData.length; ++i) {
+    const uint8_t *p = (const uint8_t*) [inputData bytes];
+    for (NSUInteger i = 0; i < inputData.length; ++i) {
         int value = -1;
         if (*p >= '0' && *p <= '9')
             value = *p - '0';
@@ -425,7 +471,7 @@
 
 exit:
     if (bytes) {
-        BNCLogAssert(b-bytes<=length);
+        BNCLogAssert((size_t)(b-bytes)<=length);
         free(bytes);
     }
     return data;

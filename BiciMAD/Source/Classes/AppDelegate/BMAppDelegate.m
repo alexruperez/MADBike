@@ -11,7 +11,6 @@
 @import AFNetworking;
 @import AFNetworkActivityLogger;
 @import CocoaLumberjack;
-@import iRate;
 @import InAppSettingsKit;
 @import Bolts;
 @import FXNotifications;
@@ -28,7 +27,7 @@
 #import "BMStation.h"
 #import "BMPlace.h"
 
-@interface BMAppDelegate () <UNUserNotificationCenterDelegate, iRateDelegate>
+@interface BMAppDelegate () <UNUserNotificationCenterDelegate>
 
 @property (nonatomic, strong) BFAppLink *appLinkReferer;
 
@@ -49,9 +48,6 @@
     [self.networkActivityLogger.loggers.anyObject setLevel:AFLoggerLevelError];
 #endif
     [self.networkActivityLogger startLogging];
-
-    self.iRate.delegate = self;
-    self.iRate.verboseLogging = NO;
     
     [BMAnalyticsManager takeOffWithApplication:application options:launchOptions];
     
@@ -200,18 +196,6 @@
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(nonnull UNNotificationResponse *)response withCompletionHandler:(nonnull void (^)(void))completionHandler
 {
     [BMAnalyticsManager didReceiveNotificationResponse:response center:center completionHandler:completionHandler];
-}
-
-#pragma mark - iRateDelegate
-
-- (void)iRateDidDetectAppUpdate
-{
-    [BMAnalyticsManager logRating:@NO contentName:nil contentType:nil contentId:nil customAttributes:nil];
-}
-
-- (void)iRateDidOpenAppStore
-{
-    [BMAnalyticsManager logRating:@YES contentName:nil contentType:nil contentId:nil customAttributes:nil];
 }
 
 @end

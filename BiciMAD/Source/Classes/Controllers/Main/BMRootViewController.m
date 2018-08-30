@@ -8,8 +8,7 @@
 
 #import "BMRootViewController.h"
 
-#import <TwitterKit/TwitterKit.h>
-
+@import TwitterKit;
 @import FXNotifications;
 @import SVProgressHUD;
 

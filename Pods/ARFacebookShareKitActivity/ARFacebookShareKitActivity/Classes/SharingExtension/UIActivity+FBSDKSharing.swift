@@ -12,7 +12,7 @@ fileprivate extension DispatchQueue {
 
     private static var _onceTracker = [String]()
 
-    public class func once(token: String, block:()->Void) {
+    class func once(token: String, block:()->Void) {
         objc_sync_enter(self); defer { objc_sync_exit(self) }
 
         if _onceTracker.contains(token) {
@@ -48,7 +48,7 @@ public extension UIActivity {
 
     private static let _onceToken = NSUUID().uuidString
 
-    open override class func initialize() {
+    public class func replaceFacebookSharing() {
         let klass: AnyClass = NSClassFromString("UISoc"+"ialAct"+"ivity")!
         
         if self != klass {
@@ -64,7 +64,7 @@ public extension UIActivity {
         }
     }
     
-    class func ar_defaultFacebookActivityType() -> UIActivityType? {
+    private static func ar_defaultFacebookActivityType() -> UIActivityType? {
         struct Static {
             static var token: Int = 0
             static var activityType: UIActivityType? = nil
@@ -75,15 +75,15 @@ public extension UIActivity {
         return Static.activityType
     }
     
-    class func ar_canShowFacebookShareDialog() -> Bool {
+    private static func ar_canShowFacebookShareDialog() -> Bool {
         return FBSDKShareDialog().canShow()
     }
     
-    class func ar_canShowFacebookAppInviteDialog() -> Bool {
+    private static func ar_canShowFacebookAppInviteDialog() -> Bool {
         return FBSDKAppInviteDialog().canShow()
     }
     
-    func ar_canUseFacebookActivityOverride() -> Bool {
+    private func ar_canUseFacebookActivityOverride() -> Bool {
         return activityType == type(of: self).ar_defaultFacebookActivityType() && (type(of: self).ar_canShowFacebookShareDialog() || type(of: self).ar_canShowFacebookAppInviteDialog())
     }
     
@@ -178,7 +178,7 @@ public extension UIActivity {
         }
     }
     
-    static func ARSwizzleInstanceMethod(_ klass: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
+    private static func ARSwizzleInstanceMethod(_ klass: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
         let originalMethod = class_getInstanceMethod(klass, originalSelector)
         let swizzledMethod = class_getInstanceMethod(klass, swizzledSelector)
         

@@ -12,7 +12,6 @@
 @class BMServicesAssembly;
 @class BMManagersAssembly;
 @class BMViewControllersAssembly;
-@class iRate;
 @class BMAppDelegate;
 
 @interface BMApplicationAssembly : TyphoonAssembly

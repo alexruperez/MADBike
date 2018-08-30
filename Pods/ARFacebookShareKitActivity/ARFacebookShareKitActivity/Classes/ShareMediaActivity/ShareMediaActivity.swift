@@ -10,9 +10,9 @@ import FBSDKShareKit
 
 @objc open class ShareMediaActivity: UIActivity {
     
-    open var title: String?
-    open var image: UIImage?
-    open var mode: FBSDKShareDialogMode = .automatic
+    @objc open var title: String?
+    @objc open var image: UIImage?
+    @objc open var mode: FBSDKShareDialogMode = .automatic
     open static var category: UIActivityCategory?
     
     fileprivate lazy var shareDialog: FBSDKShareDialog = {
@@ -51,7 +51,7 @@ import FBSDKShareKit
     }
     
     open override var activityImage : UIImage? {
-        return image ?? UIImage(named: "\(activityType!)\(ShareMediaActivity.activityCategory.rawValue)", in: Bundle(for: ShareMediaActivity.self), compatibleWith: nil)
+        return image ?? UIImage(named: "\(activityType!.rawValue)\(ShareMediaActivity.activityCategory.rawValue)", in: Bundle(for: ShareMediaActivity.self), compatibleWith: nil)
     }
     
     open override func canPerform(withActivityItems activityItems: [Any]) -> Bool {
@@ -61,7 +61,7 @@ import FBSDKShareKit
             }
             if let image = item as? UIImage {
                 if let shareContent = shareDialog.shareContent as? FBSDKShareMediaContent {
-                    let photo = FBSDKSharePhoto(image: image, userGenerated: true)
+                    let photo = FBSDKSharePhoto(image: image, userGenerated: true)!
                     shareContent.media.append(photo)
                 }
             }

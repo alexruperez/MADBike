@@ -25,10 +25,12 @@
 #import "FBSDKLogger.h"
 #import "FBSDKSettings.h"
 
-static NSString *const FBSDKAppEventParameterImplicitlyLoggedPurchase    = @"_implicitlyLoggedPurchaseEvent";
+static NSString *const FBSDKAppEventParameterImplicitlyLoggedPurchase = @"_implicitlyLogged";
 static NSString *const FBSDKAppEventNamePurchaseFailed = @"fb_mobile_purchase_failed";
+static NSString *const FBSDKAppEventParameterNameInAppPurchaseType = @"fb_iap_product_type";
 static NSString *const FBSDKAppEventParameterNameProductTitle = @"fb_content_title";
 static NSString *const FBSDKAppEventParameterNameTransactionID = @"fb_transaction_id";
+static NSString *const FBSDKAppEventParameterNameSubscriptionPeriod = @"fb_iap_subs_period";
 static int const FBSDKMaxParameterValueLength = 100;
 static NSMutableArray *g_pendingRequestors;
 
@@ -121,6 +123,10 @@ static NSMutableArray *g_pendingRequestors;
 
 - (void)handleTransaction:(SKPaymentTransaction *)transaction
 {
+  // Ignore restored transaction
+  if (transaction.originalTransaction != nil) {
+    return;
+  }
   FBSDKPaymentProductRequestor *productRequest = [[FBSDKPaymentProductRequestor alloc] initWithTransaction:transaction];
   [productRequest resolveProducts];
 }
@@ -207,18 +213,41 @@ static NSMutableArray *g_pendingRequestors;
 
   SKPayment *payment = self.transaction.payment;
   NSMutableDictionary *eventParameters = [NSMutableDictionary dictionaryWithDictionary: @{
-    FBSDKAppEventParameterNameContentID: payment.productIdentifier ?: @"",
-    FBSDKAppEventParameterNameNumItems: @(payment.quantity),
-  }];
+                                                                                          FBSDKAppEventParameterNameContentID: payment.productIdentifier ?: @"",
+                                                                                          FBSDKAppEventParameterNameNumItems: @(payment.quantity),
+                                                                                          }];
   double totalAmount = 0;
   if (product) {
     totalAmount = payment.quantity * product.price.doubleValue;
     [eventParameters addEntriesFromDictionary: @{
-      FBSDKAppEventParameterNameCurrency: [product.priceLocale objectForKey:NSLocaleCurrencyCode],
-      FBSDKAppEventParameterNameNumItems: @(payment.quantity),
-      FBSDKAppEventParameterNameProductTitle: [self getTruncatedString:product.localizedTitle],
-      FBSDKAppEventParameterNameDescription: [self getTruncatedString:product.localizedDescription],
-    }];
+                                                 FBSDKAppEventParameterNameCurrency: [product.priceLocale objectForKey:NSLocaleCurrencyCode],
+                                                 FBSDKAppEventParameterNameNumItems: @(payment.quantity),
+                                                 FBSDKAppEventParameterNameProductTitle: [self getTruncatedString:product.localizedTitle],
+                                                 FBSDKAppEventParameterNameDescription: [self getTruncatedString:product.localizedDescription],
+                                                 }];
+#if !TARGET_OS_TV
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_2
+    if (@available(iOS 11.2, *)) {
+      BOOL isSubscription = product.subscriptionPeriod != nil;
+      if (isSubscription) {
+        // subs inapp
+        SKProductSubscriptionPeriod *period = product.subscriptionPeriod;
+        NSString *unit = nil;
+        switch (period.unit) {
+          case SKProductPeriodUnitDay: unit = @"D"; break;
+          case SKProductPeriodUnitWeek: unit = @"W"; break;
+          case SKProductPeriodUnitMonth: unit = @"M"; break;
+          case SKProductPeriodUnitYear: unit = @"Y"; break;
+        }
+        NSString *p = [NSString stringWithFormat:@"P%lu%@", (unsigned long)period.numberOfUnits, unit];
+        [eventParameters setObject:p forKey:FBSDKAppEventParameterNameSubscriptionPeriod];
+        [eventParameters setObject:@"subs" forKey:FBSDKAppEventParameterNameInAppPurchaseType];
+      } else {
+        [eventParameters setObject:@"inapp" forKey:FBSDKAppEventParameterNameInAppPurchaseType];
+      }
+    }
+#endif
+#endif
     if (transactionID) {
       [eventParameters setObject:transactionID forKey:FBSDKAppEventParameterNameTransactionID];
     }
@@ -266,16 +295,32 @@ static NSMutableArray *g_pendingRequestors;
                       valueToSum:(double)valueToSum
                       parameters:(NSDictionary *)parameters {
   NSMutableDictionary *eventParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
+
+  if ([eventName isEqualToString:FBSDKAppEventNamePurchased]) {
+    NSData* receipt = [self fetchDeviceReceipt];
+    if (receipt) {
+      NSString *base64encodedReceipt = [receipt base64EncodedStringWithOptions:0];
+      eventParameters[@"receipt_data"] = base64encodedReceipt;
+    }
+  }
+
   [eventParameters setObject:@"1" forKey:FBSDKAppEventParameterImplicitlyLoggedPurchase];
   [FBSDKAppEvents logEvent:eventName
                 valueToSum:valueToSum
-                parameters:parameters];
+                parameters:eventParameters];
 
   // Unless the behavior is set to only allow explicit flushing, we go ahead and flush, since purchase events
   // are relatively rare and relatively high value and worth getting across on wire right away.
   if ([FBSDKAppEvents flushBehavior] != FBSDKAppEventsFlushBehaviorExplicitOnly) {
     [[FBSDKAppEvents singleton] flushForReason:FBSDKAppEventsFlushReasonEagerlyFlushingEvent];
   }
+}
+
+// Fetch the current receipt for this application.
+- (NSData*)fetchDeviceReceipt {
+  NSURL *receiptURL = [[NSBundle bundleForClass:[self class]] appStoreReceiptURL];
+  NSData *receipt = [NSData dataWithContentsOfURL:receiptURL];
+  return receipt;
 }
 
 @end

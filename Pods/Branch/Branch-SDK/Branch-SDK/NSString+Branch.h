@@ -1,20 +1,18 @@
+/**
+ @file          NSString+Branch.h
+ @package       Branch-SDK
+ @brief         NSString Additions
 
+ @author        Edward Smith
+ @date          February 2017
+ @copyright     Copyright © 2017 Branch. All rights reserved.
+*/
 
-//--------------------------------------------------------------------------------------------------
-//
-//                                                                                 NSString+Branch.h
-//                                                                                  Branch.framework
-//
-//                                                                                NSString Additions
-//                                                                       Edward Smith, February 2017
-//
-//                                             -©- Copyright © 2017 Branch, all rights reserved. -©-
-//
-//--------------------------------------------------------------------------------------------------
-
-
+#if __has_feature(modules)
+@import Foundation;
+#else
 #import <Foundation/Foundation.h>
-
+#endif
 
 @interface NSString (Branch)
 

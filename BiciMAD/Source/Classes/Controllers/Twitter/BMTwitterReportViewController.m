@@ -8,8 +8,7 @@
 
 #import "BMTwitterReportViewController.h"
 
-#import <TwitterKit/TwitterKit.h>
-
+@import TwitterKit;
 @import SVProgressHUD;
 
 #import "BMManagersAssembly.h"
@@ -104,7 +103,7 @@ static NSString * const kBMTwitterReportJPEGContentType = @"image/jpeg";
         parameters[kBMTwitterReportLongitudeKey] = [NSString stringWithFormat:kBMTwitterReportCoordinateFormat, coordinate.longitude];
     }
     NSError *error = nil;
-    NSURLRequest *request = [self.APIClient URLRequestWithMethod:kBMTwitterReportPOSTMethod URL:kBMTwitterReportUpdateStatusURLString parameters:parameters.copy error:&error];
+    NSURLRequest *request = [self.APIClient URLRequestWithMethod:kBMTwitterReportPOSTMethod URLString:kBMTwitterReportUpdateStatusURLString parameters:parameters.copy error:&error];
     if (!error)
     {
         [SVProgressHUD showWithStatus:NSLocalizedString(@"Reporting...", @"Reporting...")];

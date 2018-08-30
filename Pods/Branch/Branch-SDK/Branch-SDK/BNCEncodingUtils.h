@@ -6,9 +6,22 @@
 //  Copyright (c) 2015 Branch Metrics. All rights reserved.
 //
 
+#if __has_feature(modules)
+@import Foundation;
+#else
 #import <Foundation/Foundation.h>
+#endif
 
-#pragma mark BNCKeyValue
+#pragma mark BNCWireFormat
+
+extern NSDate*   BNCDateFromWireFormat(id object);
+extern NSNumber* BNCWireFormatFromDate(NSDate *date);
+extern NSNumber* BNCWireFormatFromBool(BOOL b);
+
+extern NSString* BNCStringFromWireFormat(id object);
+extern NSString* BNCWireFormatFromString(NSString *string);
+
+#pragma mark - BNCKeyValue
 
 @interface BNCKeyValue : NSObject
 
@@ -37,6 +50,7 @@
 + (NSData *)encodeDictionaryToJsonData:(NSDictionary *)dictionary;
 
 + (NSString*) stringByPercentDecodingString:(NSString*)string;
++ (NSString*) stringByPercentEncodingStringForQuery:(NSString *)string;
 
 + (NSDictionary *)decodeJsonDataToDictionary:(NSData *)jsonData;
 + (NSDictionary *)decodeJsonStringToDictionary:(NSString *)jsonString;

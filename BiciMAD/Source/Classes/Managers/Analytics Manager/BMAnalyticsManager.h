@@ -27,7 +27,6 @@ extern NSString * const kBMNewsKey;
 extern NSString * const kBMTipsKey;
 extern NSString * const kBMGreenTipsKey;
 extern NSString * const kBMIncidenceKey;
-extern NSString * const kBMProposalsKey;
 extern NSString * const kBMChangePasswordKey;
 extern NSString * const kBMClearCacheKey;
 extern NSString * const kBMEnableNotificationsKey;

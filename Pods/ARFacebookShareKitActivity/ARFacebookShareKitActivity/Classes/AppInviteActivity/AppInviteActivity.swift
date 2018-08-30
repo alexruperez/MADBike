@@ -10,8 +10,8 @@ import FBSDKShareKit
 
 @objc open class AppInviteActivity: UIActivity {
     
-    open var title: String?
-    open var image: UIImage?
+    @objc open var title: String?
+    @objc open var image: UIImage?
     open static var category: UIActivityCategory?
     
     fileprivate lazy var appInviteDialog: FBSDKAppInviteDialog = {
@@ -31,7 +31,7 @@ import FBSDKShareKit
         self.category = category
     }
     
-    public convenience init(title: String?, image: UIImage?) {
+    @objc public convenience init(title: String?, image: UIImage?) {
         self.init()
         self.title = title
         self.image = image
@@ -46,7 +46,7 @@ import FBSDKShareKit
     }
     
     open override var activityImage : UIImage? {
-        return image ?? UIImage(named: "\(activityType!)\(AppInviteActivity.activityCategory.rawValue)", in: Bundle(for: AppInviteActivity.self), compatibleWith: nil)
+        return image ?? UIImage(named: "\(activityType!.rawValue)\(AppInviteActivity.activityCategory.rawValue)", in: Bundle(for: AppInviteActivity.self), compatibleWith: nil)
     }
     
     open override func canPerform(withActivityItems activityItems: [Any]) -> Bool {

@@ -119,7 +119,8 @@
 "SHARE_EXT_TWITTER_TITLE" = "Twitter";
 /* "What's Happening?" - Placeholder */
 "COMPOSE_TEXT_VIEW_PLACEHOLDER" = "What's Happening?";
-
+/* There are no Twitter accounts configured. You can create or log in to an account in the Twitter app. */
+"SHARE_EXT_NO_ACCOUNTS_SIGN_IN_MESSAGE" = "There are no Twitter accounts configured. You can create or log in to an account in the Twitter app.";
 
 /* Test String (just for unit tests) */
 "tw__test_string" = "Test";

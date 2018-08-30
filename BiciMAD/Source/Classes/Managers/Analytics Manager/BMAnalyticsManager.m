@@ -8,15 +8,13 @@
 
 #import "BMAnalyticsManager.h"
 
-#import <TwitterKit/TwitterKit.h>
-#import <BuddyBuildSDK/BuddyBuildSDK.h>
-
 @import Fabric;
 @import Crashlytics;
 @import Branch;
 @import FBNotifications;
 @import GoogleMaps;
 @import OneSignal;
+@import TwitterKit;
 
 #import "BMDeepLinkingManager.h"
 #import "BMPrePermissionManager.h"
@@ -50,7 +48,6 @@ NSString * const kBMNewsKey = @"News";
 NSString * const kBMTipsKey = @"Tips";
 NSString * const kBMGreenTipsKey = @"GreenTips";
 NSString * const kBMIncidenceKey = @"Incidence";
-NSString * const kBMProposalsKey = @"Proposals";
 NSString * const kBMChangePasswordKey = @"ChangePassword";
 NSString * const kBMClearCacheKey = @"ClearCache";
 NSString * const kBMEnableNotificationsKey = @"EnableNotifications";
@@ -111,8 +108,6 @@ static NSDictionary *_oneSignalTags = nil;
 #endif
 
     [[Twitter sharedInstance] startWithConsumerKey:self.keys.twitterConsumerKey consumerSecret:self.keys.twitterConsumerSecret];
-
-    [BuddyBuildSDK setup];
     
     [self.facebookApplicationDelegate application:application didFinishLaunchingWithOptions:launchOptions];
     if (application.applicationState != UIApplicationStateBackground)
@@ -396,11 +391,8 @@ static NSDictionary *_oneSignalTags = nil;
         NSString *loginMail = customAttributes[kBMLoginMailKey];
         NSString *loginID = customAttributes[kBMLoginIDKey];
         [FBSDKAppEvents setUserID:loginID];
-        [OneSignal syncHashedEmail:loginMail];
+        [OneSignal setEmail:loginMail];
         [self.branch setIdentity:loginID];
-        [BuddyBuildSDK setUserDisplayNameCallback:^NSString *{
-            return loginMail.length ? loginMail : loginID;
-        }];
     }
     [Answers logLoginWithMethod:loginMethod success:loginSucceeded customAttributes:customAttributes];
     [self sendTag:loginMethod value:loginSucceeded.boolValue ? FBSDKAppEventParameterValueYes : FBSDKAppEventParameterValueNo shouldDelete:NO];

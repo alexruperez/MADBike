@@ -120,7 +120,7 @@
 
 - (void)timeline:(TWTRTimelineViewController *)timeline didFinishLoadingTweets:(NSArray *)tweets error:(NSError *)error
 {
-    if (self.gearRefreshControl.isRefreshControlAnimating)
+    if (self.gearRefreshControl.isRefreshing)
     {
         [self.gearRefreshControl endRefreshing];
     }

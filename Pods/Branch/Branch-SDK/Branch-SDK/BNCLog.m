@@ -1,20 +1,15 @@
+/**
+ @file          BNCLog.m
+ @package       Branch-SDK
+ @brief         Simple logging functions.
 
+ @author        Edward Smith
+ @date          October 2016
+ @copyright     Copyright © 2016 Branch. All rights reserved.
+*/
 
-//--------------------------------------------------------------------------------------------------
-//
-//                                                                                          BNCLog.m
-//                                                                                  Branch.framework
-//
-//                                                                          Simple logging functions
-//                                                                        Edward Smith, October 2016
-//
-//                                             -©- Copyright © 2016 Branch, all rights reserved. -©-
-//
-//--------------------------------------------------------------------------------------------------
-
-
-#import  "BNCLog.h"
-
+#import "BNCLog.h"
+#import <stdatomic.h> // import not available in Xcode 7
 
 #define _countof(array)  (sizeof(array)/sizeof(array[0]))
 static NSNumber *bnc_LogIsInitialized = nil;
@@ -229,7 +224,7 @@ BOOL BNCLogRecordWrapOpenURL_Internal(NSURL *url, long maxRecords, long recordSi
     off_t offset = 0;
     char buffer[bnc_LogRecordSize];
     ssize_t bytesRead = read(bnc_LogDescriptor, &buffer, sizeof(buffer));
-    while (bytesRead == sizeof(buffer)) {
+    while ((unsigned long) bytesRead == sizeof(buffer)) {
         NSString *dateString =
             [[NSString alloc] initWithBytes:buffer length:27 encoding:NSUTF8StringEncoding];
         NSDate *date = [bnc_LogDateFormatter dateFromString:dateString];
@@ -490,7 +485,7 @@ void BNCLogSetDisplayLevel(BNCLogLevel level) {
     });
 }
 
-NSString*const bnc_logLevelStrings[] = {
+static NSString*const bnc_logLevelStrings[] = {
     @"BNCLogLevelAll",
     @"BNCLogLevelBreakPoint",
     @"BNCLogLevelDebug",
@@ -502,14 +497,14 @@ NSString*const bnc_logLevelStrings[] = {
     @"BNCLogLevelMax"
 };
 
-NSString*const BNCLogStringFromLogLevel(BNCLogLevel level) {
+NSString* BNCLogStringFromLogLevel(BNCLogLevel level) {
     level = MAX(MIN(level, BNCLogLevelMax), 0);
     return bnc_logLevelStrings[level];
 }
 
 BNCLogLevel BNCLogLevelFromString(NSString*string) {
     if (!string) return BNCLogLevelNone;
-    for (NSInteger i = 0; i < _countof(bnc_logLevelStrings); ++i) {
+    for (NSUInteger i = 0; i < _countof(bnc_logLevelStrings); ++i) {
         if ([bnc_logLevelStrings[i] isEqualToString:string]) {
             return i;
         }
@@ -522,7 +517,6 @@ BNCLogLevel BNCLogLevelFromString(NSString*string) {
 
 #pragma mark - Client Initialization Function
 
-#include "stdatomic.h"
 static _Atomic(BNCLogClientInitializeFunctionPtr) bnc_LogClientInitializeFunctionPtr = (BNCLogClientInitializeFunctionPtr) 0;
 
 extern BNCLogClientInitializeFunctionPtr _Null_unspecified BNCLogSetClientInitializeFunction(
@@ -599,7 +593,7 @@ void BNCLogSetFlushFunction(BNCLogFlushFunctionPtr flushFunction) {
 void BNCLogWriteMessageFormat(
         BNCLogLevel logLevel,
         const char *_Nullable file,
-        int lineNumber,
+        int32_t lineNumber,
         NSString *_Nullable message,
         ...
     ) {
@@ -648,10 +642,10 @@ void BNCLogWriteMessageFormat(
 void BNCLogWriteMessage(
         BNCLogLevel logLevel,
         NSString *_Nonnull file,
-        NSUInteger lineNumber,
+        int32_t lineNumber,
         NSString *_Nonnull message
     ) {
-    BNCLogWriteMessageFormat(logLevel, file.UTF8String, (int)lineNumber, @"%@", message);
+    BNCLogWriteMessageFormat(logLevel, file.UTF8String, lineNumber, @"%@", message);
 }
 
 void BNCLogFlushMessages() {

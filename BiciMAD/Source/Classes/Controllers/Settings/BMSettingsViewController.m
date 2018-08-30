@@ -9,8 +9,7 @@
 #import "BMSettingsViewController.h"
 
 @import RESideMenu;
-
-#import <TwitterKit/TwitterKit.h>
+@import TwitterKit;
 
 #import "BMAnalyticsManager.h"
 #import "BMPrePermissionManager.h"

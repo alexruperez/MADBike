@@ -1,2 +1,2 @@
-explicit module TwitterCore.Private {
+framework module TwitterCore_Private {
 }

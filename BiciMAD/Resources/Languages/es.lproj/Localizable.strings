@@ -650,9 +650,6 @@ Share MADBike with friends and earn even more MADPoints that you can redeem for 
 /*No comment provided by engineer.*/
 "failed to convert string to data" = "fallo al convertir string a data";
 
-/*Proposals*/
-"Proposals" = "Propuestas";
-
 /*No comment provided by engineer.*/
 "the key must not to be nil" = "la clave no debe ser nil";
 

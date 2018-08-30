@@ -1,3 +1,56 @@
+Version 2.7.0 - April 2018
+==========================
+Improvements:
+  - Improved documentation on thread safety of GMSServices.
+
+Resolved Issues:
+  - Fixed crash in GMSDASHStreamingBody.
+  - Fixed Google Logo positioning in GMSPanoramaView.
+
+Note:
+  - Support for Xcode 8.0 has been dropped. The new minimum is Xcode 9.0.
+
+Version 2.6.0 - February 2018
+=============================
+Features:
+  - Added a mechanism for Developers to enable experimental features.
+  - Added a click listener to the My Location dot. This allows developers to
+    respond to interactions with the My Location dot.
+  - Added a Source attribute to Panorama searches allowing them to be restricted
+    to outdoor-only results. Note that this feature is experimental and some
+    searches may still include indoor panoramas.
+
+Improvements:
+  - Updated the default marker to match the new Google Maps marker.
+  - iOS 11 OpenGL crash reduction.
+
+Resolved Issues:
+  - Fixed a compile error when the -Wobjc-property-no-attribute flag is used.
+
+Note:
+  - CoreImage has been added as a dependency.
+
+Version 2.5.0 - October 2017
+============================
+Features:
+  - Added the paddingAdjustmentBehavior property to GMSMapView. This property
+    controls how safe area insets interact with padding.
+
+Improvements:
+  - Improved iOS 11 & iPhone X support.
+  - GMSMapView and GMSPanoramaView managed subviews are now positioned within
+    iPhone X device safe areas by default.
+
+Resolved Issues:
+  - Fixed an issue where Xcode 9's Main Thread Checker warns that [UIApplication
+    applicationState] is being called on a background thread.
+  - Fixed an issue where setting either navigationLinksHidden or
+    streetNamesHidden to YES still resulted in the navigation links and street
+    names appearing.
+
+Note:
+  - Support for Xcode 7.3 has been dropped. The new minimum is Xcode 8.0.
+
 Version 2.4.0 - August 2017
 ===========================
 Note:

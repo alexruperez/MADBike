@@ -10,9 +10,9 @@ import FBSDKShareKit
 
 @objc open class ShareLinkActivity: UIActivity {
     
-    open var title: String?
-    open var image: UIImage?
-    open var mode: FBSDKShareDialogMode = .automatic
+    @objc open var title: String?
+    @objc open var image: UIImage?
+    @objc open var mode: FBSDKShareDialogMode = .automatic
     open static var category: UIActivityCategory?
     
     fileprivate lazy var shareDialog: FBSDKShareDialog = {
@@ -33,7 +33,7 @@ import FBSDKShareKit
         self.category = category
     }
     
-    public convenience init(title: String?, image: UIImage?, mode: FBSDKShareDialogMode) {
+    @objc public convenience init(title: String?, image: UIImage?, mode: FBSDKShareDialogMode) {
         self.init()
         self.title = title
         self.image = image
@@ -49,7 +49,7 @@ import FBSDKShareKit
     }
     
     open override var activityImage : UIImage? {
-        return image ?? UIImage(named: "\(activityType!)\(ShareLinkActivity.activityCategory.rawValue)", in: Bundle(for: ShareLinkActivity.self), compatibleWith: nil)
+        return image ?? UIImage(named: "\(activityType!.rawValue)\(ShareLinkActivity.activityCategory.rawValue)", in: Bundle(for: ShareLinkActivity.self), compatibleWith: nil)
     }
     
     open override func canPerform(withActivityItems activityItems: [Any]) -> Bool {

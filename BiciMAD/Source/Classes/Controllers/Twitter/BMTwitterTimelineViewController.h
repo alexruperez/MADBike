@@ -6,7 +6,7 @@
 //  Copyright © 2016 alexruperez. All rights reserved.
 //
 
-#import <TwitterKit/TwitterKit.h>
+@import TwitterKit;
 
 @interface BMTwitterTimelineViewController : TWTRTimelineViewController
 

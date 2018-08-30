@@ -47,7 +47,8 @@ NS_ASSUME_NONNULL_BEGIN;
  * tapping on the "My Location" button) or by being updated explicitly via the camera or a
  * zero-length animation on layer.
  *
- * @param gesture If YES, this is occuring due to a user gesture.
+ * @param mapView The map view that was tapped.
+ * @param gesture If YES, this is occurring due to a user gesture.
 */
 - (void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture;
 
@@ -184,6 +185,14 @@ NS_ASSUME_NONNULL_BEGIN;
 - (BOOL)didTapMyLocationButtonForMapView:(GMSMapView *)mapView;
 
 /**
+ * Called when the My Location Dot is tapped.
+ *
+ * @param mapView The map view that was tapped.
+ * @param location The location of the user when the location dot was tapped.
+ */
+- (void)mapView:(GMSMapView *)mapView didTapMyLocation:(CLLocationCoordinate2D)location;
+
+/**
  * Called when tiles have just been requested or labels have just started rendering.
  */
 - (void)mapViewDidStartTileRendering:(GMSMapView *)mapView;
@@ -202,9 +211,12 @@ NS_ASSUME_NONNULL_BEGIN;
 @end
 
 /**
+ * \defgroup MapViewType GMSMapViewType
+ * @{
+ */
+
+/**
  * Display types for GMSMapView.
- *
- * @related GMSMapView
  */
 typedef NS_ENUM(NSUInteger, GMSMapViewType) {
   /** Basic maps.  The default. */
@@ -224,10 +236,15 @@ typedef NS_ENUM(NSUInteger, GMSMapViewType) {
 
 };
 
+/**@}*/
+
+/**
+ * \defgroup FrameRate GMSFrameRate
+ * @{
+ */
+
 /**
  * Rendering frame rates for GMSMapView.
- *
- * @related GMSMapView
  */
 typedef NS_ENUM(NSUInteger, GMSFrameRate) {
   /** Use the minimum frame rate to conserve battery usage. */
@@ -244,6 +261,34 @@ typedef NS_ENUM(NSUInteger, GMSFrameRate) {
    */
   kGMSFrameRateMaximum,
 };
+
+/**@}*/
+
+/**
+ * \defgroup MapViewPaddingAdjustmentBehavior GMSMapViewPaddingAdjustmentBehavior
+ * @{
+ */
+
+/**
+ * Constants indicating how safe area insets are added to padding.
+ */
+typedef NS_ENUM(NSUInteger, GMSMapViewPaddingAdjustmentBehavior) {
+  /** Always include the safe area insets in the padding. */
+  kGMSMapViewPaddingAdjustmentBehaviorAlways,
+
+  /**
+   * When the padding value is smaller than the safe area inset for a particular edge, use the safe
+   * area value for layout, else use padding.
+   */
+  kGMSMapViewPaddingAdjustmentBehaviorAutomatic,
+
+  /**
+   * Never include the safe area insets in the padding. This was the behavior prior to version 2.5.
+   */
+  kGMSMapViewPaddingAdjustmentBehaviorNever,
+};
+
+/**@}*/
 
 /**
  * This is the main class of the Google Maps SDK for iOS and is the entry point for all methods
@@ -367,6 +412,15 @@ typedef NS_ENUM(NSUInteger, GMSFrameRate) {
 @property(nonatomic, assign) UIEdgeInsets padding;
 
 /**
+ * Controls how safe area insets are added to the padding values. Like padding, safe area insets
+ * position map controls such as the compass, my location button and floor picker within the device
+ * safe area.
+ *
+ * Defaults to kGMSMapViewPaddingAdjustmentBehaviorAlways.
+ */
+@property(nonatomic, assign) GMSMapViewPaddingAdjustmentBehavior paddingAdjustmentBehavior;
+
+/**
  * Defaults to YES. If set to NO, GMSMapView will generate accessibility elements for overlay
  * objects, such as GMSMarker and GMSPolyline.
  *
@@ -389,7 +443,7 @@ typedef NS_ENUM(NSUInteger, GMSFrameRate) {
  * If not nil, constrains the camera target so that gestures cannot cause it to leave the specified
  * bounds.
  */
-@property(nonatomic, nullable) GMSCoordinateBounds *cameraTargetBounds;
+@property(nonatomic, strong, nullable) GMSCoordinateBounds *cameraTargetBounds;
 
 /**
  * Builds and returns a GMSMapView, with a frame and camera target.

@@ -9,7 +9,6 @@
 #import "BMApplicationAssembly.h"
 
 @import AFNetworkActivityLogger;
-@import iRate;
 
 #import "BMServicesAssembly.h"
 #import "BMManagersAssembly.h"
@@ -51,14 +50,6 @@
     }];
 }
 
-- (iRate *)iRate
-{
-    return [TyphoonDefinition withClass:[iRate class] configuration:^(TyphoonDefinition *definition) {
-        [definition useInitializer:@selector(sharedInstance)];
-        definition.scope = TyphoonScopeSingleton;
-    }];
-}
-
 - (BMAppDelegate *)appDelegate
 {
     return [TyphoonDefinition withClass:[BMAppDelegate class] configuration:^(TyphoonDefinition *definition) {
@@ -66,7 +57,6 @@
         [definition injectProperty:@selector(window) with:[self window]];
         [definition injectProperty:@selector(rootViewController) with:[self.viewControllersAssembly rootViewController]];
         [definition injectProperty:@selector(managersAssembly) with:self.managersAssembly];
-        [definition injectProperty:@selector(iRate) with:[self iRate]];
         [definition injectProperty:@selector(aslLogger) with:[self aslLogger]];
         [definition injectProperty:@selector(ttyLogger) with:[self ttyLogger]];
         [definition injectProperty:@selector(clsLogger) with:[self clsLogger]];

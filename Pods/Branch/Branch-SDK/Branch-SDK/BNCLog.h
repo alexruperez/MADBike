@@ -1,21 +1,14 @@
+/**
+ @file          BNCLog.h
+ @package       Branch-SDK
+ @brief         Simple logging functions.
 
+ @author        Edward Smith
+ @date          October 2016
+ @copyright     Copyright © 2016 Branch. All rights reserved.
+*/
 
-//--------------------------------------------------------------------------------------------------
-//
-//                                                                                          BNCLog.h
-//                                                                                  Branch.framework
-//
-//                                                                          Simple logging functions
-//                                                                        Edward Smith, October 2016
-//
-//                                             -©- Copyright © 2016 Branch, all rights reserved. -©-
-//
-//--------------------------------------------------------------------------------------------------
-
-
-#import <Foundation/Foundation.h>
 #import "BNCDebug.h"
-
 
 #ifdef __cplusplus
 extern "C" {
@@ -59,7 +52,7 @@ extern void BNCLogSetDisplayLevel(BNCLogLevel level);
 * @param level The log level to convert to a string.
 * @return Returns the string indicating the log level.
 */
-extern NSString *_Nonnull const BNCLogStringFromLogLevel(BNCLogLevel level);
+extern NSString *_Nonnull BNCLogStringFromLogLevel(BNCLogLevel level);
 
 /*!
 * @param string A string indicating the log level.
@@ -91,7 +84,7 @@ extern BNCLogClientInitializeFunctionPtr _Null_unspecified
 #pragma mark - Optional Log Output Handlers
 
 
-///@info Pre-defined log message handlers --
+///@brief Pre-defined log message handlers --
 
 typedef void (*BNCLogOutputFunctionPtr)(NSDate*_Nonnull timestamp, BNCLogLevel level, NSString*_Nullable message);
 
@@ -138,16 +131,16 @@ extern BNCLogFlushFunctionPtr _Nullable BNCLogFlushFunction(void);
 extern void BNCLogWriteMessageFormat(
     BNCLogLevel logLevel,
     const char *_Nullable sourceFileName,
-    int sourceLineNumber,
-    id _Nullable messageFormat,
+    int32_t sourceLineNumber,
+    NSString* _Nullable messageFormat,
     ...
-);
+) NS_FORMAT_FUNCTION(4,5);
 
 /// Swift-friendly wrapper for BNCLogWriteMessageFormat
 extern void BNCLogWriteMessage(
     BNCLogLevel logLevel,
     NSString *_Nonnull sourceFileName,
-    NSUInteger sourceLineNumber,
+    int32_t sourceLineNumber,
     NSString *_Nonnull message
 );
 

@@ -18,6 +18,8 @@
 
 #import "FBSDKSettings+Internal.h"
 
+#import "FBSDKAccessTokenCache.h"
+#import "FBSDKAccessTokenExpirer.h"
 #import "FBSDKCoreKit.h"
 
 #define FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(TYPE, PLIST_KEY, GETTER, SETTER, DEFAULT_VALUE) \
@@ -44,13 +46,14 @@ NSString *const FBSDKLoggingBehaviorGraphAPIDebugWarning = @"graph_api_debug_war
 NSString *const FBSDKLoggingBehaviorGraphAPIDebugInfo = @"graph_api_debug_info";
 NSString *const FBSDKLoggingBehaviorNetworkRequests = @"network_requests";
 
-static FBSDKAccessTokenCache *g_tokenCache;
+static NSObject<FBSDKAccessTokenCaching> *g_tokenCache;
 static NSMutableSet *g_loggingBehavior;
 static NSString *g_legacyUserDefaultTokenInformationKeyName = @"FBAccessTokenInformationKey";
 static NSString *const FBSDKSettingsLimitEventAndDataUsage = @"com.facebook.sdk:FBSDKSettingsLimitEventAndDataUsage";
 static BOOL g_disableErrorRecovery;
 static NSString *g_userAgentSuffix;
 static NSString *g_defaultGraphAPIVersion;
+static FBSDKAccessTokenExpirer *g_accessTokenExpirer;
 
 @implementation FBSDKSettings
 
@@ -58,6 +61,7 @@ static NSString *g_defaultGraphAPIVersion;
 {
   if (self == [FBSDKSettings class]) {
     g_tokenCache = [[FBSDKAccessTokenCache alloc] init];
+    g_accessTokenExpirer = [[FBSDKAccessTokenExpirer alloc] init];
   }
 }
 
@@ -71,6 +75,8 @@ FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSString, FacebookDomainPart, fac
 FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSNumber, FacebookJpegCompressionQuality, _JPEGCompressionQualityNumber, _setJPEGCompressionQualityNumber, @0.9);
 FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSNumber, FacebookAutoLogAppEventsEnabled, autoLogAppEventsEnabled,
   setAutoLogAppEventsEnabled, @1);
+FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSNumber, FacebookCodelessDebugLogEnabled, codelessDebugLogEnabled,
+  setCodelessDebugLogEnabled, @0);
 
 + (void)setGraphErrorRecoveryDisabled:(BOOL)disableGraphErrorRecovery {
   g_disableErrorRecovery = disableGraphErrorRecovery;
@@ -177,12 +183,12 @@ FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSNumber, FacebookAutoLogAppEvent
 
 #pragma mark - Internal
 
-+ (FBSDKAccessTokenCache *)accessTokenCache
++ (NSObject<FBSDKAccessTokenCaching> *)accessTokenCache
 {
   return g_tokenCache;
 }
 
-- (void)setAccessTokenCache:(FBSDKAccessTokenCache *)cache
++ (void)setAccessTokenCache:(NSObject<FBSDKAccessTokenCaching> *)cache
 {
   if (g_tokenCache != cache) {
     g_tokenCache = cache;

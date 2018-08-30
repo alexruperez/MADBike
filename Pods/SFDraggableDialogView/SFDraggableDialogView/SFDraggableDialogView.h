@@ -203,7 +203,7 @@ typedef NS_ENUM(NSInteger, SFContentViewType) {
  *  @param drop Drop down movement
  *  @param completion Completion block.
  */
-- (void)dismissWithDrop:(bool)drop completion:(void (^)())completion;
+- (void)dismissWithDrop:(bool)drop completion:(void (^)(void))completion;
 
 /**
  *  Create the background image view that will be placed behind the dialog view.

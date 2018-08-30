@@ -70,6 +70,8 @@ github "alexruperez/ARFacebookShareKitActivity"
 
 Use it in the same way you use [UIActivityViewController](http://nshipster.com/uiactivityviewcontroller/), that easy!
 
+If you want to replace native Facebook UISocialActivity, just call `UIActivity.replaceFacebookSharing()`.
+
 # Etc.
 
 * Special thanks to [jilouc](https://github.com/jilouc)/[CCAFacebookAppActivity](https://github.com/jilouc/CCAFacebookAppActivity), which has inspired this repo.

@@ -24,10 +24,6 @@ NSString * const kBMDKErrorDomain = @"org.drunkcode.MADBike.error.drunkcode";
 // DrunkCode Error Keys
 NSString * const kBMErrorKey = @"error";
 
-// NextInit
-NSString * const kBMProposalsURLString = @"https://www.nextinit.com/landings/madbike/mobile-activation.html";
-NSString * const kBMProposalsDeepLinkString = @"nextinit://";
-
 // EMT API URL
 NSString * const kBMHTTPClientEMTURLString = @"https://rbdata.emtmadrid.es:8443/BiciMad/";
 

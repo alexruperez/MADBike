@@ -24,10 +24,6 @@ extern NSString * const kBMDKErrorDomain;
 // DrunkCode Error Keys
 extern NSString * const kBMErrorKey;
 
-// NextInit
-extern NSString * const kBMProposalsURLString;
-extern NSString * const kBMProposalsDeepLinkString;
-
 // EMT API URL
 extern NSString * const kBMHTTPClientEMTURLString;
 

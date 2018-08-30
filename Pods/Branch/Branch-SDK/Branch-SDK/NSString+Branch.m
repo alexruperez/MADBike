@@ -1,25 +1,18 @@
+/**
+ @file          NSString+Branch.m
+ @package       Branch-SDK
+ @brief         NSString Additions
 
-
-//--------------------------------------------------------------------------------------------------
-//
-//                                                                                 NSString+Branch.m
-//                                                                                  Branch.framework
-//
-//                                                                                NSString Additions
-//                                                                       Edward Smith, February 2017
-//
-//                                             -©- Copyright © 2017 Branch, all rights reserved. -©-
-//
-//--------------------------------------------------------------------------------------------------
-
+ @author        Edward Smith
+ @date          February 2017
+ @copyright     Copyright © 2017 Branch. All rights reserved.
+*/
 
 #import "NSString+Branch.h"
-
 
 __attribute__((constructor)) void BNCForceNSStringCategoryToLoad() {
     //  Nothing here, but forces linker to load the category.
 }
-
 
 @implementation NSString (Branch)
 
@@ -28,7 +21,7 @@ __attribute__((constructor)) void BNCForceNSStringCategoryToLoad() {
     // NSLog(@"bnc_isEqualToMaskedString self/string:\n%@\n%@.", self, string);
     if (!string) return NO;
     if (self.length != string.length) return NO;
-    for (NSInteger idx = 0; idx < self.length; idx++) {
+    for (NSUInteger idx = 0; idx < self.length; idx++) {
         unichar p = [self characterAtIndex:idx];
         unichar q = [string characterAtIndex:idx];
         if (q != '*' && p != q) return NO;
@@ -46,8 +39,7 @@ __attribute__((constructor)) void BNCForceNSStringCategoryToLoad() {
 }
 
 - (BOOL) bnc_containsString:(NSString*_Nullable)string {
-    if (!string) return NO;
-    return ([self rangeOfString:string].location != NSNotFound);
+    return (string && [self rangeOfString:(NSString*_Nonnull)string].location != NSNotFound);
 }
 
 @end

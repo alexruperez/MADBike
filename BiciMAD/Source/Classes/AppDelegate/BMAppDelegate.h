@@ -10,7 +10,6 @@
 
 @class BMManagersAssembly;
 @class BMRootViewController;
-@class iRate;
 @class DDASLLogger;
 @class DDTTYLogger;
 @class DDCLSLogger;
@@ -22,7 +21,6 @@
 @property (nonatomic, strong) UIWindow *window;
 @property (nonatomic, strong) BMRootViewController *rootViewController;
 @property (nonatomic, strong) BMManagersAssembly *managersAssembly;
-@property (nonatomic, strong) iRate *iRate;
 @property (nonatomic, strong) DDASLLogger *aslLogger;
 @property (nonatomic, strong) DDTTYLogger *ttyLogger;
 @property (nonatomic, strong) DDCLSLogger *clsLogger;
