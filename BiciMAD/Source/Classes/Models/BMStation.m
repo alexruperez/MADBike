@@ -260,6 +260,7 @@ static NSString * const kBMMADBikeWebStationURLString = @"https://www.madbikeapp
     
     attributeSet.title = self.title;
     attributeSet.displayName = self.title;
+    attributeSet.contentDescription = self.subtitle;
     NSMutableArray *keywords = @[NSLocalizedString(@"MADBike", @"MADBike"), NSLocalizedString(@"BiciMAD", @"BiciMAD"), NSLocalizedString(@"bike", @"bike"), NSLocalizedString(@"bikes", @"bikes"), NSLocalizedString(@"bicycle", @"bicycle"), NSLocalizedString(@"bicycles", @"bicycles"), NSLocalizedString(@"Madrid", @"Madrid"), NSLocalizedString(@"move", @"move"), NSLocalizedString(@"city", @"city"), NSLocalizedString(@"center", @"center"), NSLocalizedString(@"downtown", @"downtown"), NSLocalizedString(@"Bonopark", @"Bonopark"), NSLocalizedString(@"map", @"map"), NSLocalizedString(@"stations", @"stations")].mutableCopy;
     [keywords addObjectsFromArray:[self.title componentsSeparatedByString:@" "]];
     attributeSet.keywords = keywords.copy;
@@ -288,6 +289,7 @@ static NSString * const kBMMADBikeWebStationURLString = @"https://www.madbikeapp
         _userActivity.eligibleForHandoff = YES;
         if (@available(iOS 12.0, *)) {
             _userActivity.eligibleForPrediction = YES;
+            _userActivity.persistentIdentifier = self.stationId;
         }
         if ([_userActivity respondsToSelector:@selector(mapItem)])
         {

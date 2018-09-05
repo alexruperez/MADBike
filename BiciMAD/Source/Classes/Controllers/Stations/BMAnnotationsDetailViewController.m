@@ -57,6 +57,7 @@
         if ([self.annotations.firstObject conformsToProtocol:@protocol(BMSearchable)])
         {
             self.userActivity = [self.annotations.firstObject userActivity];
+            [self.userActivity becomeCurrent];
         }
     }
     else
