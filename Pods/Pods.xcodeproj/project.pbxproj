@@ -102,7 +102,6 @@
 		15105B941D0E19D2C72FFD7DFA9E41AF /* BranchInstallRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C39F3CAB93B73D0B1A1538FF8EA7305 /* BranchInstallRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1551CB7F045A6E5AEE602177E4F9023B /* FBSDKGraphErrorRecoveryProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E90FE318C4DA7C8B4290C3EBBE1533E /* FBSDKGraphErrorRecoveryProcessor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		15D8EA5904CED04F9D7783226CFBB51C /* TyphoonInjectionByConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3EB695D39BF3478276D3D464CF491B /* TyphoonInjectionByConfig.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		15E0DCE96962B9780BDC97373BB1E9E2 /* RNCryptor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 047E69FDF07C547567357E6DBD1889C1 /* RNCryptor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		15F01C0719CE9E4917222BCF0CBE547D /* BranchShortUrlSyncRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 03817F9B345D4DE902EFC2382375FC96 /* BranchShortUrlSyncRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		161A13704533DE941720705663B875D0 /* BFTask.h in Headers */ = {isa = PBXBuildFile; fileRef = D97CC34CF541A1AA7E16EA3FFA2731EF /* BFTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		164C8921A5D2449A95F1CC62D09C6BBC /* FBSDKError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9557CE5F64F9D83B3C95D9077485B7D9 /* FBSDKError.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -325,7 +324,6 @@
 		42C094B4B7F3EE95E389697D93278F45 /* UIActivity+FBSDKSharingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB17CD618709C639804D0F2AF9879C07 /* UIActivity+FBSDKSharingDelegate.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		42CD3D76E6305ABB1F6D4BC7A614CDD6 /* FBSDKHybridAppEventsScriptMessageHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 3356CEF0D22F456A50535C123DD9C9DB /* FBSDKHybridAppEventsScriptMessageHandler.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4330D7832322F4823754D0B4392BE958 /* FBSDKCloseIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FB2FD91F42999AA45847BC4D10FFDC /* FBSDKCloseIcon.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		433EF11D1A4B3DC4A890E02D234946D2 /* RNCryptor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46298CBC9C0CC5FE4E85F96D318A6D48 /* RNCryptor-dummy.m */; };
 		43C2C2FDC675F62A53DF40F760B0C506 /* AFCompatibilityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CEF14D7069E09A614CC0B467C8472F4 /* AFCompatibilityMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43E3D528446B6593A489F69368FD2A13 /* SmileWeatherDemoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E50C5D8E960E5CA87ACBB995CD9010F0 /* SmileWeatherDemoView.xib */; };
 		43FBE66D7AE40F2CA22E4723AF2A6B09 /* FBSDKAccessTokenCacheV4.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD8E0FAE06CB22F34A7FC3AA1E7C3B0 /* FBSDKAccessTokenCacheV4.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -479,6 +477,7 @@
 		5E106032399713927A121C68D1F91E92 /* OCLogTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6375DD8DEC667FD4E6FCCF309831BDE1 /* OCLogTemplate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5E7FE4BD2CDA37F8E9649E0A1B6946CE /* BranchShortUrlSyncRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E61B861332529AD7DD0B4460511B0C83 /* BranchShortUrlSyncRequest.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5EB042994A4CEC7C19D22A92A409C972 /* TyphoonTypeConversionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4A7D6DBF394ABC511DEB5503C7C11F /* TyphoonTypeConversionUtils.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5EF1A77626551051F6B0CFF4C08081D7 /* RNCryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E41AF32A5DF3876907BC22995DF8A4D /* RNCryptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F4053DFCBD3820DC7C457BA2BB598B2 /* TyphoonBlockDefinitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB4FA5D325736A2E2E5BD493B4EB84 /* TyphoonBlockDefinitionController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5F9449A40E71F1FD4A99D830DF0B784A /* TyphoonComponentFactory+InstanceBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B979F4DE044B0BF39CDBD70E6B8C698 /* TyphoonComponentFactory+InstanceBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FB1699FF09CF840B43BD7D5D6EE6E46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A7B1FBD82074E983331A03C2DC5E6C /* Foundation.framework */; };
@@ -935,7 +934,9 @@
 		AD4C056D31DBA2E8B9EFC363ABE4D68B /* FBSDKBoltsMeasurementEventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 723F2D79187B772F3A7FF57EFC5E5379 /* FBSDKBoltsMeasurementEventListener.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AD6186B2E66E334EB82660B711C67052 /* CCHNearCenterMapClusterer.h in Headers */ = {isa = PBXBuildFile; fileRef = C2E7087DEB88A0AA68D8E7E39088111D /* CCHNearCenterMapClusterer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD9B883734F7ED43C006544AF6D1E3DD /* Legend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CFDE959FF3F64B250ED3C64165B490 /* Legend.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AE2C9EC3C9C4674B4E53FC88AB0C5895 /* RNCryptor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F4111D68AFF96D9C522B0579256813C5 /* RNCryptor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE38E642AB3824F107D9DE3501C13DA6 /* FBSDKShareError.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B436ED1DD845323BD240066F497BCE /* FBSDKShareError.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AE480A9B2A062948CDA9465EC36C6351 /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A217C60FBF63A1C4E115145D340612EA /* RNCryptor.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AE6D3DF482E56D0C3BEE76E925C789D4 /* FBSDKGameRequestDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = E5BDD1929703AE83BCD972DAD611D0A5 /* FBSDKGameRequestDialog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE6EAA7543DDA9C2AF235F32CF84CDF4 /* MagicalRecord+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1A7A1C2F32D9E69833037DDD24A53D /* MagicalRecord+Actions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AE796ABDA2513CC4037255A5EEC6EF96 /* FBSDKURLOpening.h in Headers */ = {isa = PBXBuildFile; fileRef = A5D5EC6229457E7E0B3811B185B245E1 /* FBSDKURLOpening.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -1265,7 +1266,6 @@
 		EB19D0C9DCE534E88E92F24095DD9468 /* FBSDKBridgeAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B2F5DC0874AF11158CE35007680868 /* FBSDKBridgeAPIResponse.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EBC5E7C7E4740BC3ABC112C55042F8F8 /* CCHMapClusterControllerDebugPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B88B2CD892B66BDA22A009A074F5F1C /* CCHMapClusterControllerDebugPolygon.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EBE563F76C797C863466E54AD49DB405 /* TyphoonCallStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 902E2E474D6974F2B62251639AE98A20 /* TyphoonCallStack.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		EC30358251B65D9379548C05CCAB4FDD /* RNCryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 40FD28C4D27B97C5F1F109DB155690A5 /* RNCryptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC396C83958162C3A7A076468DDC95CC /* FBSDKCodelessParameterComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = FB7367F73072CD8C676C334C2D4137CA /* FBSDKCodelessParameterComponent.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		EC3C6FC1EC3BE9D348F3B8650B78D7CB /* FBSDKAppEventsStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EA370A7C8165A9A8C8C2F331885355 /* FBSDKAppEventsStateManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EC52DF8C50CD4B3D44E8BAE321D28477 /* FBSDKGraphRequestPiggybackManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AC08EDF9415B66C0255FCE3F070007F2 /* FBSDKGraphRequestPiggybackManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -1289,6 +1289,7 @@
 		F02EE6FEFC5B9F573BBCC1218BB64857 /* DefaultFillFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A309B376FDFC27FD757B587E3C21F9 /* DefaultFillFormatter.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F050FC92EAC42353690D9395CAEEAC68 /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 1527B3C38ED230651DFF11CFAA7FD58F /* NSAttributeDescription+MagicalDataImport.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F069FA931895AA9A9918224011C33B97 /* FBSDKLikeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1DEF2F9B1D17EAD41DBDD3FEC33F38 /* FBSDKLikeControl.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F08987F29B5FBDBC7F7203ADA5735051 /* RNCryptor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B57C0432778B2D4C59F1029BEF51292 /* RNCryptor-dummy.m */; };
 		F0A80F190E6CACFF98680B36C9F08F20 /* UIResponder+TyphoonOutletTransfer.h in Headers */ = {isa = PBXBuildFile; fileRef = DF06B916BC5BBFDDFF2BC246508ED900 /* UIResponder+TyphoonOutletTransfer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F134E98ED0A882D2D0D83002F2869EF1 /* FBSDKShareOpenGraphContent.h in Headers */ = {isa = PBXBuildFile; fileRef = CFEC7CF548A2BAE8AFEC33D1ABB04670 /* FBSDKShareOpenGraphContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F16693F985D7F19043706C55BEB85B8F /* TyphoonNSURLTypeConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 730FAFC02F5FE8DDE33363CF34CBAD99 /* TyphoonNSURLTypeConverter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -1335,7 +1336,6 @@
 		F824A99C2517AC03EA45C846F16B78A3 /* BNCContentDiscoveryManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F17633623143E0D034720D2D4DF017AF /* BNCContentDiscoveryManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8A8C99C1E9EA59912745B3BB9E2735D /* FBSDKWebDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E9692D04536064DADC26D37488CE95 /* FBSDKWebDialog.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F8E0176E7F8D62EC5EEE66D3DBA81DAB /* BNCSpotlightService.h in Headers */ = {isa = PBXBuildFile; fileRef = 30B529CB22BFCA7393C0307073466FD3 /* BNCSpotlightService.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F91212B54B0DE9C3D8675E71A751FDF8 /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642B162214A46BF08BAC2C08A1D98D3 /* RNCryptor.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F91C7D3999EBD317CE44DE10F4A5ABB7 /* NSInvocation+TCFInstanceBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 000B025211AD9C213B8C9FBAD43F569E /* NSInvocation+TCFInstanceBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F941A790821A91D345F28C5A738C0D95 /* FBSDKSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C3D6DDBD525849A8791EB4B1847F71 /* FBSDKSwizzler.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F944B9D9F8644766143450F11F815590 /* DGRunkeeperSwitch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00EF9428AE933773A5605C8B69EAE9C7 /* DGRunkeeperSwitch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1722,7 +1722,6 @@
 		023A4E66B7942F8E7524A5975660861C /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ru.lproj; path = InAppSettingsKit/Resources/ru.lproj; sourceTree = "<group>"; };
 		02A841BD0B28B5E363F45B7CDADB4B7A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02B2F5DC0874AF11158CE35007680868 /* FBSDKBridgeAPIResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBridgeAPIResponse.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPIResponse.m; sourceTree = "<group>"; };
-		02D9F20F6AC66A768920959124604F60 /* RNCryptor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RNCryptor.modulemap; sourceTree = "<group>"; };
 		0306DE63C378FE6C3247C97A34963F48 /* FBSDKSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKSettings.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKSettings.h; sourceTree = "<group>"; };
 		0324FF4CABC5F4530E798ECC1161C50D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0329C88E39DE72B5AB91460A127D860F /* AFNetworkActivityConsoleLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityConsoleLogger.m; path = AFNetworkActivityLogger/AFNetworkActivityConsoleLogger.m; sourceTree = "<group>"; };
@@ -1740,7 +1739,6 @@
 		0437F04118C161EF73EA09AF9979A6FC /* BiciMADKeys.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BiciMADKeys.h; sourceTree = "<group>"; };
 		0445F9142E7C2D755164CEF41A3107DF /* SmileWeatherHourlyData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherHourlyData.h; path = SmileWeather/Classes/SmileWeatherHourlyData.h; sourceTree = "<group>"; };
 		047E0B938E668031A5940B904ECC7AEE /* TyphoonInjectionByRuntimeArgument.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TyphoonInjectionByRuntimeArgument.m; path = Source/Definition/Injections/TyphoonInjectionByRuntimeArgument.m; sourceTree = "<group>"; };
-		047E69FDF07C547567357E6DBD1889C1 /* RNCryptor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-umbrella.h"; sourceTree = "<group>"; };
 		055B3096A172EBFC2530B54FABA0C0DA /* SVPulsingAnnotationView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVPulsingAnnotationView-prefix.pch"; sourceTree = "<group>"; };
 		0570B49450A7B6C771995AB6D09140B7 /* TyphoonRuntimeArguments.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TyphoonRuntimeArguments.m; path = Source/Factory/Internal/TyphoonRuntimeArguments.m; sourceTree = "<group>"; };
 		058B48DCA4F8076320E3DA0C56C2EA7F /* FBSDKIcon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKIcon.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKIcon.h; sourceTree = "<group>"; };
@@ -1985,7 +1983,6 @@
 		2CFABADC89CBCD398C69D9DD2403EB39 /* FBSDKAccessTokenCacheV4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAccessTokenCacheV4.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCacheV4.h; sourceTree = "<group>"; };
 		2D0C007134A5D4A04380A9AB4BF02891 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		2D5DC5E87CA35F8DE5E5F2A67F47367F /* TyphoonComponentFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TyphoonComponentFactory.m; path = Source/Factory/TyphoonComponentFactory.m; sourceTree = "<group>"; };
-		2D6B190D41009D6167A531DC8FFF99F1 /* RNCryptor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RNCryptor.xcconfig; sourceTree = "<group>"; };
 		2D9EB71C829BABF35AFD0A600DC2BFED /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
 		2DA45D4F33380D5D40C2E105A7F32CA9 /* Description.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Description.swift; path = Source/Charts/Components/Description.swift; sourceTree = "<group>"; };
 		2DA690947FA5D82C5818FC131EEEF1D6 /* BFAppLinkTarget.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLinkTarget.h; path = Bolts/iOS/BFAppLinkTarget.h; sourceTree = "<group>"; };
@@ -2007,7 +2004,6 @@
 		313BF367603E5F9E14BB312228DBA79E /* IBarLineScatterCandleBubbleChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IBarLineScatterCandleBubbleChartDataSet.swift; path = Source/Charts/Data/Interfaces/IBarLineScatterCandleBubbleChartDataSet.swift; sourceTree = "<group>"; };
 		3141E4B9B0A9179FC4CC1A57702A9F78 /* MagicalRecord+ShorthandMethods.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MagicalRecord+ShorthandMethods.m"; path = "MagicalRecord/Core/MagicalRecord+ShorthandMethods.m"; sourceTree = "<group>"; };
 		314F3CE2155E5A15A90BCAC510678EF5 /* CandleChartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CandleChartData.swift; path = Source/Charts/Data/Implementations/Standard/CandleChartData.swift; sourceTree = "<group>"; };
-		318FF51EBB2967C6427A0CF893DF3AA5 /* RNCryptor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-prefix.pch"; sourceTree = "<group>"; };
 		3191DFEBD6FD0D8FC502A2862056A8C0 /* NSManagedObject+MagicalRecord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+MagicalRecord.h"; path = "MagicalRecord/Categories/NSManagedObject/NSManagedObject+MagicalRecord.h"; sourceTree = "<group>"; };
 		31BD2BA5A43519F53FD885D8F4C6BB67 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ja.lproj; path = InAppSettingsKit/Resources/ja.lproj; sourceTree = "<group>"; };
 		31CCAFBF7B14DA7F26325074C64EBD7B /* FBSDKURLSessionTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKURLSessionTask.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKURLSessionTask.h; sourceTree = "<group>"; };
@@ -2082,13 +2078,13 @@
 		3F09AC304A62A22EA74F5095263186E6 /* SPGooglePlacesPlaceDetailQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPGooglePlacesPlaceDetailQuery.h; path = SPGooglePlacesAutocomplete/SPGooglePlacesPlaceDetailQuery.h; sourceTree = "<group>"; };
 		3F0CDBA542F1B7CD6D1B925711F56EA5 /* Popover-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Popover-dummy.m"; sourceTree = "<group>"; };
 		3F50A881D9682B59776EFE20A8A0A4A3 /* FBSDKLikeDialog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLikeDialog.h; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKLikeDialog.h; sourceTree = "<group>"; };
+		3FA0C07C8ADCBE665D1B877783C22D4E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FD1816011E5B0083F9138B57FABDA0E /* InAppSettingsKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = InAppSettingsKit.modulemap; sourceTree = "<group>"; };
 		3FD58BA30F9C947D755D0773470C1836 /* MagicalRecord.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MagicalRecord.modulemap; sourceTree = "<group>"; };
 		408BEE208DF490C1BA2BF9153D74DFF3 /* SPGooglePlacesAutocomplete.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPGooglePlacesAutocomplete.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40A309B376FDFC27FD757B587E3C21F9 /* DefaultFillFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultFillFormatter.swift; path = Source/Charts/Formatters/DefaultFillFormatter.swift; sourceTree = "<group>"; };
 		40A4FFB7E786A3F01873392CBE82BEB4 /* FBSDKCoreKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKCoreKit.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit.h; sourceTree = "<group>"; };
 		40D2640AF92C04739050B1512BB5C439 /* FBSDKGameRequestContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGameRequestContent.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKGameRequestContent.h; sourceTree = "<group>"; };
-		40FD28C4D27B97C5F1F109DB155690A5 /* RNCryptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNCryptor.h; sourceTree = "<group>"; };
 		414B3E964B048A42C887E3502795C34D /* LineRadarRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineRadarRenderer.swift; path = Source/Charts/Renderers/LineRadarRenderer.swift; sourceTree = "<group>"; };
 		41B94947E1C44D9520BA278532B3A1E4 /* TyphoonJsonStyleConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TyphoonJsonStyleConfiguration.m; path = Source/Configuration/ConfigPostProcessor/TyphoonConfiguration/TyphoonJsonStyleConfiguration.m; sourceTree = "<group>"; };
 		41DC97372F17477C0A45F1984B4949CD /* DOFavoriteButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DOFavoriteButton-umbrella.h"; sourceTree = "<group>"; };
@@ -2114,7 +2110,6 @@
 		455FD1319FE22E727C9A96A4B3B59DCE /* TyphoonDefinitionPostProcessor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TyphoonDefinitionPostProcessor.h; path = Source/Configuration/TyphoonDefinitionPostProcessor.h; sourceTree = "<group>"; };
 		45A4111D60AE7C26BBC661FBC1192DEA /* IASKSettingsReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IASKSettingsReader.h; path = InAppSettingsKit/Models/IASKSettingsReader.h; sourceTree = "<group>"; };
 		461B5DA37D118AE58A2822AD72CEFAC5 /* FBSDKProfile+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKProfile+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKProfile+Internal.h"; sourceTree = "<group>"; };
-		46298CBC9C0CC5FE4E85F96D318A6D48 /* RNCryptor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RNCryptor-dummy.m"; sourceTree = "<group>"; };
 		469BD9992597566E99864B36CE5D6749 /* FBSDKShareMessengerMediaTemplateContent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKShareMessengerMediaTemplateContent.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareMessengerMediaTemplateContent.m; sourceTree = "<group>"; };
 		46C0C13F0C0CDD461764DC4C2CE154E3 /* smile_sunset@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_sunset@3x.png"; path = "SmileWeather/Assets/smile_sunset@3x.png"; sourceTree = "<group>"; };
 		46E56F8AE5E54F9C929D17F209ED8816 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
@@ -2134,6 +2129,7 @@
 		4994FE8ECC0B2511183E7CD5F26DA09B /* TyphoonDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TyphoonDefinition.m; path = Source/Definition/TyphoonDefinition.m; sourceTree = "<group>"; };
 		49B1F83F67F37EF42E1A326F0FBDAD3C /* IASKSlider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IASKSlider.h; path = InAppSettingsKit/Views/IASKSlider.h; sourceTree = "<group>"; };
 		4A16B1BE3547B72D54BEF5961FFFF968 /* RESideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RESideMenu.m; path = RESideMenu/RESideMenu.m; sourceTree = "<group>"; };
+		4A1B1C8F9CA1EDDDEE3C3845E4BEADC3 /* RNCryptor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-prefix.pch"; sourceTree = "<group>"; };
 		4A355031BE1555A85BF5DCA1709A99B7 /* FBSDKCameraEffectTextures.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKCameraEffectTextures.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKCameraEffectTextures.h; sourceTree = "<group>"; };
 		4A3AE701C0E0000D333BEEB5A36E453A /* ScatterChartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScatterChartView.swift; path = Source/Charts/Charts/ScatterChartView.swift; sourceTree = "<group>"; };
 		4A74D736EE6E17711580FDEFD2312A1D /* BBBadgeBarButtonItem-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BBBadgeBarButtonItem-umbrella.h"; sourceTree = "<group>"; };
@@ -2236,6 +2232,7 @@
 		5A8A5741D8C318D66A891F6FA21D022F /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDAbstractDatabaseLogger.m; path = Classes/DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		5AD09F943544388CA2BF8DAB238C06A3 /* BFAppLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLink.h; path = Bolts/iOS/BFAppLink.h; sourceTree = "<group>"; };
 		5B3C72EA5F14164D7614D9A826E05DFF /* AnimatedZoomViewJob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedZoomViewJob.swift; path = Source/Charts/Jobs/AnimatedZoomViewJob.swift; sourceTree = "<group>"; };
+		5B57C0432778B2D4C59F1029BEF51292 /* RNCryptor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RNCryptor-dummy.m"; sourceTree = "<group>"; };
 		5B6776725B6530E3C1EA6D3227D70EDB /* NSManagedObjectContext+MagicalSaves.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+MagicalSaves.m"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalSaves.m"; sourceTree = "<group>"; };
 		5B857CFD5BEA44A5C3AF3AA753249061 /* FBSDKAppLinkUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAppLinkUtility.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkUtility.m; sourceTree = "<group>"; };
 		5B85BBB24AA026BE918A52F39A407AAF /* CCHNearCenterMapClusterer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHNearCenterMapClusterer.m; path = CCHMapClusterController/CCHNearCenterMapClusterer.m; sourceTree = "<group>"; };
@@ -2262,6 +2259,7 @@
 		5FB7619D5F575EBA7B0327B4CF7ABF21 /* BranchSetIdentityRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchSetIdentityRequest.m; path = "Branch-SDK/Branch-SDK/Networking/Requests/BranchSetIdentityRequest.m"; sourceTree = "<group>"; };
 		5FE8CD98216A4F8F5992B3398A11CD79 /* NSManagedObjectContext+MagicalRecord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+MagicalRecord.m"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalRecord.m"; sourceTree = "<group>"; };
 		5FF8B31280E2A4E0C25B73079CAFB92B /* NSMutableDictionary+Branch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+Branch.h"; path = "Branch-SDK/Branch-SDK/NSMutableDictionary+Branch.h"; sourceTree = "<group>"; };
+		60088212E09C5D22B8CEE64CF4868F65 /* RNCryptor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RNCryptor.modulemap; sourceTree = "<group>"; };
 		601D824AD0C595A310BD9A448B15558A /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
 		60270BEA1192DCDF6EB01107CB70C8AF /* SmileWeatherDemoVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherDemoVC.h; path = SmileWeather/Classes/SmileWeatherDemoVC.h; sourceTree = "<group>"; };
 		6030120D08472E047E05C6326B73B275 /* SPGooglePlacesAutocompleteUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPGooglePlacesAutocompleteUtilities.h; path = SPGooglePlacesAutocomplete/SPGooglePlacesAutocompleteUtilities.h; sourceTree = "<group>"; };
@@ -2409,6 +2407,7 @@
 		74AB1B233DBF4B207ACD51251A5F505B /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+RESideMenu.m"; path = "RESideMenu/UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
 		74CA27FBAB9424CEA7CC1911DF7556B5 /* FBSDKMaleSilhouetteIcon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKMaleSilhouetteIcon.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKMaleSilhouetteIcon.m; sourceTree = "<group>"; };
 		74CDE548CB87CDC54ECCD59F00061E68 /* MTLJSONAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTLJSONAdapter.m; path = Mantle/MTLJSONAdapter.m; sourceTree = "<group>"; };
+		74E589E04717D2CC7B5B46AD43AA15CA /* RNCryptor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RNCryptor.xcconfig; sourceTree = "<group>"; };
 		74F258461945A9E4053ED07FAFF30072 /* BNCCrashlyticsWrapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCCrashlyticsWrapper.h; path = "Branch-SDK/Branch-SDK/BNCCrashlyticsWrapper.h"; sourceTree = "<group>"; };
 		74F9AD0C09E12574D3498A52B9BDCAED /* NSObject+MagicalDataImport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+MagicalDataImport.h"; path = "MagicalRecord/Categories/DataImport/NSObject+MagicalDataImport.h"; sourceTree = "<group>"; };
 		74FFE1E90C8B18820FDC2F0760EE91AE /* Keys.podspec.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = Keys.podspec.json; sourceTree = "<group>"; };
@@ -2553,6 +2552,7 @@
 		8DB0C92E1C41ADDC3B8F5C6634EBD086 /* ChevronUpShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChevronUpShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/ChevronUpShapeRenderer.swift; sourceTree = "<group>"; };
 		8DB10B89A746DE068AD120D22432C767 /* TyphoonParentReferenceHydratingPostProcessor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TyphoonParentReferenceHydratingPostProcessor.h; path = Source/Factory/Internal/TyphoonParentReferenceHydratingPostProcessor.h; sourceTree = "<group>"; };
 		8DE6692C09C738D7BC4BD886095A366B /* NSManagedObject+MagicalRequests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+MagicalRequests.m"; path = "MagicalRecord/Categories/NSManagedObject/NSManagedObject+MagicalRequests.m"; sourceTree = "<group>"; };
+		8E41AF32A5DF3876907BC22995DF8A4D /* RNCryptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RNCryptor.h; path = Sources/Cryptor/include/RNCryptor.h; sourceTree = "<group>"; };
 		8E7139AD3DAC8267C6EAFF6210410B82 /* INTULocationManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = INTULocationManager.xcconfig; sourceTree = "<group>"; };
 		8F53EDB1796DF3F3A354717598AAF9B4 /* CocoaLumberjack.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaLumberjack.xcconfig; sourceTree = "<group>"; };
 		8F6133A3615E7AA4AF2DF49DB0C53C7F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
@@ -2685,6 +2685,7 @@
 		A182F7DD62CAED6600BCD490A6B95C25 /* Mantle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mantle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A2B721777853816919F7135736AD54 /* TyphoonDefinition+InstanceBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "TyphoonDefinition+InstanceBuilder.h"; path = "Source/Definition/Internal/TyphoonDefinition+InstanceBuilder.h"; sourceTree = "<group>"; };
 		A1FFF6E0F4E34448E974F003EC13A1CF /* NSValue+TCFUnwrapValues.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValue+TCFUnwrapValues.m"; path = "Source/Factory/Internal/NSValue+TCFUnwrapValues.m"; sourceTree = "<group>"; };
+		A217C60FBF63A1C4E115145D340612EA /* RNCryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RNCryptor.swift; path = Sources/RNCryptor/RNCryptor.swift; sourceTree = "<group>"; };
 		A21D62F5F803C953740E5FC6A9386283 /* TyphoonTypeConverterRegistry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TyphoonTypeConverterRegistry.m; path = Source/TypeConversion/TyphoonTypeConverterRegistry.m; sourceTree = "<group>"; };
 		A281F533E8E928A3C4B53A077AC0D3D2 /* TyphoonMethod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TyphoonMethod.m; path = Source/Definition/Method/TyphoonMethod.m; sourceTree = "<group>"; };
 		A2FA47D1CB09840F8583E54CE5774C0F /* BNCConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCConfig.h; path = "Branch-SDK/Branch-SDK/BNCConfig.h"; sourceTree = "<group>"; };
@@ -2781,7 +2782,6 @@
 		B54CB3C1C30252A7D6A54B38F1358B5B /* CMMapLauncher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CMMapLauncher.h; path = CMMapLauncher/CMMapLauncher.h; sourceTree = "<group>"; };
 		B5FCA274AF4CC0A8230569AE04A4B45A /* AFNetworkActivityLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworkActivityLogger-prefix.pch"; sourceTree = "<group>"; };
 		B6115140CF88FAF0F94A197E16E9008E /* NSObject+DeallocNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+DeallocNotification.h"; path = "Source/Utils/NSObject+DeallocNotification.h"; sourceTree = "<group>"; };
-		B642B162214A46BF08BAC2C08A1D98D3 /* RNCryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RNCryptor.swift; sourceTree = "<group>"; };
 		B64A1056332DC82A762D89CA18D66562 /* BranchDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BranchDelegate.h; path = "Branch-SDK/Branch-SDK/BranchDelegate.h"; sourceTree = "<group>"; };
 		B6524057B5DDC5D91B5095E0E873850C /* TyphoonInjectionByReference.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TyphoonInjectionByReference.h; path = Source/Definition/Injections/TyphoonInjectionByReference.h; sourceTree = "<group>"; };
 		B6BE03951A2341DDC9C8444464A76E04 /* LegendRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegendRenderer.swift; path = Source/Charts/Renderers/LegendRenderer.swift; sourceTree = "<group>"; };
@@ -2943,7 +2943,6 @@
 		CF99E564EC08EA185BFF08FB9D5185D2 /* ViewPortHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewPortHandler.swift; path = Source/Charts/Utils/ViewPortHandler.swift; sourceTree = "<group>"; };
 		CFEC7CF548A2BAE8AFEC33D1ABB04670 /* FBSDKShareOpenGraphContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKShareOpenGraphContent.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareOpenGraphContent.h; sourceTree = "<group>"; };
 		CFF21B412527E15BBF6ABDC7B0B190B4 /* smile_umbrella@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_umbrella@2x.png"; path = "SmileWeather/Assets/smile_umbrella@2x.png"; sourceTree = "<group>"; };
-		D0159CFCF877384CBB092DAD09518001 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0497BEFC6E867C27916D729EB365FDA /* Pods-BiciMAD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BiciMAD.debug.xcconfig"; sourceTree = "<group>"; };
 		D0B09BA68BF531835BF6AA69CB6ED04F /* FBSDKCoreKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSDKCoreKit-umbrella.h"; sourceTree = "<group>"; };
 		D0E8310692FDA362408A84B03E3DB740 /* TyphoonPreattachedComponentsRegisterer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TyphoonPreattachedComponentsRegisterer.h; path = Source/Factory/TyphoonPreattachedComponentsRegisterer.h; sourceTree = "<group>"; };
@@ -3162,6 +3161,7 @@
 		F3C3D6DDBD525849A8791EB4B1847F71 /* FBSDKSwizzler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKSwizzler.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKSwizzler.m; sourceTree = "<group>"; };
 		F3C59D510586625A0203F25F8F142149 /* GearRefreshControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GearRefreshControl-prefix.pch"; sourceTree = "<group>"; };
 		F3D07542459AC6628DC38E362F248A97 /* ShareLinkActivity.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = ShareLinkActivity.xcassets; path = ARFacebookShareKitActivity/Assets/ShareLinkActivity/ShareLinkActivity.xcassets; sourceTree = "<group>"; };
+		F4111D68AFF96D9C522B0579256813C5 /* RNCryptor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-umbrella.h"; sourceTree = "<group>"; };
 		F4557B6EE2C39F8F03AF555BCE46D628 /* FBSDKBridgeAPIRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBridgeAPIRequest.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPIRequest.h; sourceTree = "<group>"; };
 		F487EB5761A0BCCB887207D0C396067A /* SFDraggableDialogView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SFDraggableDialogView.m; path = SFDraggableDialogView/SFDraggableDialogView.m; sourceTree = "<group>"; };
 		F49A26B3C57C4488E60CDD621E2D979F /* LineScatterCandleRadarChartDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineScatterCandleRadarChartDataSet.swift; path = Source/Charts/Data/Implementations/Standard/LineScatterCandleRadarChartDataSet.swift; sourceTree = "<group>"; };
@@ -4378,16 +4378,6 @@
 			path = Branch;
 			sourceTree = "<group>";
 		};
-		3213426E371334526362FCBCD1396639 /* RNCryptor */ = {
-			isa = PBXGroup;
-			children = (
-				40FD28C4D27B97C5F1F109DB155690A5 /* RNCryptor.h */,
-				B642B162214A46BF08BAC2C08A1D98D3 /* RNCryptor.swift */,
-				97A475355C48D306F1ACF841B333D83E /* Support Files */,
-			);
-			path = RNCryptor;
-			sourceTree = "<group>";
-		};
 		323541CFCFD55E893792EC380C2D6064 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -4401,6 +4391,16 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/InAppSettingsKit";
+			sourceTree = "<group>";
+		};
+		39D5199BF9C446A3B7A7BFA15BC7EAEA /* RNCryptor */ = {
+			isa = PBXGroup;
+			children = (
+				8E41AF32A5DF3876907BC22995DF8A4D /* RNCryptor.h */,
+				A217C60FBF63A1C4E115145D340612EA /* RNCryptor.swift */,
+				EDEEEBAA8D218845048706A22DCB43B0 /* Support Files */,
+			);
+			path = RNCryptor;
 			sourceTree = "<group>";
 		};
 		3A0434C7DFDEC1FCBD75FA2AA540E400 /* Support Files */ = {
@@ -5373,20 +5373,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		97A475355C48D306F1ACF841B333D83E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D0159CFCF877384CBB092DAD09518001 /* Info.plist */,
-				02D9F20F6AC66A768920959124604F60 /* RNCryptor.modulemap */,
-				2D6B190D41009D6167A531DC8FFF99F1 /* RNCryptor.xcconfig */,
-				46298CBC9C0CC5FE4E85F96D318A6D48 /* RNCryptor-dummy.m */,
-				318FF51EBB2967C6427A0CF893DF3AA5 /* RNCryptor-prefix.pch */,
-				047E69FDF07C547567357E6DBD1889C1 /* RNCryptor-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/RNCryptor";
-			sourceTree = "<group>";
-		};
 		97D016ECF734D588F4579B43315A22EC /* SVPulsingAnnotationView */ = {
 			isa = PBXGroup;
 			children = (
@@ -5549,7 +5535,7 @@
 				5E149777119D4F2DC8014EA5AA02CEE0 /* OpenInGoogleMaps */,
 				098DCF80E23FF85B696F7249A645CFFC /* Popover */,
 				6A91B1E46BD2B44A74030C2BF91278B2 /* RESideMenu */,
-				3213426E371334526362FCBCD1396639 /* RNCryptor */,
+				39D5199BF9C446A3B7A7BFA15BC7EAEA /* RNCryptor */,
 				DE8938EBB22BF52635261B0CB4F273F8 /* SFDraggableDialogView */,
 				F1D1639EF37EBFABDCECD9A584085D7B /* SmileWeather */,
 				EA1EF94C67626DC321A0991E80768032 /* SPGooglePlacesAutocomplete */,
@@ -6140,6 +6126,20 @@
 				07D82E50A138D0C18A9356E00C3DF5B2 /* zh-Hant.lproj */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		EDEEEBAA8D218845048706A22DCB43B0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FA0C07C8ADCBE665D1B877783C22D4E /* Info.plist */,
+				60088212E09C5D22B8CEE64CF4868F65 /* RNCryptor.modulemap */,
+				74E589E04717D2CC7B5B46AD43AA15CA /* RNCryptor.xcconfig */,
+				5B57C0432778B2D4C59F1029BEF51292 /* RNCryptor-dummy.m */,
+				4A1B1C8F9CA1EDDDEE3C3845E4BEADC3 /* RNCryptor-prefix.pch */,
+				F4111D68AFF96D9C522B0579256813C5 /* RNCryptor-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RNCryptor";
 			sourceTree = "<group>";
 		};
 		EEF1F4B045DF1A42468669B0099D4FC3 /* Reachability */ = {
@@ -7026,6 +7026,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B7FD6B9C140FC84D450E0B506DC6A1AF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE2C9EC3C9C4674B4E53FC88AB0C5895 /* RNCryptor-umbrella.h in Headers */,
+				5EF1A77626551051F6B0CFF4C08081D7 /* RNCryptor.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C77F6B6BDC9612C0209C92AB8794A719 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -7119,15 +7128,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F944B9D9F8644766143450F11F815590 /* DGRunkeeperSwitch-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F5C1EDD0849947D25A7AE15CC040A9FB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				15E0DCE96962B9780BDC97373BB1E9E2 /* RNCryptor-umbrella.h in Headers */,
-				EC30358251B65D9379548C05CCAB4FDD /* RNCryptor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7793,8 +7793,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC769CF3B6E400E3CD1C2D3BC15E210E /* Build configuration list for PBXNativeTarget "RNCryptor" */;
 			buildPhases = (
-				F5C1EDD0849947D25A7AE15CC040A9FB /* Headers */,
-				5070ABC10209F04A29131E9B8ED26900 /* Sources */,
+				B7FD6B9C140FC84D450E0B506DC6A1AF /* Headers */,
+				E10B84135816BB9B5D6439469A3E8E6B /* Sources */,
 				2DB54E20A64FC174950DA4D08911F972 /* Frameworks */,
 				FDDF66D171F42D80EC399BABAD84A5FF /* Resources */,
 			);
@@ -7870,7 +7870,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 0930;
 				TargetAttributes = {
 					06096D8CBB174F363F0F2DB299D764C8 = {
 						LastSwiftMigration = 1000;
@@ -8494,15 +8494,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5070ABC10209F04A29131E9B8ED26900 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				433EF11D1A4B3DC4A890E02D234946D2 /* RNCryptor-dummy.m in Sources */,
-				F91212B54B0DE9C3D8675E71A751FDF8 /* RNCryptor.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5729DE7748A11565ED2D2DAABDB40D94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -9118,6 +9109,15 @@
 				B0BEDC663C50377E3310FEEC7858D869 /* EXTScope.m in Sources */,
 				7C83BA39092CC1EAA2B1AC44310017A2 /* MTLManagedObjectAdapter-dummy.m in Sources */,
 				8E3EC725187C7C73D30BA0373EC4B1AC /* MTLManagedObjectAdapter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E10B84135816BB9B5D6439469A3E8E6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F08987F29B5FBDBC7F7203ADA5735051 /* RNCryptor-dummy.m in Sources */,
+				AE480A9B2A062948CDA9465EC36C6351 /* RNCryptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9784,7 +9784,7 @@
 		};
 		195C544C1244DA300B967F931D87A92B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D6B190D41009D6167A531DC8FFF99F1 /* RNCryptor.xcconfig */;
+			baseConfigurationReference = 74E589E04717D2CC7B5B46AD43AA15CA /* RNCryptor.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -9807,7 +9807,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -10398,7 +10398,7 @@
 		};
 		595EC8CC7E9A54CBDDA58709D5ED840E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D6B190D41009D6167A531DC8FFF99F1 /* RNCryptor.xcconfig */;
+			baseConfigurationReference = 74E589E04717D2CC7B5B46AD43AA15CA /* RNCryptor.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -10421,7 +10421,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -11410,7 +11410,6 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;

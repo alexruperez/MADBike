@@ -143,7 +143,7 @@ PODS:
   - OpenInGoogleMaps (0.1.0)
   - Popover (1.0.6)
   - RESideMenu (4.0.7)
-  - RNCryptor (5.0.1)
+  - RNCryptor (5.0.3)
   - SFDraggableDialogView (1.1.5)
   - SmileWeather (0.2.4)
   - SPGooglePlacesAutocomplete (1.0.6)
@@ -163,46 +163,47 @@ PODS:
   - Zephyr (2.2.3)
 
 DEPENDENCIES:
-  - AFNetworkActivityLogger (from `https://github.com/AFNetworking/AFNetworkActivityLogger.git`, branch `3_0_0`)
-  - AFNetworking (~> 3.1)
+  - AFNetworkActivityLogger (~> 3.0)
+  - AFNetworking (~> 3.2)
   - ARFacebookShareKitActivity (~> 1.1)
   - BBBadgeBarButtonItem (~> 1.2)
   - Branch
   - CCHMapClusterController (~> 1.7)
   - Charts (= 3.0.4)
   - CMMapLauncher (from `https://github.com/alexruperez/CMMapLauncher.git`)
-  - Crashlytics (~> 3.8)
+  - Crashlytics (~> 3.10)
   - DGRunkeeperSwitch (~> 1.1)
   - DOFavoriteButton (from `https://github.com/okmr-d/DOFavoriteButton.git`)
   - DTMHeatmap (~> 1.0)
-  - Fabric (~> 1.6)
-  - FBSDKCoreKit (~> 4.23)
+  - Fabric (~> 1.7)
+  - FBSDKCoreKit (~> 4.36)
   - FXNotifications (~> 1.1)
   - GearRefreshControl (~> 1.0)
   - GoogleMaps (~> 2.3)
-  - InAppSettingsKit (~> 2.8)
-  - INTULocationManager (~> 4.2)
+  - InAppSettingsKit (~> 2.9)
+  - INTULocationManager (~> 4.3)
   - Keys (from `Pods/CocoaPodsKeys`)
   - libextobjc (~> 0.4)
   - MagicalRecord/CocoaLumberjack (~> 2.3)
-  - Mantle (~> 2.0)
+  - Mantle (~> 2.1)
   - MTLManagedObjectAdapter (~> 1.0)
   - OneSignal (< 3.0, >= 2.6.2)
   - OpenInGoogleMaps (~> 0.1)
   - Popover (= 1.0.6)
   - RESideMenu (~> 4.0)
-  - RNCryptor (= 5.0.1)
+  - RNCryptor (= 5.0.3)
   - SFDraggableDialogView (~> 1.1)
   - SmileWeather (~> 0.2)
   - SPGooglePlacesAutocomplete (~> 1.0)
-  - SVProgressHUD (~> 2.0)
+  - SVProgressHUD (~> 2.2)
   - SVPulsingAnnotationView (from `https://github.com/TransitApp/SVPulsingAnnotationView.git`)
-  - TwitterKit (~> 3.1)
+  - TwitterKit (~> 3.4)
   - Typhoon (~> 3.6)
   - Zephyr (= 2.2.3)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AFNetworkActivityLogger
     - AFNetworking
     - ARFacebookShareKitActivity
     - BBBadgeBarButtonItem
@@ -241,9 +242,6 @@ SPEC REPOS:
     - Zephyr
 
 EXTERNAL SOURCES:
-  AFNetworkActivityLogger:
-    :branch: 3_0_0
-    :git: https://github.com/AFNetworking/AFNetworkActivityLogger.git
   CMMapLauncher:
     :git: https://github.com/alexruperez/CMMapLauncher.git
   DOFavoriteButton:
@@ -254,9 +252,6 @@ EXTERNAL SOURCES:
     :git: https://github.com/TransitApp/SVPulsingAnnotationView.git
 
 CHECKOUT OPTIONS:
-  AFNetworkActivityLogger:
-    :commit: b7cce59a369788c409d218e8dab7f381a858cee4
-    :git: https://github.com/AFNetworking/AFNetworkActivityLogger.git
   CMMapLauncher:
     :commit: 44765103e4ff5b57ca3a3f18fa807e264540abc5
     :git: https://github.com/alexruperez/CMMapLauncher.git
@@ -299,7 +294,7 @@ SPEC CHECKSUMS:
   OpenInGoogleMaps: 60dd887d2e2b2149166a03bd6dab1d4478a7d3e8
   Popover: 227aa929a6cdf41c4828786be8ede109c40344c9
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
-  RNCryptor: 2e352a488779d1a9184ab629be22a7c5bc84acb5
+  RNCryptor: c93d19029dcf7ff160aca0f24d6c9e7b0d82f664
   SFDraggableDialogView: 1ace36b8cb2f52aab82f386d910a286f0c073997
   SmileWeather: c194de37bc6b2eacddda15d8b69de4a82fe42927
   SPGooglePlacesAutocomplete: 8adac6930adf6f01fe82c06efe96d8deb385fb5b
@@ -310,6 +305,6 @@ SPEC CHECKSUMS:
   Typhoon: 551cc8fae881d0f4b20ddafc6d276da3e867f61f
   Zephyr: 9620401cbbd18305b1b4e2752dd67cc283bae30a
 
-PODFILE CHECKSUM: 9f5bfee0dfb5209e6fe35bfc97943011b6bfc66e
+PODFILE CHECKSUM: 44444b630d2cbeb90302a200e43d7740a9d4f888
 
 COCOAPODS: 1.5.3
