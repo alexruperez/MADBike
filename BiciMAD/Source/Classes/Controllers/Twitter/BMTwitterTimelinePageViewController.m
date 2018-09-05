@@ -74,6 +74,8 @@
     
     self.view.backgroundColor = UIColor.bm_backgroundColor;
 
+    [self setUserActivityWithActivityType:kBMMADBikeUserActivityNews title:NSLocalizedString(@"News", @"News") description:nil];
+
     @weakify(self)
     [self.notificationCenter addObserver:self forName:kBMMADBikeDeepLinkNewsNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification *note, id observer) {
         @strongify(self)

@@ -4,7 +4,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 def base_pods
-    pod 'OneSignal', '>= 2.5.2', '< 3.0'
+    pod 'OneSignal', '>= 2.6.2', '< 3.0'
 end
 
 def app_pods
@@ -63,6 +63,10 @@ end
 target 'BiciMAD' do
     app_pods
     pod 'ARFacebookShareKitActivity', '~> 1.1'
+end
+
+target 'Notifications' do
+    base_pods
 end
 
 post_install do |installer|

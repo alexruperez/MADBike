@@ -10,6 +10,7 @@
 
 #import "MTLValueTransformer+BMValueTransformers.h"
 #import "BMNavigationManager.h"
+#import "BMDeepLinkingManager.h"
 
 static NSString * const kBMAddressDictionaryStreetKey = @"Street";
 
@@ -280,11 +281,14 @@ static NSString * const kBMMADBikeWebStationURLString = @"https://www.madbikeapp
 {
     if (!_userActivity)
     {
-        _userActivity = [[NSUserActivity alloc] initWithActivityType:NSUserActivityTypeBrowsingWeb];
+        _userActivity = [[NSUserActivity alloc] initWithActivityType:kBMMADBikeUserActivityStation];
         _userActivity.title = self.title;
         _userActivity.eligibleForSearch = YES;
         _userActivity.eligibleForPublicIndexing = YES;
         _userActivity.eligibleForHandoff = YES;
+        if (@available(iOS 12.0, *)) {
+            _userActivity.eligibleForPrediction = YES;
+        }
         if ([_userActivity respondsToSelector:@selector(mapItem)])
         {
             _userActivity.mapItem = self.mapItem;
@@ -292,6 +296,8 @@ static NSString * const kBMMADBikeWebStationURLString = @"https://www.madbikeapp
         _userActivity.contentAttributeSet = self.searchableItem.attributeSet;
         _userActivity.keywords = [NSSet setWithArray:_userActivity.contentAttributeSet.keywords];
         _userActivity.webpageURL = [NSURL URLWithString:self.URLString];
+        _userActivity.requiredUserInfoKeys = [NSSet setWithObject:kBMMADBikeDeepLinkIdentifier];
+        _userActivity.userInfo = @{kBMMADBikeDeepLinkIdentifier: self.stationId};
     }
     
     return _userActivity;

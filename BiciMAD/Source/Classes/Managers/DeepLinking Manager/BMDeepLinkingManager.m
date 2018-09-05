@@ -24,8 +24,19 @@ static NSString * const kBMMADBikeDeepLinkShare = @"share";
 static NSString * const kBMMADBikeDeepLinkSearch = @"search";
 static NSString * const kBMMADBikeDeepLinkReview = @"review";
 static NSString * const kBMMADBikeDeepLinkWeather = @"weather";
-static NSString * const kBMMADBikeDeepLinkIdentifier = @"id";
 static NSString * const kBMBranchLinkIdentifier = @"app.link";
+
+NSString * const kBMMADBikeDeepLinkIdentifier = @"id";
+NSString * const kBMMADBikeUserActivityPrefix = @"org.drunkcode.MADBike.";
+NSString * const kBMMADBikeUserActivityStation = @"org.drunkcode.MADBike.station";
+NSString * const kBMMADBikeUserActivityAirQuality = @"org.drunkcode.MADBike.quality";
+NSString * const kBMMADBikeUserActivityNews = @"org.drunkcode.MADBike.news";
+NSString * const kBMMADBikeUserActivityReport = @"org.drunkcode.MADBike.report";
+NSString * const kBMMADBikeUserActivitySettings = @"org.drunkcode.MADBike.settings";
+NSString * const kBMMADBikeUserActivityShare = @"org.drunkcode.MADBike.share";
+NSString * const kBMMADBikeUserActivitySearch = @"org.drunkcode.MADBike.search";
+NSString * const kBMMADBikeUserActivityReview = @"org.drunkcode.MADBike.review";
+NSString * const kBMMADBikeUserActivityWeather = @"org.drunkcode.MADBike.weather";
 
 NSString * const kBMMADBikeDeepLinkPrefix = @"madbike";
 NSString * const kBMMADBikeDeepLinkNotification = @"BMMADBikeDeepLinkNotification";
@@ -142,14 +153,14 @@ NSString * const kBMMADBikeDeepLinkSearchNotification = @"BMMADBikeDeepLinkSearc
         
         if ([activityIdentifier isKindOfClass:NSString.class])
         {
-            [BMAnalyticsManager logCustomEventWithName:kBMSpotlightKey customAttributes:@{kBMSpotlightActionKey: userActivity.activityType ? userActivity.activityType : NSNull.null, kBMSpotlightIdentifierKey: activityIdentifier ? activityIdentifier : NSNull.null}];
+            [BMAnalyticsManager logCustomEventWithName:kBMSpotlightKey customAttributes:@{kBMActionKey: userActivity.activityType ? userActivity.activityType : NSNull.null, kBMIdentifierKey: activityIdentifier ? activityIdentifier : NSNull.null}];
            return [self handleOpenURL:[NSURL URLWithString:activityIdentifier] application:application options:userActivity.userInfo];
         }
     }
     else if ([userActivity.activityType isEqualToString:@"com.apple.corespotlightquerycontinuation"])
     {
         NSString *searchQueryString = userActivity.userInfo[@"kCSSearchQueryString"];
-        [BMAnalyticsManager logCustomEventWithName:kBMSpotlightKey customAttributes:@{kBMSpotlightActionKey: userActivity.activityType ? userActivity.activityType : NSNull.null, kBMSpotlightIdentifierKey: searchQueryString ? searchQueryString : NSNull.null}];
+        [BMAnalyticsManager logCustomEventWithName:kBMSpotlightKey customAttributes:@{kBMActionKey: userActivity.activityType ? userActivity.activityType : NSNull.null, kBMIdentifierKey: searchQueryString ? searchQueryString : NSNull.null}];
         @weakify(self)
         dispatch_async(dispatch_get_main_queue(), ^{
             @strongify(self)
@@ -159,8 +170,57 @@ NSString * const kBMMADBikeDeepLinkSearchNotification = @"BMMADBikeDeepLinkSearc
         });
         return YES;
     }
+    else if ([userActivity.activityType hasPrefix:kBMMADBikeUserActivityPrefix])
+    {
+        NSString *identifier = userActivity.userInfo[kBMMADBikeDeepLinkIdentifier];
+        NSDictionary *options = userActivity.userInfo;
+        [BMAnalyticsManager logCustomEventWithName:kBMSiriShortcutKey customAttributes:@{kBMActionKey: userActivity.activityType ? userActivity.activityType : NSNull.null, kBMIdentifierKey: identifier ? identifier : NSNull.null}];
+        @weakify(self)
+        dispatch_async(dispatch_get_main_queue(), ^{
+            @strongify(self)
+            [self.notificationCenter postNotificationName:kBMMADBikeDeepLinkNotification object:identifier userInfo:options];
+            if ([userActivity.activityType isEqualToString:kBMMADBikeUserActivityStation])
+            {
+                [self.notificationCenter postNotificationName:kBMMADBikeDeepLinkStationNotification object:identifier userInfo:options];
+            }
+            else if ([userActivity.activityType isEqualToString:kBMMADBikeUserActivityWeather])
+            {
+                [self.notificationCenter postNotificationName:kBMMADBikeDeepLinkWeatherNotification object:identifier userInfo:options];
+            }
+            else if ([userActivity.activityType isEqualToString:kBMMADBikeUserActivityAirQuality])
+            {
+                [self.notificationCenter postNotificationName:kBMMADBikeDeepLinkAirQualityNotification object:identifier userInfo:options];
+            }
+            else if ([userActivity.activityType isEqualToString:kBMMADBikeUserActivityNews])
+            {
+                [self.notificationCenter postNotificationName:kBMMADBikeDeepLinkNewsNotification object:identifier userInfo:options];
+            }
+            else if ([userActivity.activityType isEqualToString:kBMMADBikeUserActivityReport])
+            {
+                [self.notificationCenter postNotificationName:kBMMADBikeDeepLinkReportNotification object:identifier userInfo:options];
+            }
+            else if ([userActivity.activityType isEqualToString:kBMMADBikeUserActivitySettings])
+            {
+                [self.notificationCenter postNotificationName:kBMMADBikeDeepLinkSettingsNotification object:identifier userInfo:options];
+            }
+            else if ([userActivity.activityType isEqualToString:kBMMADBikeUserActivityShare])
+            {
+                [self.notificationCenter postNotificationName:kBMMADBikeDeepLinkShareNotification object:identifier userInfo:options];
+            }
+            else if ([userActivity.activityType isEqualToString:kBMMADBikeUserActivitySearch])
+            {
+                [self.notificationCenter postNotificationName:kBMMADBikeDeepLinkStationNotification object:nil userInfo:options];
+                [self.notificationCenter postNotificationName:kBMMADBikeDeepLinkSearchNotification object:identifier userInfo:options];
+            }
+            else if ([userActivity.activityType isEqualToString:kBMMADBikeUserActivityReview])
+            {
+                [SKStoreReviewController requestReview];
+            }
+        });
+        return YES;
+    }
     
-    [BMAnalyticsManager logCustomEventWithName:kBMSpotlightKey customAttributes:@{kBMSpotlightActionKey: userActivity.activityType ? userActivity.activityType : NSNull.null, kBMSpotlightIdentifierKey: userActivity.webpageURL ? userActivity.webpageURL : NSNull.null}];
+    [BMAnalyticsManager logCustomEventWithName:kBMSpotlightKey customAttributes:@{kBMActionKey: userActivity.activityType ? userActivity.activityType : NSNull.null, kBMIdentifierKey: userActivity.webpageURL ? userActivity.webpageURL : NSNull.null}];
     return [userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb] && [self handleOpenURL:userActivity.webpageURL application:application options:userActivity.userInfo];
 
 }

@@ -12,6 +12,7 @@
 #import "BMManagersAssembly.h"
 #import "BMAnalyticsManager.h"
 #import "BMWeatherDownloader.h"
+#import "MADBike-Swift.h"
 
 static NSString * const kBMSmileWeatherDemoViewBundleIdentifier = @"org.cocoapods.SmileWeather";
 static NSString * const kBMSmileWeatherDemoViewNibName = @"SmileWeatherDemoView";
@@ -104,6 +105,8 @@ static NSString * const kBMSmileWeatherPropertyCellReuseIdentifier = @"propertyC
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_close"] style:UIBarButtonItemStylePlain target:self action:@selector(dismissViewController:)];
     self.navigationItem.leftBarButtonItem.accessibilityLabel = NSLocalizedString(@"Close", @"Close");
+
+    [self setUserActivityWithActivityType:kBMMADBikeUserActivityWeather title:NSLocalizedString(@"Weather", @"Weather") description: nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated

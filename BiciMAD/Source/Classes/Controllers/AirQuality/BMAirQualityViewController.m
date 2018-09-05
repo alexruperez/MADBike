@@ -24,6 +24,7 @@
 #import "UICollectionViewCell+BMUtils.h"
 #import "MKAnnotationView+BMUtils.h"
 #import "BMAirQuality.h"
+#import "MADBike-Swift.h"
 
 static NSString * const kBMDefaultFormula = @"NO₂";
 
@@ -54,6 +55,8 @@ static NSString * const kBMDefaultFormula = @"NO₂";
     self.title = NSLocalizedString(@"Air Quality", @"Air Quality");
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_menu"] style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
     self.navigationItem.leftBarButtonItem.accessibilityLabel = NSLocalizedString(@"Menu", @"Menu");
+
+    [self setUserActivityWithActivityType:kBMMADBikeUserActivityAirQuality title:NSLocalizedString(@"Air Quality", @"Air Quality") description:nil];
 
     [BMFormulaCollectionViewCell bm_registerNibOnCollectionView:self.collectionView];
     self.collectionView.backgroundView = self.activityIndicatorView;

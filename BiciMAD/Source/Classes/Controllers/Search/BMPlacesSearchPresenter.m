@@ -92,9 +92,9 @@ static BMPlacesTaskPlaceType const kBMPlacesTaskPlaceType = BMPlacesTaskPlaceTyp
                     [self placesTableViewController:self.searchResultsTableViewController didSelectPlacemark:placemark addressString:destinationPlacemark.name error:nil];
                 }];
             }
-            else if (destinationPlacemark.addressDictionary && !destinationPlacemark.location)
+            else if (destinationPlacemark.postalAddress && !destinationPlacemark.location)
             {
-                [self.managersAssembly.geocoderManager geocodeAddressDictionary:destinationPlacemark.addressDictionary completionHandler:^(NSArray *placemarks, NSError *error) {
+                [self.managersAssembly.geocoderManager geocodePostalAddress:destinationPlacemark.postalAddress completionHandler:^(NSArray *placemarks, NSError *error) {
                     CLPlacemark *placemark = placemarks.firstObject;
                     if (!placemark)
                     {

@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *freeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bikesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *unavailableLabel;
+@property (weak, nonatomic) IBOutlet UILabel *reservedLabel;
 
 @end
 
@@ -47,6 +48,8 @@
     self.bikesLabel.text = [NSString stringWithFormat:@"%zd", station.bikesHooked];
     
     self.unavailableLabel.text = [NSString stringWithFormat:@"%zd", station.unavailableStands];
+
+    self.reservedLabel.text = [NSString stringWithFormat:@"%zd", station.bikesReserved];
     
     self.freeTitleLabel.textColor = self.freeLabel.textColor = UIColor.bm_red;
     

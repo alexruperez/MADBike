@@ -59,7 +59,7 @@ PODS:
   - Branch (0.25.3):
     - Branch/Core (= 0.25.3)
   - Branch/Core (0.25.3)
-  - CCHMapClusterController (1.7.1)
+  - CCHMapClusterController (1.7.2)
   - Charts (3.0.4):
     - Charts/Core (= 3.0.4)
   - Charts/Core (3.0.4)
@@ -187,7 +187,7 @@ DEPENDENCIES:
   - MagicalRecord/CocoaLumberjack (~> 2.3)
   - Mantle (~> 2.0)
   - MTLManagedObjectAdapter (~> 1.0)
-  - OneSignal (< 3.0, >= 2.5.2)
+  - OneSignal (< 3.0, >= 2.6.2)
   - OpenInGoogleMaps (~> 0.1)
   - Popover (= 1.0.6)
   - RESideMenu (~> 4.0)
@@ -274,7 +274,7 @@ SPEC CHECKSUMS:
   BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Branch: 9917f91a5381bc88ed8e4f080a18213267cf44e6
-  CCHMapClusterController: 3de2f03cb659a98ef8518d22de3fcb129d888049
+  CCHMapClusterController: 682e1eb1373a7decda1b75fd7b24b3047fed9daa
   Charts: 0705898046257443f0afbbc3179f4b67507b6e48
   CMMapLauncher: 2785415522d20f18e0629b835ffc38dbe56de16f
   CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
@@ -310,6 +310,6 @@ SPEC CHECKSUMS:
   Typhoon: 551cc8fae881d0f4b20ddafc6d276da3e867f61f
   Zephyr: 9620401cbbd18305b1b4e2752dd67cc283bae30a
 
-PODFILE CHECKSUM: b32dba8fc0e7c495fdc62d86219f9e63e0ffbce2
+PODFILE CHECKSUM: 9f5bfee0dfb5209e6fe35bfc97943011b6bfc66e
 
 COCOAPODS: 1.5.3

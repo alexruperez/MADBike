@@ -35,8 +35,9 @@ extern NSString * const kBMDeepLinkKey;
 extern NSString * const kBMDeepLinkURLStringKey;
 extern NSString * const kBMMADBikeLinkKey;
 extern NSString * const kBMSpotlightKey;
-extern NSString * const kBMSpotlightActionKey;
-extern NSString * const kBMSpotlightIdentifierKey;
+extern NSString * const kBMSiriShortcutKey;
+extern NSString * const kBMActionKey;
+extern NSString * const kBMIdentifierKey;
 
 typedef void (^BMRewardsCompletionHandler)(BOOL changed, NSInteger credits, NSError *error);
 

@@ -8,6 +8,17 @@
 
 @import UIKit;
 
+extern NSString * const kBMMADBikeDeepLinkIdentifier;
+extern NSString * const kBMMADBikeUserActivityStation;
+extern NSString * const kBMMADBikeUserActivityAirQuality;
+extern NSString * const kBMMADBikeUserActivityNews;
+extern NSString * const kBMMADBikeUserActivityReport;
+extern NSString * const kBMMADBikeUserActivitySettings;
+extern NSString * const kBMMADBikeUserActivityShare;
+extern NSString * const kBMMADBikeUserActivitySearch;
+extern NSString * const kBMMADBikeUserActivityReview;
+extern NSString * const kBMMADBikeUserActivityWeather;
+
 extern NSString * const kBMMADBikeDeepLinkPrefix;
 extern NSString * const kBMMADBikeDeepLinkNotification;
 extern NSString * const kBMMADBikeDeepLinkStationNotification;

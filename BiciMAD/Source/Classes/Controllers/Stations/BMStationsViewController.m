@@ -141,6 +141,8 @@
     
     self.title = NSLocalizedString(@"MADBike", @"MADBike");
     self.navigationItem.leftBarButtonItem.accessibilityLabel = NSLocalizedString(@"Menu", @"Menu");
+
+    [self setUserActivityWithActivityType:kBMMADBikeUserActivityStation title:NSLocalizedString(@"Stations", @"Stations") description:nil];
     
     self.view.backgroundColor = UIColor.bm_backgroundColor;
     

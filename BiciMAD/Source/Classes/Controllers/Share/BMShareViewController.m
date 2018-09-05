@@ -71,6 +71,8 @@
     
     self.descriptionLabel.textColor = UIColor.whiteColor;
     self.descriptionLabel.text = NSLocalizedString(@"Share MADBike with friends and earn MADPoints that you can redeem for sweet prizes!", @"Share MADBike with friends and earn MADPoints that you can redeem for sweet prizes!");
+
+    [self setUserActivityWithActivityType:kBMMADBikeUserActivityShare title:NSLocalizedString(@"Share", @"Share") description:NSLocalizedString(@"Share MADBike with friends and earn MADPoints that you can redeem for sweet prizes!", @"Share MADBike with friends and earn MADPoints that you can redeem for sweet prizes!")];
     
     @weakify(self)
     [self.managersAssembly.notificationCenter addObserver:self forName:AFNetworkingReachabilityDidChangeNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification *note, id observer) {

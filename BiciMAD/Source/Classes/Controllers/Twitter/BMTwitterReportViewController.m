@@ -49,6 +49,13 @@ static NSString * const kBMTwitterReportJPEGContentType = @"image/jpeg";
     return TWTRAPIClient.clientWithCurrentUser;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    [self setUserActivityWithActivityType:kBMMADBikeUserActivityReport title:NSLocalizedString(@"Report", @"Report") description:NSLocalizedString(@"#MADBikeLost", @"#MADBikeLost")];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];

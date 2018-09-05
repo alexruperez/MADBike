@@ -55,8 +55,9 @@ NSString * const kBMDeepLinkKey = @"DeepLink";
 NSString * const kBMDeepLinkURLStringKey = @"URLString";
 NSString * const kBMMADBikeLinkKey = @"madbike_link";
 NSString * const kBMSpotlightKey = @"Spotlight";
-NSString * const kBMSpotlightActionKey = @"Action";
-NSString * const kBMSpotlightIdentifierKey = @"Identifier";
+NSString * const kBMSiriShortcutKey = @"SiriShortcut";
+NSString * const kBMActionKey = @"Action";
+NSString * const kBMIdentifierKey = @"Identifier";
 
 @implementation BMAnalyticsManager
 
@@ -101,7 +102,7 @@ static NSDictionary *_oneSignalTags = nil;
     [OneSignal setLogLevel:ONE_S_LL_FATAL visualLevel:ONE_S_LL_NONE];
 #endif
 
-    [[Twitter sharedInstance] startWithConsumerKey:self.keys.twitterConsumerKey consumerSecret:self.keys.twitterConsumerSecret];
+    [self.twitter startWithConsumerKey:self.keys.twitterConsumerKey consumerSecret:self.keys.twitterConsumerSecret];
     
     [self.facebookApplicationDelegate application:application didFinishLaunchingWithOptions:launchOptions];
     if (application.applicationState != UIApplicationStateBackground)
@@ -376,7 +377,7 @@ static NSDictionary *_oneSignalTags = nil;
         NSString *loginMail = customAttributes[kBMLoginMailKey];
         NSString *loginID = customAttributes[kBMLoginIDKey];
         [FBSDKAppEvents setUserID:loginID];
-        [OneSignal setEmail:loginMail];
+        [OneSignal setEmail:loginMail withEmailAuthHashToken:loginID];
         [self.branch setIdentity:loginID];
     }
     [Answers logLoginWithMethod:loginMethod success:loginSucceeded customAttributes:customAttributes];

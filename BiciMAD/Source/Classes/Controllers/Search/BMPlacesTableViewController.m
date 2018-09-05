@@ -18,6 +18,7 @@
 #import "BMStation.h"
 #import "BMClusterAnnotationView.h"
 #import "MKAnnotationView+BMUtils.h"
+#import "MADBike-Swift.h"
 
 static NSString * const kBMPlaceCellIdentifier = @"BMPlaceCell";
 static NSUInteger const kBMStationsCacheSize = 2;
@@ -79,6 +80,8 @@ static NSUInteger const kBMPlaceHistorySize = 8;
 {
     [super viewDidLoad];
 
+    [self setUserActivityWithActivityType:kBMMADBikeUserActivitySearch title:NSLocalizedString(@"Search", @"Search") description:NSLocalizedString(@"Find the closest stations", @"Find the closest stations")];
+
     [self configureTableView];
     [self configureLoader];
 }
@@ -105,7 +108,7 @@ static NSUInteger const kBMPlaceHistorySize = 8;
 
 - (void)configureTableView
 {
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     self.tableView.rowHeight = 66.f;
     self.tableView.backgroundColor = UIColor.clearColor;
     self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension;

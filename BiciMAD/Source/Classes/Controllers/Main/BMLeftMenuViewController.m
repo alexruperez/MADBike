@@ -207,7 +207,7 @@ static NSString * const kBMLeftMenuCellIdentifier = @"BMLeftMenuCell";
                 if (locationSuccess)
                 {
                     @strongify(self)
-                    [self.prePermissionManager twitterWithViewController:self.sideMenuViewController completion:^(BOOL twitterSuccess) {
+                    [self.prePermissionManager twitter:^(BOOL twitterSuccess) {
                         if (twitterSuccess)
                         {
                             @strongify(self)

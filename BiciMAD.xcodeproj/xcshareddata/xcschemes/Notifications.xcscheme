@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D51DAB371F0C46FD009DD9EF"
+               BlueprintIdentifier = "D5F28E0B213FF3F800E99998"
                BuildableName = "Notifications.appex"
                BlueprintName = "Notifications"
                ReferencedContainer = "container:BiciMAD.xcodeproj">
@@ -41,14 +41,13 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D51DAB371F0C46FD009DD9EF"
+            BlueprintIdentifier = "D5F28E0B213FF3F800E99998"
             BuildableName = "Notifications.appex"
             BlueprintName = "Notifications"
             ReferencedContainer = "container:BiciMAD.xcodeproj">

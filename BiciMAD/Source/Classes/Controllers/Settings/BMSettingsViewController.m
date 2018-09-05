@@ -13,6 +13,7 @@
 
 #import "BMAnalyticsManager.h"
 #import "BMPrePermissionManager.h"
+#import "MADBike-Swift.h"
 
 static NSString * const kBMCacheKey = @"cache";
 static NSString * const kBMAppCacheKey = @"org.drunkcode.MADBike";
@@ -33,6 +34,8 @@ static NSString * const kBMAppCacheKey = @"org.drunkcode.MADBike";
     self.showCreditsFooter = NO;
     self.showDoneButton = NO;
     self.tableView.tintColor = UIColor.bm_tintColor;
+
+    [self setUserActivityWithActivityType:kBMMADBikeUserActivitySettings title:NSLocalizedString(@"Settings", @"Settings") description:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated

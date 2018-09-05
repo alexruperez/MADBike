@@ -596,6 +596,9 @@ Share MADBike with friends and earn even more MADPoints that you can redeem for 
 /*MADBike Search*/
 "MADBike Search" = "Búsqueda MADBike";
 
+/*Search*/
+"Search" = "Búsqueda";
+
 /*e.g. Puerta del Sol*/
 "e.g. Puerta del Sol" = "p.ej. Puerta del Sol";
 
