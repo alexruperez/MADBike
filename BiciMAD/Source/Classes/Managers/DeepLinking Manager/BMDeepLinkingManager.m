@@ -118,6 +118,7 @@ NSString * const kBMMADBikeDeepLinkSearchNotification = @"BMMADBikeDeepLinkSearc
                 }
                 else if ([url.absoluteString hasPrefix:[NSString stringWithFormat:@"%@://%@", kBMMADBikeDeepLinkPrefix, kBMMADBikeDeepLinkReview]])
                 {
+                    [BMAnalyticsManager logRating:@YES contentName:nil contentType:nil contentId:nil customAttributes:nil];
                     [SKStoreReviewController requestReview];
                 }
             });
@@ -214,6 +215,7 @@ NSString * const kBMMADBikeDeepLinkSearchNotification = @"BMMADBikeDeepLinkSearc
             }
             else if ([userActivity.activityType isEqualToString:kBMMADBikeUserActivityReview])
             {
+                [BMAnalyticsManager logRating:@YES contentName:nil contentType:nil contentId:nil customAttributes:nil];
                 [SKStoreReviewController requestReview];
             }
         });

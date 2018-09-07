@@ -146,8 +146,19 @@ static NSDictionary *_oneSignalTags = nil;
 
 + (void)setOneSignalTags:(NSDictionary *)oneSignalTags shouldDelete:(BOOL)shouldDelete
 {
+    __block NSMutableDictionary *tags = NSMutableDictionary.new;
+
+    for (id<NSCopying> key in self.oneSignalTags.allKeys) {
+        NSString *newValue = oneSignalTags[key];
+        if (![self.oneSignalTags[key] isEqualToString:newValue]) {
+            tags[key] = newValue;
+        }
+    }
+
     _oneSignalTags = oneSignalTags;
-    [self sendOneSignalTags:oneSignalTags shouldDelete:shouldDelete];
+    if (tags.count > 0) {
+        [self sendOneSignalTags:tags shouldDelete:shouldDelete];
+    }
 }
 
 + (void)configureOneSignalWithApplication:(UIApplication *)application options:(NSDictionary *)launchOptions
@@ -229,7 +240,8 @@ static NSDictionary *_oneSignalTags = nil;
 
 + (void)sendOneSignalTags:(NSDictionary *)tags shouldDelete:(BOOL)shouldDelete
 {
-    NSMutableDictionary *sendOneSignalTags = tags.mutableCopy;
+    NSMutableDictionary *sendOneSignalTags = [[NSMutableDictionary alloc] initWithCapacity:100];
+    [sendOneSignalTags addEntriesFromDictionary:tags];
 
     if (shouldDelete) {
         NSMutableArray *deleteOneSignalTags = NSMutableArray.new;
@@ -241,11 +253,15 @@ static NSDictionary *_oneSignalTags = nil;
                 [deleteOneSignalTags addObject:key];
             }
         }
-        
-        [OneSignal deleteTags:deleteOneSignalTags.copy];
+
+        if (deleteOneSignalTags.count > 0) {
+            [OneSignal deleteTags:[deleteOneSignalTags subarrayWithRange:NSMakeRange(0, MIN(100, deleteOneSignalTags.count))]];
+        }
     }
 
-    [OneSignal sendTags:sendOneSignalTags.copy];
+    if (sendOneSignalTags.count > 0) {
+        [OneSignal sendTags:sendOneSignalTags.copy];
+    }
 }
 
 + (BOOL)handleOpenURL:(NSURL *)url application:(UIApplication *)application options:(NSDictionary *)options
