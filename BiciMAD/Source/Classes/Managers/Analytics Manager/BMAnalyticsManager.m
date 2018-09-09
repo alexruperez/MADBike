@@ -203,6 +203,13 @@ static NSDictionary *_oneSignalTags = nil;
 {
     if ([tag isKindOfClass:NSString.class] && [value isKindOfClass:NSString.class])
     {
+        if ([value isKindOfClass:NSString.class] && [value isEqualToString:FBSDKAppEventParameterValueNo]) {
+            [OneSignal deleteTag:tag];
+        }
+        else
+        {
+            [OneSignal sendTag:tag value:value];
+        }
         return [self sendTags:@{tag: value} force:YES shouldDelete:shouldDelete];
     }
     return NO;
