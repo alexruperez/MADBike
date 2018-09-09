@@ -266,7 +266,7 @@ static NSDictionary *_oneSignalTags = nil;
 
 + (BOOL)handleOpenURL:(NSURL *)url application:(UIApplication *)application options:(NSDictionary *)options
 {
-    return [self.branch application:application openURL:url options:options] || [self.facebookApplicationDelegate application:application openURL:url options:options] || [self.twitter application:application openURL:url options:options] || [BMDeepLinkingManager handleOpenURL:url application:application options:options];
+    return [self.facebookApplicationDelegate application:application openURL:url options:options] || [self.twitter application:application openURL:url options:options] || [BMDeepLinkingManager handleOpenURL:url application:application options:options] || [self.branch application:application openURL:url options:options];
 }
 
 + (BOOL)handleUserActivity:(NSUserActivity *)userActivity application:(UIApplication *)application restorationHandler:(void (^)(NSArray *))restorationHandler
