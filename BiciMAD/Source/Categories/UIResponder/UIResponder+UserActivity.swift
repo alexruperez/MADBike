@@ -24,7 +24,7 @@ import MapKit
                                                    referrerURL: URL? = nil,
                                                    expiration: Date? = nil,
                                                    displayName: String? = nil,
-                                                   keywords: Set<String>? = nil,
+                                                   keywords: Set<String> = Set<String>(),
                                                    continuationStreams: Bool = false,
                                                    delegate: NSUserActivityDelegate? = nil,
                                                    becomeCurrent: Bool = true,
@@ -42,7 +42,7 @@ import MapKit
         attributeSet.contentDescription = contentDescription
         attributeSet.thumbnailData = thumbnailData
         attributeSet.displayName = displayName ?? title
-        attributeSet.keywords = Array(keywords ?? [])
+        attributeSet.keywords = Array(keywords)
         userActivity.contentAttributeSet = attributeSet
         userActivity.contentAttributeSet?.supportsNavigation = NSNumber(value: supportsNavigation)
         userActivity.contentAttributeSet?.supportsPhoneCall = NSNumber(value: supportsPhoneCall)
@@ -57,7 +57,7 @@ import MapKit
         if let expiration = expiration {
             userActivity.expirationDate = expiration
         }
-        userActivity.keywords = keywords ?? []
+        userActivity.keywords = keywords
         userActivity.supportsContinuationStreams = continuationStreams
         userActivity.delegate = delegate
         userActivity.isEligibleForSearch = search
@@ -66,7 +66,9 @@ import MapKit
         if #available(iOS 12.0, *) {
             userActivity.isEligibleForPrediction = prediction
             userActivity.persistentIdentifier = persistentIdentifier ?? activityType
-            //userActivity.suggestedInvocationPhrase = suggestedInvocationPhrase
+            #if swift(>=4.2)
+            userActivity.suggestedInvocationPhrase = suggestedInvocationPhrase ?? title
+            #endif
         }
         if let mapItem = mapItem {
             userActivity.mapItem = mapItem
