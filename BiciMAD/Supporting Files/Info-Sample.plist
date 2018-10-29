@@ -50,7 +50,7 @@
 			<string>facebook</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>YOUR_KEY</string>
+				<string>fbYOUR_APP_KEY</string>
 			</array>
 		</dict>
 		<dict>
