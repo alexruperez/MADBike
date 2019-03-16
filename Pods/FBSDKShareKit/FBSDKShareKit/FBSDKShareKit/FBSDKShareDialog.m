@@ -24,7 +24,7 @@
 #import "FBSDKShareCameraEffectContent.h"
 #import "FBSDKShareConstants.h"
 #import "FBSDKShareDefines.h"
-#import "FBSDKShareError.h"
+#import "FBSDKShareExtension.h"
 #import "FBSDKShareLinkContent.h"
 #import "FBSDKShareMediaContent.h"
 #import "FBSDKShareOpenGraphAction.h"
@@ -47,7 +47,7 @@
 #define FBSDK_SHARE_METHOD_QUOTE_MIN_VERSION @"20160328"
 #define FBSDK_SHARE_METHOD_MMP_MIN_VERSION @"20160328"
 
-FBSDK_STATIC_INLINE void FBSDKShareDialogValidateAPISchemeRegisteredForCanOpenUrl()
+static inline void FBSDKShareDialogValidateAPISchemeRegisteredForCanOpenUrl()
 {
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
@@ -55,7 +55,7 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateAPISchemeRegisteredForCanOpenUr
   });
 }
 
-FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredForCanOpenUrl()
+static inline void FBSDKShareDialogValidateShareExtensionSchemeRegisteredForCanOpenUrl()
 {
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
@@ -70,6 +70,7 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
 @implementation FBSDKShareDialog
 {
   FBSDKWebDialog *_webDialog;
+  NSMutableArray<NSURL *> *_temporaryFiles;
 }
 
 #pragma mark - Class Methods
@@ -99,6 +100,13 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
 - (void)dealloc
 {
   _webDialog.delegate = nil;
+  if (_temporaryFiles) {
+    NSFileManager *const fileManager = [NSFileManager defaultManager];
+    for (NSURL *temporaryFile in _temporaryFiles) {
+      [fileManager removeItemAtURL:temporaryFile error:nil];
+    }
+    _temporaryFiles = nil;
+  }
 }
 
 #pragma mark - Properties
@@ -111,7 +119,12 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
 
 - (BOOL)canShow
 {
-  if (!self.shareContent) {
+  if (self.shareContent) {
+    // Validate this content
+    NSError *error = nil;
+    return [self _validateWithError:&error];
+  } else {
+    // Launch an empty dialog for sharing a status message.
     switch (self.mode) {
       case FBSDKShareDialogModeAutomatic:
       case FBSDKShareDialogModeBrowser:
@@ -127,16 +140,14 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
         return [self _canShowShareSheet];
       }
     }
-  } else {
-    NSError *error = nil;
-    return [self _validateWithError:&error];
   }
 }
 
 - (BOOL)show
 {
   BOOL didShow = NO;
-  NSError *error = nil;
+  NSError *error;
+  NSError *validationError;
 
   if ([self _validateWithError:&error]) {
     switch (self.mode) {
@@ -157,11 +168,11 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
         break;
       }
       case FBSDKShareDialogModeNative:{
-        didShow = [self _showNativeWithCanShowError:&error validationError:&error];
+        didShow = [self _showNativeWithCanShowError:&error validationError:&validationError];
         break;
       }
       case FBSDKShareDialogModeShareSheet:{
-        didShow = [self _showShareSheetWithCanShowError:&error validationError:&error];
+        didShow = [self _showShareSheetWithCanShowError:&error validationError:&validationError];
         break;
       }
       case FBSDKShareDialogModeWeb:{
@@ -171,7 +182,7 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
     }
   }
   if (!didShow) {
-    [self _invokeDelegateDidFailWithError:error];
+    [self _invokeDelegateDidFailWithError:error ?: validationError];
   } else {
     [self _logDialogShow];
     [FBSDKInternalUtility registerTransientObject:self];
@@ -179,7 +190,7 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
   return didShow;
 }
 
-- (BOOL)validateWithError:(NSError *__autoreleasing *)errorRef
+- (BOOL)validateWithError:(NSError **)errorRef
 {
   return [self _validateWithError:errorRef] && [self _validateFullyCompatibleWithError:errorRef];
 }
@@ -196,12 +207,13 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
   if (errorCode == 4201) {
     [self _invokeDelegateDidCancel];
   } else if (errorCode != 0) {
-    NSError *error = [FBSDKShareError errorWithCode:FBSDKShareUnknownErrorCode
-                                           userInfo:@{
-                                                      FBSDKGraphRequestErrorGraphErrorCode : @(errorCode)
-                                                      }
-                                            message:results[@"error_message"]
-                                    underlyingError:nil];
+    NSError *error = [NSError fbErrorWithDomain:FBSDKShareErrorDomain
+                                           code:FBSDKShareErrorUnknown
+                                       userInfo:@{
+                                                  FBSDKGraphRequestErrorGraphErrorCodeKey : @(errorCode)
+                                                  }
+                                        message:results[@"error_message"]
+                                underlyingError:nil];
     [self _handleWebResponseParameters:nil error:error cancelled: NO];
   } else {
     // not all web dialogs report cancellation, so assume that the share has completed with no additional information
@@ -252,7 +264,7 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
   return hasOGURL;
 }
 
--(BOOL)_showAutomatic:(NSError *__autoreleasing *)errorRef
+-(BOOL)_showAutomatic:(NSError **)errorRef
 {
   BOOL isDefaultToShareSheet = [self _isDefaultToShareSheet];
   BOOL useNativeDialog = [self _useNativeDialog];
@@ -416,19 +428,43 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
   return [ret copy];
 }
 
+- (NSURL *)_contentVideoURL:(FBSDKShareVideo *)video
+{
+  if (video.videoAsset != nil) {
+    return video.videoAsset.videoURL;
+  } else if (video.data != nil) {
+    NSURL *const temporaryDirectory = [NSURL fileURLWithPath:NSTemporaryDirectory() isDirectory:YES];
+    if (temporaryDirectory) {
+      NSURL *const temporaryFile = [temporaryDirectory URLByAppendingPathComponent:[[NSUUID UUID] UUIDString]];
+      if (temporaryFile) {
+        if (!_temporaryFiles) {
+          _temporaryFiles = [NSMutableArray new];
+        }
+        [_temporaryFiles addObject:temporaryFile];
+        if ([video.data writeToURL:temporaryFile atomically:YES]) {
+          return temporaryFile;
+        }
+      }
+    }
+  } else if (video.videoURL != nil) {
+    return video.videoURL;
+  }
+  return nil;
+}
+
 - (NSArray *)_contentVideoURLs
 {
-  NSMutableArray *ret = [NSMutableArray new];
-  id<FBSDKSharingContent> shareContent = self.shareContent;
+  NSMutableArray<NSURL *> *const ret = [NSMutableArray new];
+  const id<FBSDKSharingContent> shareContent = self.shareContent;
   if ([shareContent isKindOfClass:[FBSDKShareVideoContent class]]) {
-    NSURL *videoURL = ((FBSDKShareVideoContent *)shareContent).video.videoURL;
+    NSURL *const videoURL = [self _contentVideoURL:[(FBSDKShareVideoContent *)shareContent video]];
     if (videoURL != nil) {
       [ret addObject:videoURL];
     }
   } else if ([shareContent isKindOfClass:[FBSDKShareMediaContent class]]) {
-    for (id media in ((FBSDKShareMediaContent *)shareContent).media) {
+    for (const id media in ((FBSDKShareMediaContent *)shareContent).media) {
       if ([media isKindOfClass:[FBSDKShareVideo class]]) {
-        NSURL *videoURL = ((FBSDKShareVideo *)media).videoURL;
+        NSURL *const videoURL = [self _contentVideoURL:(FBSDKShareVideo *)media];
         if (videoURL != nil) {
           [ret addObject:videoURL];
         }
@@ -491,9 +527,6 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
     return NO;
   }
   id<FBSDKSharingContent> shareContent = self.shareContent;
-  NSString *methodName;
-  NSDictionary *parameters;
-
   if ([shareContent isKindOfClass:[FBSDKSharePhotoContent class]] && [self _photoContentHasAtLeastOneImage:(FBSDKSharePhotoContent *)shareContent]) {
     void(^completion)(BOOL, NSString *, NSDictionary *) = ^(BOOL successfullyBuilt, NSString *cMethodName, NSDictionary *cParameters) {
       if (successfullyBuilt) {
@@ -518,6 +551,8 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
     [FBSDKShareUtility buildAsyncWebPhotoContent:shareContent
                                completionHandler:completion];
   } else {
+    NSString *methodName;
+    NSDictionary<NSString *, id> *parameters;
     if (![FBSDKShareUtility buildWebShareContent:shareContent
                                       methodName:&methodName
                                       parameters:&parameters
@@ -585,8 +620,9 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
 {
   if (![self _canShowNative]) {
     if (canShowErrorRef != NULL) {
-      *canShowErrorRef = [FBSDKShareError errorWithCode:FBSDKShareDialogNotAvailableErrorCode
-                                                message:@"Native share dialog is not available."];
+      *canShowErrorRef = [NSError fbErrorWithDomain:FBSDKShareErrorDomain
+                                               code:FBSDKShareErrorDialogNotAvailable
+                                            message:@"Native share dialog is not available."];
     }
     return NO;
   }
@@ -614,7 +650,7 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
                                                          parameters:parameters
                                                            userInfo:nil];
   FBSDKBridgeAPICallbackBlock completionBlock = ^(FBSDKBridgeAPIResponse *response) {
-    if (response.error.code == FBSDKAppVersionUnsupportedErrorCode) {
+    if (response.error.code == FBSDKErrorAppVersionUnsupported) {
       NSError *fallbackError;
       if ([self _showShareSheetWithCanShowError:NULL validationError:&fallbackError] ||
           [self _showFeedBrowser:&fallbackError]) {
@@ -648,8 +684,9 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
 {
   if (![self _canShowShareSheet]) {
     if (canShowErrorRef != NULL) {
-      *canShowErrorRef = [FBSDKShareError errorWithCode:FBSDKShareDialogNotAvailableErrorCode
-                                                message:@"Share sheet is not available."];
+      *canShowErrorRef = [NSError fbErrorWithDomain:FBSDKShareErrorDomain
+                                               code:FBSDKShareErrorDialogNotAvailable
+                                            message:@"Share sheet is not available."];
     }
     return NO;
   }
@@ -659,7 +696,9 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
   UIViewController *fromViewController = self.fromViewController;
   if (!fromViewController) {
     if (validationErrorRef != NULL) {
-      *validationErrorRef = [FBSDKShareError requiredArgumentErrorWithName:@"fromViewController" message:nil];
+      *validationErrorRef = [NSError fbRequiredArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                                  name:@"fromViewController"
+                                                               message:nil];
     }
     return NO;
   }
@@ -674,8 +713,9 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
 
   if (!composeViewController) {
     if (canShowErrorRef != NULL) {
-      *canShowErrorRef = [FBSDKShareError errorWithCode:FBSDKShareDialogNotAvailableErrorCode
-                                                message:@"Error creating SLComposeViewController."];
+      *canShowErrorRef = [NSError fbErrorWithDomain:FBSDKShareErrorDomain
+                                               code:FBSDKShareErrorDialogNotAvailable
+                                            message:@"Error creating SLComposeViewController."];
     }
     return NO;
   }
@@ -751,7 +791,7 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
   return [configuration useSafariViewControllerForDialogName:FBSDKDialogConfigurationNameShare];
 }
 
-- (BOOL)_validateWithError:(NSError *__autoreleasing *)errorRef
+- (BOOL)_validateWithError:(NSError **)errorRef
 {
   if (errorRef != NULL) {
     *errorRef = nil;
@@ -768,8 +808,9 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
       if (errorRef != NULL) {
         NSString *message = [NSString stringWithFormat:@"Share dialog does not support %@.",
                              NSStringFromClass(self.shareContent.class)];
-        *errorRef = [FBSDKShareError requiredArgumentErrorWithName:@"shareContent"
-                                                           message:message];
+        *errorRef = [NSError fbRequiredArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                          name:@"shareContent"
+                                                       message:message];
       }
       return NO;
     }
@@ -807,9 +848,10 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
     }
   }
   if (errorRef != NULL) {
-    *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"FBSDKShareDialogMode"
-                                                        value:@(self.mode)
-                                                      message:nil];
+    *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                     name:@"FBSDKShareDialogMode"
+                                                    value:@(self.mode)
+                                                  message:nil];
   }
   return NO;
 }
@@ -826,7 +868,7 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
 
  This method exists to enable the behavior described above and should only be called from `validateWithError:`.
  */
-- (BOOL)_validateFullyCompatibleWithError:(NSError *__autoreleasing *)errorRef
+- (BOOL)_validateFullyCompatibleWithError:(NSError **)errorRef
 {
   id<FBSDKSharingContent> shareContent = self.shareContent;
   if ([shareContent isKindOfClass:[FBSDKShareLinkContent class]]) {
@@ -835,9 +877,10 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
         self.mode == FBSDKShareDialogModeShareSheet &&
         ![self _canUseQuoteInShareSheet]) {
       if ((errorRef != NULL) && !*errorRef) {
-        *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"shareContent"
-                                                            value:shareLinkContent
-                                                          message:@"Quotes are only supported if Facebook for iOS version 52 and above is installed"];
+        *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                         name:@"shareContent"
+                                                        value:shareLinkContent
+                                                      message:@"Quotes are only supported if Facebook for iOS version 52 and above is installed"];
       }
       return NO;
     }
@@ -845,7 +888,7 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
   return YES;
 }
 
-- (BOOL)_validateShareContentForBrowserWithOptions:(FBSDKShareBridgeOptions)bridgeOptions error:(NSError *__autoreleasing *)errorRef
+- (BOOL)_validateShareContentForBrowserWithOptions:(FBSDKShareBridgeOptions)bridgeOptions error:(NSError **)errorRef
 {
   id<FBSDKSharingContent> shareContent = self.shareContent;
   if ([shareContent isKindOfClass:[FBSDKShareLinkContent class]]) {
@@ -853,18 +896,20 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
     FBSDKShareLinkContent *const linkContent = shareContent;
     if (!linkContent.contentURL) {
       if ((errorRef != NULL) && !*errorRef) {
-        *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"shareContent"
-                                                            value:shareContent
-                                                          message:@"FBSDKShareLinkContent contentURL is required."];
+        *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                         name:@"shareContent"
+                                                        value:shareContent
+                                                      message:@"FBSDKShareLinkContent contentURL is required."];
       }
       return NO;
     }
   }
   if ([shareContent isKindOfClass:[FBSDKShareCameraEffectContent class]]) {
     if ((errorRef != NULL) && !*errorRef) {
-      *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"shareContent"
-                                                          value:shareContent
-                                                        message:@"Camera Content must be shared in `Native` mode."];
+      *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                       name:@"shareContent"
+                                                      value:shareContent
+                                                    message:@"Camera Content must be shared in `Native` mode."];
     }
     return NO;
   }
@@ -875,9 +920,10 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
   if (containsPhotos) {
     if ([FBSDKAccessToken currentAccessToken] == nil) {
       if ((errorRef != NULL) && !*errorRef) {
-        *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"shareContent"
-                                                            value:shareContent
-                                                          message:@"The web share dialog needs a valid access token to stage photos."];
+        *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                         name:@"shareContent"
+                                                        value:shareContent
+                                                      message:@"The web share dialog needs a valid access token to stage photos."];
       }
       return NO;
     }
@@ -887,9 +933,10 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
       }
     } else {
       if ((errorRef != NULL) && !*errorRef) {
-        *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"shareContent"
-                                                            value:shareContent
-                                                          message:@"Web share dialogs cannot include photos."];
+        *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                         name:@"shareContent"
+                                                        value:shareContent
+                                                      message:@"Web share dialogs cannot include photos."];
       }
       return NO;
     }
@@ -897,9 +944,10 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
   if (containsVideos) {
     if ([FBSDKAccessToken currentAccessToken] == nil) {
       if ((errorRef != NULL) && !*errorRef) {
-        *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"shareContent"
-                                                            value:shareContent
-                                                          message:@"The web share dialog needs a valid access token to stage videos."];
+        *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                         name:@"shareContent"
+                                                        value:shareContent
+                                                      message:@"The web share dialog needs a valid access token to stage videos."];
       }
       return NO;
     }
@@ -912,9 +960,10 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
   if (containsMedia) {
     if (bridgeOptions & FBSDKShareBridgeOptionsPhotoImageURL) { // a web-based URL is required
       if ((errorRef != NULL) && !*errorRef) {
-        *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"shareContent"
-                                                            value:shareContent
-                                                          message:@"Web share dialogs cannot include local media."];
+        *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                         name:@"shareContent"
+                                                        value:shareContent
+                                                      message:@"Web share dialogs cannot include local media."];
       }
       return NO;
     }
@@ -930,17 +979,19 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
     FBSDKShareLinkContent *const linkContent = shareContent;
     if (!linkContent.contentURL) {
       if ((errorRef != NULL) && !*errorRef) {
-        *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"shareContent"
-                                                            value:shareContent
-                                                          message:@"FBSDKShareLinkContent contentURL is required."];
+        *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                         name:@"shareContent"
+                                                        value:shareContent
+                                                      message:@"FBSDKShareLinkContent contentURL is required."];
       }
       return NO;
     }
   } else {
     if ((errorRef != NULL) && !*errorRef) {
-      *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"shareContent"
-                                                          value:shareContent
-                                                        message:@"Feed share dialogs support FBSDKShareLinkContent."];
+      *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                       name:@"shareContent"
+                                                      value:shareContent
+                                                    message:@"Feed share dialogs support FBSDKShareLinkContent."];
     }
     return NO;
   }
@@ -953,9 +1004,10 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
   if ([shareContent isKindOfClass:[FBSDKShareMediaContent class]]) {
     if ([FBSDKShareUtility shareMediaContentContainsPhotosAndVideos:(FBSDKShareMediaContent *)shareContent]) {
       if ((errorRef != NULL) && !*errorRef) {
-        *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"shareContent"
-                                                            value:shareContent
-                                                          message:@"Multimedia Content is only available for mode `ShareSheet`"];
+        *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                         name:@"shareContent"
+                                                        value:shareContent
+                                                      message:@"Multimedia Content is only available for mode `ShareSheet`"];
       }
       return NO;
     }
@@ -977,7 +1029,10 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
       } else {
         if ((errorRef != NULL) && !*errorRef) {
           NSString *message = @"Share photo content must have UIImage photos in order to share with the share sheet";
-          *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"shareContent" value:shareContent message:message];
+          *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                           name:@"shareContent"
+                                                          value:shareContent
+                                                        message:message];
         }
         return NO;
       }
@@ -993,12 +1048,15 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
       BOOL isOGURLShare = [self _isOpenGraphURLShare:ogContent];
 
       BOOL isValidOGShare = (isOGURLShare &&
-                             [ogContent.action.actionType length] != 0 &&
-                             [ogContent.previewPropertyName length] != 0);
+                             ogContent.action.actionType.length != 0 &&
+                             ogContent.previewPropertyName.length != 0);
       if (!isValidOGShare) {
         if ((errorRef != NULL) && !*errorRef) {
           NSString *message = @"Share content must include an URL in the action, an action type, and a preview property name in order to share with the share sheet.";
-          *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"shareContent" value:shareContent message:message];
+          *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                           name:@"shareContent"
+                                                          value:shareContent
+                                                        message:message];
         }
       }
       return isValidOGShare;
@@ -1008,7 +1066,10 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
       if ((errorRef != NULL) && !*errorRef) {
         NSString *message = [NSString stringWithFormat:@"Share sheet does not support %@.",
                              NSStringFromClass(shareContent.class)];
-        *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"shareContent" value:shareContent message:message];
+        *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                         name:@"shareContent"
+                                                        value:shareContent
+                                                      message:message];
       }
       return NO;
     }
@@ -1022,9 +1083,10 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
       self.mode == FBSDKShareDialogModeShareSheet &&
       ![self _canUseMMPInShareSheet]) {
     if ((errorRef != NULL) && !*errorRef) {
-      *errorRef = [FBSDKShareError invalidArgumentErrorWithName:@"shareContent"
-                                                          value:shareContent
-                                                        message:@"Multimedia content (photos + videos) is only supported if Facebook for iOS version 52 and above is installed"];
+      *errorRef = [NSError fbInvalidArgumentErrorWithDomain:FBSDKShareErrorDomain
+                                                       name:@"shareContent"
+                                                      value:shareContent
+                                                    message:@"Multimedia content (photos + videos) is only supported if Facebook for iOS version 52 and above is installed"];
     }
     return NO;
   }
@@ -1108,56 +1170,42 @@ FBSDK_STATIC_INLINE void FBSDKShareDialogValidateShareExtensionSchemeRegisteredF
 - (NSString *)_calculateInitialText
 {
   NSString *initialText;
+  NSString *const hashtag = [FBSDKShareUtility hashtagStringFromHashtag:self.shareContent.hashtag];
   if ([self _canAttributeThroughShareSheet]) {
-    NSMutableDictionary *initialTextDictionary = [NSMutableDictionary new];
-    initialTextDictionary[@"app_id"] = [FBSDKSettings appID];
-    NSString *hashtag = [FBSDKShareUtility hashtagStringFromHashtag:self.shareContent.hashtag];
-    if (hashtag != nil) {
-      initialTextDictionary[@"hashtags"] = @[hashtag];
+    NSMutableDictionary<NSString *, id> *const parameters = [NSMutableDictionary new];
+    NSString *const appID = [FBSDKSettings appID];
+    if (appID.length > 0) {
+      parameters[FBSDKShareExtensionParamAppID] = [FBSDKSettings appID];
+    }
+    if (hashtag.length > 0) {
+      parameters[FBSDKShareExtensionParamHashtags] = @[hashtag];
     }
     if ([self.shareContent isKindOfClass:[FBSDKShareLinkContent class]]) {
-      NSString *quote = [(FBSDKShareLinkContent *)self.shareContent quote];
-      if (quote != nil) {
-        initialTextDictionary[@"quotes"] = @[quote];
+      NSString *const quote = ((FBSDKShareLinkContent *)self.shareContent).quote;
+      if (quote.length > 0) {
+        parameters[FBSDKShareExtensionParamQuotes] = @[quote];
       }
     }
     if ([self.shareContent isKindOfClass:[FBSDKShareOpenGraphContent class]]) {
-      NSDictionary *ogData = [FBSDKShareUtility parametersForShareContent:self.shareContent
-                                                            bridgeOptions:FBSDKShareBridgeOptionsDefault
-                                                    shouldFailOnDataError:self.shouldFailOnDataError];
-      initialTextDictionary[@"og_data"] = ogData;
+      NSDictionary<NSString *, id> *const ogData = [FBSDKShareUtility parametersForShareContent:self.shareContent
+                                                                                  bridgeOptions:FBSDKShareBridgeOptionsDefault
+                                                                          shouldFailOnDataError:self.shouldFailOnDataError];
+      parameters[FBSDKShareExtensionParamOGData] = ogData;
     }
 
     NSError *error = nil;
-    NSString *jsonString = [FBSDKInternalUtility JSONStringForObject:initialTextDictionary error:&error invalidObjectHandler:NULL];
+    NSString *const jsonString = [FBSDKInternalUtility JSONStringForObject:parameters error:&error invalidObjectHandler:NULL];
     if (error != nil) {
       return nil;
     }
 
-    NSString *JSONStartDelimiter = @"|";
-    initialText = [NSString stringWithFormat:@"%@%@%@",
-                   [self _calculatePreJSONInitialTextWithHashtag:hashtag],
-                   JSONStartDelimiter,
-                   jsonString];
+    initialText = FBSDKShareExtensionInitialText(appID, hashtag, jsonString);
   } else {
-    NSString *hashtag = [FBSDKShareUtility hashtagStringFromHashtag:self.shareContent.hashtag];
-    if (hashtag != nil) {
+    if (hashtag.length > 0) {
       initialText = hashtag;
     }
   }
   return initialText;
-}
-
-// Not all versions of the Share Extension support JSON. Adding this text before allows backward compatibility
-- (NSString *)_calculatePreJSONInitialTextWithHashtag:(NSString *)hashtag
-{
-  NSMutableString *text = [NSMutableString new];
-  [text appendString:[NSString stringWithFormat:@"fb-app-id:%@", [FBSDKSettings appID]]];
-  if (hashtag != nil) {
-    [text appendString:@" "];
-    [text appendString:hashtag];
-  }
-  return [text copy];
 }
 
 @end

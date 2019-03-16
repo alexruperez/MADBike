@@ -9,7 +9,7 @@
 #import "BMPlacesTableViewController.h"
 
 @import MapKit;
-@import SPGooglePlacesAutocomplete;
+@import GooglePlaces;
 
 #import "BMManagersAssembly.h"
 #import "BMAnalyticsManager.h"
@@ -220,6 +220,7 @@ static NSUInteger const kBMPlaceHistorySize = 8;
     }
     
     NSString *text = @"";
+    NSMutableAttributedString *attributedText = nil;
     NSString *detailText = @"";
     if (indexPath.section == 0)
     {
@@ -240,21 +241,11 @@ static NSUInteger const kBMPlaceHistorySize = 8;
     }
     else if (indexPath.section == 2 && self.places.count > (NSUInteger)indexPath.row)
     {
-        SPGooglePlacesAutocompletePlace *place = self.places[(NSUInteger)indexPath.row];
-        if ([place isKindOfClass:SPGooglePlacesAutocompletePlace.class])
+        GMSAutocompletePrediction *place = self.places[(NSUInteger)indexPath.row];
+        if ([place isKindOfClass:GMSAutocompletePrediction.class])
         {
             cell.imageView.image = [UIImage imageNamed:@"ic_marker_gray"];
-            if (place.terms.count > 1)
-            {
-                NSMutableArray *terms = place.terms.mutableCopy;
-                text = terms.firstObject;
-                [terms removeObject:text];
-                detailText = [terms.copy componentsJoinedByString:@", "];
-            }
-            else
-            {
-                text = place.name;
-            }
+            attributedText = place.attributedFullText.mutableCopy;
         }
     }
     else if (indexPath.section == 3 && self.history.count > (NSUInteger)indexPath.row)
@@ -262,12 +253,15 @@ static NSUInteger const kBMPlaceHistorySize = 8;
         cell.imageView.image = [UIImage imageNamed:@"ic_marker_gray"];
         text = self.history[(NSUInteger)indexPath.row];
     }
-    
-    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text];
+
+    if (!attributedText)
+    {
+        attributedText = [[NSMutableAttributedString alloc] initWithString:text];
+    }
     NSArray *inputArray = [self.input componentsSeparatedByString:@" "];
     for (NSString *input in inputArray)
     {
-        NSRange inputRange = [text rangeOfString:input options:(NSStringCompareOptions)(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch)];
+        NSRange inputRange = [attributedText.string rangeOfString:input options:(NSStringCompareOptions)(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch)];
         if (inputRange.location != NSNotFound)
         {
             [attributedText setAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.f]} range:inputRange];
@@ -342,11 +336,14 @@ static NSUInteger const kBMPlaceHistorySize = 8;
             }
             else if (indexPath.section == 2 && self.places.count > (NSUInteger)indexPath.row)
             {
-                SPGooglePlacesAutocompletePlace *place = self.places[(NSUInteger)indexPath.row];
-                if ([place isKindOfClass:SPGooglePlacesAutocompletePlace.class])
+                GMSAutocompletePrediction *place = self.places[(NSUInteger)indexPath.row];
+                if ([place isKindOfClass:GMSAutocompletePrediction.class])
                 {
-                    [place resolveToPlacemark:^(CLPlacemark *placemark, NSString *addressString, NSError *error) {
-                        [self.delegate placesTableViewController:self didSelectPlacemark:placemark addressString:addressString error:error];
+                    GMSPlaceField fields = (GMSPlaceFieldName | GMSPlaceFieldCoordinate | GMSPlaceFieldFormattedAddress);
+
+                    [GMSPlacesClient.sharedClient fetchPlaceFromPlaceID:place.placeID placeFields:fields sessionToken:self.sessionToken callback:^(GMSPlace * _Nullable placeFetched, NSError * _Nullable error) {
+                        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:placeFetched.coordinate];
+                        [self.delegate placesTableViewController:self didSelectPlacemark:placemark addressString:placeFetched.name error:error];
                     }];
                 }
             }

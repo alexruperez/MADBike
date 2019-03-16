@@ -37,6 +37,7 @@
 - (void)mapViewLoaded;
 - (void)updateMapOptions;
 - (void)showUserLocation:(id)sender;
+- (void)showCoordinate:(CLLocationCoordinate2D)coordinate animated:(BOOL)animated;
 
 - (void)setVisibleMapAnnotations:(id)annotations animated:(BOOL)animated;
 - (void)setVisibleCircularRegion:(CLCircularRegion *)circularRegion animated:(BOOL)animated;

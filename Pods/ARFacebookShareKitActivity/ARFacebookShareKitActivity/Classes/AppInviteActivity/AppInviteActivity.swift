@@ -61,7 +61,7 @@ import FBSDKShareKit
         
         do {
             try appInviteDialog.validate()
-            return appInviteDialog.canShow()
+            return appInviteDialog.canShow
         } catch {
             return false
         }

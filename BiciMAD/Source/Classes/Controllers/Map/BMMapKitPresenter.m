@@ -134,6 +134,13 @@ static CGFloat const kBMStationsEdgeInset = 40.f;
     }
 }
 
+- (void)showCoordinate:(CLLocationCoordinate2D)coordinate animated:(BOOL)animated {
+    if (CLLocationCoordinate2DIsValid(coordinate) && (coordinate.latitude > 0.f || coordinate.longitude > 0.f))
+    {
+        [self.mapView setCenterCoordinate:coordinate animated:animated];
+    }
+}
+
 - (void)setVisibleMapAnnotations:(id)annotations animated:(BOOL)animated
 {
     MKMapRect zoomRect = MKMapRectNull;

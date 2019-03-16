@@ -24,7 +24,8 @@ def app_pods
     pod 'FBSDKCoreKit', '~> 4.36'
     pod 'FXNotifications', '~> 1.1'
     pod 'GearRefreshControl', '~> 1.0'
-    pod 'GoogleMaps', '~> 2.3'
+    pod 'GoogleMaps', '~> 3.0'
+    pod 'GooglePlaces', '~> 3.0'
     pod 'InAppSettingsKit', '~> 2.9'
     pod 'INTULocationManager', '~> 4.3'
     pod 'libextobjc', '~> 0.4'
@@ -37,12 +38,11 @@ def app_pods
     pod 'RNCryptor', '5.0.3'
     pod 'SFDraggableDialogView', '~> 1.1'
     pod 'SmileWeather', '~> 0.2'
-    pod 'SPGooglePlacesAutocomplete', '~> 1.0'
     pod 'SVProgressHUD', '~> 2.2'
     pod 'SVPulsingAnnotationView', :git => 'https://github.com/TransitApp/SVPulsingAnnotationView.git'
     pod 'TwitterKit', '~> 3.4'
     pod 'Typhoon', '~> 3.6'
-    pod 'Zephyr', '2.2.3'
+    pod 'Zephyr', '3.2.0'
     
     plugin 'cocoapods-keys', {
       project: "BiciMAD",

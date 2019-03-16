@@ -25,6 +25,9 @@
 
 @class BMPlacesTask;
 
+@class GMSAutocompleteSessionToken;
+@class GMSAutocompleteFilter;
+
 @protocol TWTRTimelineDataSource;
 
 @interface BMServicesAssembly : TyphoonAssembly
@@ -57,7 +60,7 @@
 
 - (BMServiceTask *)incidencesEMTTaskWithPhonePreferred:(NSNumber *)phonePreferred phone:(NSString *)phone email:(NSString *)email lastName:(NSString *)lastName subject:(NSString *)subject text:(NSString *)text;
 
-- (BMPlacesTask *)placesTaskWithInput:(NSString *)input sensor:(NSNumber *)sensor;
+- (BMPlacesTask *)placesTaskWithInput:(NSString *)input sessionToken:(GMSAutocompleteSessionToken *)sessionToken filter:(GMSAutocompleteFilter *)filter;
 
 - (BMServiceTask *)airQualityTaskWithOnlyCurrentValues:(NSNumber *)currentValues onlyAverage:(NSNumber *)onlyAverage discardAverage:(NSNumber *)discardAverage;
 

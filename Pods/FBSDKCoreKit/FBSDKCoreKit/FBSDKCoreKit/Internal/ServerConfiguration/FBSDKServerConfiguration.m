@@ -20,7 +20,6 @@
 #import "FBSDKServerConfiguration+Internal.h"
 
 #import "FBSDKInternalUtility.h"
-#import "FBSDKMacros.h"
 
 #define FBSDK_SERVER_CONFIGURATION_ADVERTISING_ID_ENABLED_KEY @"advertisingIDEnabled"
 #define FBSDK_SERVER_CONFIGURATION_APP_ID_KEY @"appID"
@@ -77,11 +76,6 @@ const NSInteger FBSDKServerConfigurationVersion = 2;
 }
 
 #pragma mark - Object Lifecycle
-
-- (instancetype)init NS_UNAVAILABLE
-{
-  assert(0);
-}
 
 - (instancetype)initWithAppID:(NSString *)appID
                       appName:(NSString *)appName
@@ -160,12 +154,12 @@ implicitPurchaseLoggingEnabled:(BOOL)implicitPurchaseLoggingEnabled
 - (BOOL)_useFeatureWithKey:(NSString *)key dialogName:(NSString *)dialogName
 {
   if ([dialogName isEqualToString:FBSDKDialogConfigurationNameLogin]) {
-    return [(NSNumber *)(_dialogFlows[dialogName][key] ?:
-                         _dialogFlows[FBSDKDialogConfigurationNameDefault][key]) boolValue];
+    return ((NSNumber *)(_dialogFlows[dialogName][key] ?:
+                         _dialogFlows[FBSDKDialogConfigurationNameDefault][key])).boolValue;
   } else {
-    return [(NSNumber *)(_dialogFlows[dialogName][key] ?:
+    return ((NSNumber *)(_dialogFlows[dialogName][key] ?:
                          _dialogFlows[FBSDKDialogConfigurationNameSharing][key] ?:
-                         _dialogFlows[FBSDKDialogConfigurationNameDefault][key]) boolValue];
+                         _dialogFlows[FBSDKDialogConfigurationNameDefault][key])).boolValue;
   }
 }
 

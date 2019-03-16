@@ -21,7 +21,6 @@
 #import <CommonCrypto/CommonDigest.h>
 
 #import "FBSDKInternalUtility.h"
-#import "FBSDKMacros.h"
 
 @implementation FBSDKUtility
 
@@ -31,7 +30,7 @@
   NSArray *parts = [queryString componentsSeparatedByString:@"&"];
 
   for (NSString *part in parts) {
-    if ([part length] == 0) {
+    if (part.length == 0) {
       continue;
     }
 
@@ -131,12 +130,6 @@
   }
 
   return encryptedStuff;
-}
-
-- (instancetype)init
-{
-  FBSDK_NO_DESIGNATED_INITIALIZER();
-  return nil;
 }
 
 @end

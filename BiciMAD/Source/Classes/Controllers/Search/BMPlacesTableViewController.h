@@ -12,6 +12,7 @@
 @class BMPlacesTableViewController;
 @class BMManagersAssembly;
 @class BMStation;
+@class GMSAutocompleteSessionToken;
 
 @protocol BMPlacesTableViewControllerDelegate <NSObject>
 
@@ -30,6 +31,7 @@
 @interface BMPlacesTableViewController : UITableViewController <UISearchBarDelegate>
 
 @property (nonatomic, strong) BMManagersAssembly *managersAssembly;
+@property (nonatomic, strong) GMSAutocompleteSessionToken *sessionToken;
 
 - (instancetype)initWithDelegate:(id<BMPlacesTableViewControllerDelegate>)delegate;
 

@@ -56,9 +56,9 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
-  - Branch (0.25.3):
-    - Branch/Core (= 0.25.3)
-  - Branch/Core (0.25.3)
+  - Branch (0.25.11):
+    - Branch/Core (= 0.25.11)
+  - Branch/Core (0.25.11)
   - CCHMapClusterController (1.7.2)
   - Charts (3.0.4):
     - Charts/Core (= 3.0.4)
@@ -72,61 +72,63 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.4.0):
     - CocoaLumberjack/Default
-  - Crashlytics (3.10.7):
-    - Fabric (~> 1.7.11)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
   - DGRunkeeperSwitch (1.1.4)
   - DOFavoriteButton (0.0.4)
   - DTMHeatmap (1.0)
-  - Fabric (1.7.11)
-  - FBSDKCoreKit (4.36.0):
-    - Bolts (~> 1.7)
-  - FBSDKShareKit (4.36.0):
-    - FBSDKCoreKit (~> 4.36.0)
+  - Fabric (1.9.0)
+  - FBSDKCoreKit (4.41.0):
+    - Bolts (~> 1.9)
+  - FBSDKShareKit (4.41.0):
+    - FBSDKCoreKit
   - FXNotifications (1.1.1)
   - GearRefreshControl (1.0.1)
-  - GoogleMaps (2.7.0):
-    - GoogleMaps/Maps (= 2.7.0)
-  - GoogleMaps/Base (2.7.0)
-  - GoogleMaps/Maps (2.7.0):
+  - GoogleMaps (3.0.3):
+    - GoogleMaps/Maps (= 3.0.3)
+  - GoogleMaps/Base (3.0.3)
+  - GoogleMaps/Maps (3.0.3):
     - GoogleMaps/Base
-  - InAppSettingsKit (2.9)
-  - INTULocationManager (4.3.0)
+  - GooglePlaces (3.0.3):
+    - GoogleMaps/Base (= 3.0.3)
+  - InAppSettingsKit (2.10)
+  - INTULocationManager (4.3.2)
   - Keys (1.0.1)
-  - libextobjc (0.4.1):
-    - libextobjc/EXTADT (= 0.4.1)
-    - libextobjc/EXTConcreteProtocol (= 0.4.1)
-    - libextobjc/EXTKeyPathCoding (= 0.4.1)
-    - libextobjc/EXTNil (= 0.4.1)
-    - libextobjc/EXTSafeCategory (= 0.4.1)
-    - libextobjc/EXTScope (= 0.4.1)
-    - libextobjc/EXTSelectorChecking (= 0.4.1)
-    - libextobjc/EXTSynthesize (= 0.4.1)
-    - "libextobjc/NSInvocation+EXT (= 0.4.1)"
-    - "libextobjc/NSMethodSignature+EXT (= 0.4.1)"
-    - libextobjc/RuntimeExtensions (= 0.4.1)
-    - libextobjc/UmbrellaHeader (= 0.4.1)
-  - libextobjc/EXTADT (0.4.1):
+  - libextobjc (0.6):
+    - libextobjc/EXTADT (= 0.6)
+    - libextobjc/EXTConcreteProtocol (= 0.6)
+    - libextobjc/EXTKeyPathCoding (= 0.6)
+    - libextobjc/EXTNil (= 0.6)
+    - libextobjc/EXTSafeCategory (= 0.6)
+    - libextobjc/EXTScope (= 0.6)
+    - libextobjc/EXTSelectorChecking (= 0.6)
+    - libextobjc/EXTSynthesize (= 0.6)
+    - "libextobjc/NSInvocation+EXT (= 0.6)"
+    - "libextobjc/NSMethodSignature+EXT (= 0.6)"
+    - libextobjc/RuntimeExtensions (= 0.6)
+    - libextobjc/UmbrellaHeader (= 0.6)
+  - libextobjc/EXTADT (0.6):
     - libextobjc/RuntimeExtensions
-  - libextobjc/EXTConcreteProtocol (0.4.1):
+  - libextobjc/EXTConcreteProtocol (0.6):
     - libextobjc/RuntimeExtensions
-  - libextobjc/EXTKeyPathCoding (0.4.1):
+  - libextobjc/EXTKeyPathCoding (0.6):
     - libextobjc/RuntimeExtensions
-  - libextobjc/EXTNil (0.4.1):
+  - libextobjc/EXTNil (0.6):
     - libextobjc/RuntimeExtensions
-  - libextobjc/EXTSafeCategory (0.4.1):
+  - libextobjc/EXTSafeCategory (0.6):
     - libextobjc/RuntimeExtensions
-  - libextobjc/EXTScope (0.4.1):
+  - libextobjc/EXTScope (0.6):
     - libextobjc/RuntimeExtensions
-  - libextobjc/EXTSelectorChecking (0.4.1):
+  - libextobjc/EXTSelectorChecking (0.6):
     - libextobjc/RuntimeExtensions
-  - libextobjc/EXTSynthesize (0.4.1):
+  - libextobjc/EXTSynthesize (0.6):
     - libextobjc/RuntimeExtensions
-  - "libextobjc/NSInvocation+EXT (0.4.1)":
+  - "libextobjc/NSInvocation+EXT (0.6)":
     - libextobjc/RuntimeExtensions
-  - "libextobjc/NSMethodSignature+EXT (0.4.1)":
+  - "libextobjc/NSMethodSignature+EXT (0.6)":
     - libextobjc/RuntimeExtensions
-  - libextobjc/RuntimeExtensions (0.4.1)
-  - libextobjc/UmbrellaHeader (0.4.1)
+  - libextobjc/RuntimeExtensions (0.6)
+  - libextobjc/UmbrellaHeader (0.6)
   - MagicalRecord/CocoaLumberjack (2.3.2):
     - CocoaLumberjack (~> 2.0)
     - MagicalRecord/Core
@@ -139,19 +141,18 @@ PODS:
     - MTLManagedObjectAdapter/extobjc (= 1.0.3)
   - MTLManagedObjectAdapter/extobjc (1.0.3):
     - Mantle (~> 2.0)
-  - OneSignal (2.8.7)
+  - OneSignal (2.9.5)
   - OpenInGoogleMaps (0.1.0)
   - Popover (1.0.6)
   - RESideMenu (4.0.7)
   - RNCryptor (5.0.3)
   - SFDraggableDialogView (1.1.5)
   - SmileWeather (0.2.4)
-  - SPGooglePlacesAutocomplete (1.0.6)
   - SVProgressHUD (2.2.5)
   - SVPulsingAnnotationView (0.3)
   - TwitterCore (3.2.0)
-  - TwitterKit (3.4.0):
-    - TwitterCore (>= 3.1.0)
+  - TwitterKit (3.4.2):
+    - TwitterCore (>= 3.2.0)
   - Typhoon (3.6.0):
     - Typhoon/DeallocNotifier (= 3.6.0)
     - Typhoon/IntrospectionUtils (= 3.6.0)
@@ -160,7 +161,7 @@ PODS:
   - Typhoon/IntrospectionUtils (3.6.0)
   - Typhoon/no-arc (3.6.0):
     - Typhoon/IntrospectionUtils
-  - Zephyr (2.2.3)
+  - Zephyr (3.2.0)
 
 DEPENDENCIES:
   - AFNetworkActivityLogger (~> 3.0)
@@ -179,7 +180,8 @@ DEPENDENCIES:
   - FBSDKCoreKit (~> 4.36)
   - FXNotifications (~> 1.1)
   - GearRefreshControl (~> 1.0)
-  - GoogleMaps (~> 2.3)
+  - GoogleMaps (~> 3.0)
+  - GooglePlaces (~> 3.0)
   - InAppSettingsKit (~> 2.9)
   - INTULocationManager (~> 4.3)
   - Keys (from `Pods/CocoaPodsKeys`)
@@ -194,12 +196,11 @@ DEPENDENCIES:
   - RNCryptor (= 5.0.3)
   - SFDraggableDialogView (~> 1.1)
   - SmileWeather (~> 0.2)
-  - SPGooglePlacesAutocomplete (~> 1.0)
   - SVProgressHUD (~> 2.2)
   - SVPulsingAnnotationView (from `https://github.com/TransitApp/SVPulsingAnnotationView.git`)
   - TwitterKit (~> 3.4)
   - Typhoon (~> 3.6)
-  - Zephyr (= 2.2.3)
+  - Zephyr (= 3.2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -221,6 +222,7 @@ SPEC REPOS:
     - FXNotifications
     - GearRefreshControl
     - GoogleMaps
+    - GooglePlaces
     - InAppSettingsKit
     - INTULocationManager
     - libextobjc
@@ -234,7 +236,6 @@ SPEC REPOS:
     - RNCryptor
     - SFDraggableDialogView
     - SmileWeather
-    - SPGooglePlacesAutocomplete
     - SVProgressHUD
     - TwitterCore
     - TwitterKit
@@ -268,43 +269,43 @@ SPEC CHECKSUMS:
   ARFacebookShareKitActivity: 3479b73f32e462d8c82e2d4c2c4e25cebd7ba561
   BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
-  Branch: 9917f91a5381bc88ed8e4f080a18213267cf44e6
+  Branch: 3cc6dcfd726db42ced22c418c0fb09aa5e90a847
   CCHMapClusterController: 682e1eb1373a7decda1b75fd7b24b3047fed9daa
   Charts: 0705898046257443f0afbbc3179f4b67507b6e48
   CMMapLauncher: 2785415522d20f18e0629b835ffc38dbe56de16f
   CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
-  Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   DGRunkeeperSwitch: cc237936f42237307f5e212e18136a27bf907bf1
   DOFavoriteButton: 866e15af173d2dd5233971a1f657a5f31d2491d5
   DTMHeatmap: f5588af0730fbfe78c75d6d013f1932d7d327ab2
-  Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
-  FBSDKCoreKit: 3b8e6570eedb443f9fc4af196a7bf39f18e3a3d8
-  FBSDKShareKit: 7090fdd55c39b03941efddb64c83a64ff6b3949f
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  FBSDKCoreKit: 974810fe3806173f3777c68062fa8ed6fa59b59d
+  FBSDKShareKit: 79dfd0c51f1a241f33e219fcc39e7cc69534b900
   FXNotifications: 5b4a90a3ae5bccce93d33070bed79da27c8c811e
   GearRefreshControl: f1d4cf97b6440bbd47d6a8a32fe2aaddd6d1e3cb
-  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
-  InAppSettingsKit: fc3dea21846535b76b8289b119dbfdbe2505b2b2
-  INTULocationManager: 0ca5c76eacc029ba15938fc699520bc333ed6435
+  GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
+  GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
+  InAppSettingsKit: d965e29be941eb19857271e4625de3fba6e23c9f
+  INTULocationManager: e5dc524611b0cd582f473bc56cc8c389adb2f338
   Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
-  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  libextobjc: aed8b7d2b07f511c1a7ecaacb33ea03e327c69b7
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   MTLManagedObjectAdapter: 631a53432675dcf03a9d90624afb3cececf54631
-  OneSignal: a48968a4096ac9146af91f31870204dcd731c939
+  OneSignal: ccdeb961882f8668305e5b694e2cb7cb325fc907
   OpenInGoogleMaps: 60dd887d2e2b2149166a03bd6dab1d4478a7d3e8
   Popover: 227aa929a6cdf41c4828786be8ede109c40344c9
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
   RNCryptor: c93d19029dcf7ff160aca0f24d6c9e7b0d82f664
   SFDraggableDialogView: 1ace36b8cb2f52aab82f386d910a286f0c073997
   SmileWeather: c194de37bc6b2eacddda15d8b69de4a82fe42927
-  SPGooglePlacesAutocomplete: 8adac6930adf6f01fe82c06efe96d8deb385fb5b
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SVPulsingAnnotationView: 6dd95e7bd61ff7f582f1e75029fd6df25eeba569
   TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
-  TwitterKit: bc7bd086b9b724a1d888745a054e1d0b1ecc4f3f
+  TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
   Typhoon: 551cc8fae881d0f4b20ddafc6d276da3e867f61f
-  Zephyr: 9620401cbbd18305b1b4e2752dd67cc283bae30a
+  Zephyr: 8d7343c6cc45ed53c9d94dce33cf5c7c607b5e05
 
-PODFILE CHECKSUM: 44444b630d2cbeb90302a200e43d7740a9d4f888
+PODFILE CHECKSUM: 95bb9a24c94d6fdfb62c6f7ddcdfe4e9a28c7095
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

@@ -190,6 +190,7 @@
 		5939CE35B5506947BEBED7A5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6AB1B7827D3B05D2D6CC5371 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6C6322830C4A2B99F938076C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		779EAA26DB2629FE43DE691C /* Pods-BiciMAD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiciMAD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BiciMAD/Pods-BiciMAD.debug.xcconfig"; sourceTree = "<group>"; };
 		817351E81E0809DF009E627A /* RNCryptorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCryptorManager.swift; sourceTree = "<group>"; };
 		819CCB031E13C1F100B54A1A /* DeepLinkingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkingExtensions.swift; sourceTree = "<group>"; };
 		8FC383C3B99AB83AB45F4BC8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -468,6 +469,7 @@
 		D5F91FF81DB7678C0038EC13 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D5F91FFA1DB767940038EC13 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		D90E926F13C928D9C5DB5F9B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		DA9CE53EB897701EF7554D77 /* Pods-BiciMAD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiciMAD.release.xcconfig"; path = "Pods/Target Support Files/Pods-BiciMAD/Pods-BiciMAD.release.xcconfig"; sourceTree = "<group>"; };
 		E8A4AD196DE17CF26862D179 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -546,6 +548,8 @@
 			children = (
 				9701EB5F3BD126248CF8070F /* Pods-Notifications.debug.xcconfig */,
 				9E40CF98A05A5622DAFB3AAB /* Pods-Notifications.release.xcconfig */,
+				779EAA26DB2629FE43DE691C /* Pods-BiciMAD.debug.xcconfig */,
+				DA9CE53EB897701EF7554D77 /* Pods-BiciMAD.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1443,7 +1447,7 @@
 					D5803E9B1BC586DB000C0E26 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = Q6BEQCNWYM;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -1558,18 +1562,20 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BiciMAD/Pods-BiciMAD-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BiciMAD/Pods-BiciMAD-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BiciMAD/Pods-BiciMAD-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BiciMAD/Pods-BiciMAD-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		815EE23A1DC7783600CF09FC /* Warn for TODO comments */ = {
@@ -1628,7 +1634,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BiciMAD/Pods-BiciMAD-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BiciMAD/Pods-BiciMAD-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworkActivityLogger/AFNetworkActivityLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/ARFacebookShareKitActivity/ARFacebookShareKitActivity.framework",
@@ -1657,7 +1663,6 @@
 				"${BUILT_PRODUCTS_DIR}/RESideMenu/RESideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
 				"${BUILT_PRODUCTS_DIR}/SFDraggableDialogView/SFDraggableDialogView.framework",
-				"${BUILT_PRODUCTS_DIR}/SPGooglePlacesAutocomplete/SPGooglePlacesAutocomplete.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SVPulsingAnnotationView/SVPulsingAnnotationView.framework",
 				"${BUILT_PRODUCTS_DIR}/SmileWeather/SmileWeather.framework",
@@ -1697,7 +1702,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RESideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SFDraggableDialogView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPGooglePlacesAutocomplete.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPulsingAnnotationView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SmileWeather.framework",
@@ -1709,7 +1713,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BiciMAD/Pods-BiciMAD-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BiciMAD/Pods-BiciMAD-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FC40354CF1E6A1D3CE51DA23 /* [CP] Check Pods Manifest.lock */ = {

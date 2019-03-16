@@ -76,11 +76,11 @@ public extension UIActivity {
     }
     
     private static func ar_canShowFacebookShareDialog() -> Bool {
-        return FBSDKShareDialog().canShow()
+        return FBSDKShareDialog().canShow
     }
     
     private static func ar_canShowFacebookAppInviteDialog() -> Bool {
-        return FBSDKAppInviteDialog().canShow()
+        return FBSDKAppInviteDialog().canShow
     }
     
     private func ar_canUseFacebookActivityOverride() -> Bool {

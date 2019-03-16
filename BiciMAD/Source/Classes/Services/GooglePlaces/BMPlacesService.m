@@ -20,23 +20,15 @@ static NSString * const kBMPlacesCountryCode = @"es";
 
 @implementation BMPlacesService
 
-- (void)placesWithInput:(NSString *)input sensor:(BOOL)sensor location:(CLLocationCoordinate2D)location radius:(CGFloat)radius offset:(NSUInteger)offset type:(BMPlacesTaskPlaceType)type successBlock:(BMPlacesServiceArrayBlock)successBlock failureBlock:(BMPlacesServiceErrorBlock)failureBlock
+- (void)placesWithInput:(NSString *)input sessionToken:(GMSAutocompleteSessionToken *)sessionToken filter:(GMSAutocompleteFilter *)filter bounds:(GMSCoordinateBounds *)bounds boundsMode:(GMSAutocompleteBoundsMode)boundsMode successBlock:(BMPlacesServiceArrayBlock)successBlock failureBlock:(BMPlacesServiceErrorBlock)failureBlock
 {
     [self.task cancel];
     
-    self.task = [self.servicesAssembly placesTaskWithInput:input sensor:@(sensor)];
-    
-    self.task.location = location;
-    
-    self.task.radius = radius;
-    
-    self.task.offset = offset;
-    
-    self.task.language = [NSLocale.autoupdatingCurrentLocale objectForKey:NSLocaleLanguageCode];
-    
-    self.task.countryCode = kBMPlacesCountryCode;
-    
-    self.task.type = type;
+    self.task = [self.servicesAssembly placesTaskWithInput:input sessionToken:sessionToken filter:filter];
+
+    self.task.bounds = bounds;
+
+    self.task.boundsMode = boundsMode;
     
     [self.task setSuccessBlock:successBlock];
     

@@ -194,6 +194,10 @@ static CLLocationDistance const kBMUserLocationZoom = 100.f;
     }
 }
 
+- (void)showCoordinate:(CLLocationCoordinate2D)coordinate animated:(BOOL)animated {
+    [self showCoordinate:coordinate zoom:kBMUserLocationZoom animated:YES];
+}
+
 - (void)showCoordinate:(CLLocationCoordinate2D)coordinate zoom:(CLLocationDistance)zoom animated:(BOOL)animated
 {
     if (CLLocationCoordinate2DIsValid(coordinate) && (coordinate.latitude > 0.f || coordinate.longitude > 0.f) && zoom > 0.f)

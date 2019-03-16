@@ -8,20 +8,13 @@
 
 #import "BMPlacesTask.h"
 
-@import SPGooglePlacesAutocomplete;
-
-@interface SPGooglePlacesAutocompleteQuery (BMCancelTask)
-
-- (void)cancelOutstandingRequests;
-
-@end
+@import GooglePlaces;
 
 @interface BMPlacesTask ()
 
-@property (nonatomic, copy) NSString *apiKey;
 @property (nonatomic, copy) NSString *input;
-@property (nonatomic, assign) BOOL sensor;
-@property (nonatomic, strong) SPGooglePlacesAutocompleteQuery *query;
+@property (nonatomic, copy) GMSAutocompleteSessionToken *sessionToken;
+@property (nonatomic, copy) GMSAutocompleteFilter *filter;
 
 @end
 
@@ -29,24 +22,24 @@
 
 + (instancetype)taskWithHTTPClient:(BMHTTPClient *)HTTPClient
 {
-    [NSException raise:NSInvalidArgumentException format:@"%@ class uses %@ initializer!", self.bm_className, NSStringFromSelector(@selector(taskWithApiKey:input:sensor:))];
+    [NSException raise:NSInvalidArgumentException format:@"%@ class uses %@ initializer!", self.bm_className, NSStringFromSelector(@selector(taskWithInput:sessionToken:filter:))];
     return nil;
 }
 
-+ (instancetype)taskWithApiKey:(NSString *)apiKey input:(NSString *)input sensor:(NSNumber *)sensor
++ (instancetype)taskWithInput:(NSString *)input sessionToken:(GMSAutocompleteSessionToken *)sessionToken filter:(GMSAutocompleteFilter *)filter
 {
-    return [[self alloc] initWithApiKey:apiKey input:input sensor:sensor];
+    return [[self alloc] initWithInput:input sessionToken:sessionToken filter:filter];
 }
 
-- (instancetype)initWithApiKey:(NSString *)apiKey input:(NSString *)input sensor:(NSNumber *)sensor
+- (instancetype)initWithInput:(NSString *)input sessionToken:(GMSAutocompleteSessionToken *)sessionToken filter:(GMSAutocompleteFilter *)filter
 {
     self = super.init;
     
     if (self)
     {
-        _apiKey = apiKey;
         _input = input;
-        _sensor = sensor.boolValue;
+        _sessionToken = sessionToken;
+        _filter = filter;
     }
     
     return self;
@@ -54,36 +47,15 @@
 
 - (void)executeInBackground:(BOOL)background
 {
-    self.query = [[SPGooglePlacesAutocompleteQuery alloc] initWithApiKey:self.apiKey];
-    
-    self.query.input = self.input;
-    self.query.sensor = self.sensor;
-    self.query.offset = self.offset;
-    self.query.location = self.location;
-    self.query.radius = self.radius;
-    self.query.language = self.language;
-    self.query.countryCode = self.countryCode;
-    self.query.types = (SPGooglePlacesAutocompletePlaceType)self.type;
-    
-    [self.query fetchPlaces:^(NSArray *places, NSError *error) {
-        if (!error)
-        {
-            if (self.successBlock)
-            {
-                self.successBlock(places);
-            }
+    [GMSPlacesClient.sharedClient findAutocompletePredictionsFromQuery:self.input bounds:self.bounds boundsMode:self.boundsMode filter:self.filter sessionToken:self.sessionToken callback:^(NSArray<GMSAutocompletePrediction *> * _Nullable results, NSError * _Nullable error) {
+        if (results != nil && self.successBlock) {
+            self.successBlock(results);
         }
         else if (self.failureBlock)
         {
             self.failureBlock(error);
         }
     }];
-}
-
-- (void)cancel
-{
-    [self.query cancelOutstandingRequests];
-    self.query = nil;
 }
 
 @end

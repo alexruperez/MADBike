@@ -6,33 +6,16 @@
 //  Copyright © 2015 alexruperez. All rights reserved.
 //
 
-@import CoreLocation;
+@import GooglePlaces;
 
 #import "BMEMTServiceTask.h"
 
-typedef NS_ENUM(NSInteger, BMPlacesTaskPlaceType) {
-    BMPlacesTaskPlaceTypeAll,
-    BMPlacesTaskPlaceTypeGeocode,
-    BMPlacesTaskPlaceTypeAddress,
-    BMPlacesTaskPlaceTypeEstablishment,
-    BMPlacesTaskPlaceTypeRegions,
-    BMPlacesTaskPlaceTypeCities
-};
-
 @interface BMPlacesTask : BMEMTServiceTask
 
-+ (instancetype)taskWithApiKey:(NSString *)apiKey input:(NSString *)input sensor:(NSNumber *)sensor;
++ (instancetype)taskWithInput:(NSString *)input sessionToken:(GMSAutocompleteSessionToken *)sessionToken filter:(GMSAutocompleteFilter *)filter;
 
-@property (nonatomic, assign) NSUInteger offset;
+@property (nonatomic, copy) GMSCoordinateBounds *bounds;
 
-@property (nonatomic, assign) CLLocationCoordinate2D location;
-
-@property (nonatomic, assign) CGFloat radius;
-
-@property (nonatomic, copy) NSString *language;
-
-@property (nonatomic, assign) BMPlacesTaskPlaceType type;
-
-@property (nonatomic, copy) NSString *countryCode;
+@property (nonatomic, assign) GMSAutocompleteBoundsMode boundsMode;
 
 @end

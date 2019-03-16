@@ -644,7 +644,14 @@
         CLCircularRegion *region = (CLCircularRegion *)placemark.region;
         if (!region)
         {
-            [self.mapPresenter showUserLocation:placemark];
+            if (placemark.location && CLLocationCoordinate2DIsValid(placemark.location.coordinate))
+            {
+                [self.mapPresenter showCoordinate:placemark.location.coordinate animated:YES];
+            }
+            else
+            {
+                [self.mapPresenter showUserLocation:placemark];
+            }
         }
         else
         {

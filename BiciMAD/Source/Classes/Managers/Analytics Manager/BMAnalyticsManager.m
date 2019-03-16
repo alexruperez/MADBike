@@ -12,6 +12,7 @@
 @import Crashlytics;
 @import Branch;
 @import GoogleMaps;
+@import GooglePlaces;
 @import OneSignal;
 @import TwitterKit;
 
@@ -135,6 +136,7 @@ static NSDictionary *_oneSignalTags = nil;
     }];
 
     [GMSServices provideAPIKey:self.keys.googleMapsAPIKey];
+    [GMSPlacesClient provideAPIKey:self.keys.googleMapsAPIKey];
 
     [self configureOneSignalWithApplication:application options:launchOptions];
 }

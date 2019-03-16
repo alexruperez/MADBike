@@ -6,7 +6,7 @@
 //  Copyright © 2015 alexruperez. All rights reserved.
 //
 
-@import CoreLocation;
+@import GooglePlaces;
 
 #import "BMNetworkService.h"
 
@@ -17,6 +17,6 @@ typedef void (^BMPlacesServiceErrorBlock)(NSError *error);
 
 @interface BMPlacesService : BMNetworkService
 
-- (void)placesWithInput:(NSString *)input sensor:(BOOL)sensor location:(CLLocationCoordinate2D)location radius:(CGFloat)radius offset:(NSUInteger)offset type:(BMPlacesTaskPlaceType)type successBlock:(BMPlacesServiceArrayBlock)successBlock failureBlock:(BMPlacesServiceErrorBlock)failureBlock;
+- (void)placesWithInput:(NSString *)input sessionToken:(GMSAutocompleteSessionToken *)sessionToken filter:(GMSAutocompleteFilter *)filter bounds:(GMSCoordinateBounds *)bounds boundsMode:(GMSAutocompleteBoundsMode)boundsMode successBlock:(BMPlacesServiceArrayBlock)successBlock failureBlock:(BMPlacesServiceErrorBlock)failureBlock;
 
 @end

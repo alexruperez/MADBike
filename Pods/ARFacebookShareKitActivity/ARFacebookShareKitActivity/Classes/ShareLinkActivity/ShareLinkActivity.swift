@@ -66,7 +66,7 @@ import FBSDKShareKit
         
         do {
             try shareDialog.validate()
-            return shareDialog.canShow()
+            return shareDialog.canShow
         } catch {
             return false
         }

@@ -157,7 +157,7 @@ static NSString * const kBMDefaultFormula = @"NO₂";
             
             for (BMAirQualityMetric *metric in airQuality.metrics)
             {
-                if (metric.values.count > 0)
+                if (metric.values.count > 0 && metric.formula != nil)
                 {
                     [formulas addObject:metric.formula];
                     

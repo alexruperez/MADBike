@@ -20,14 +20,14 @@
 #import "BMStation.h"
 
 static NSUInteger const kBMSearchControllerOffset = 0;
-static CGFloat const kBMSearchControllerRadius = 6000;
-static BMPlacesTaskPlaceType const kBMPlacesTaskPlaceType = BMPlacesTaskPlaceTypeAll;
 
 @interface BMPlacesSearchPresenter () <UISearchControllerDelegate, UISearchResultsUpdating, BMPlacesTableViewControllerDelegate>
 
 @property (nonatomic, strong) BMPlacesTableViewController *searchResultsTableViewController;
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) UIBarButtonItem *rightBarButtonItem;
+@property (nonatomic, strong) GMSAutocompleteSessionToken *sessionToken;
+@property (nonatomic, strong) GMSAutocompleteFilter *filter;
 
 @end
 
@@ -45,11 +45,33 @@ static BMPlacesTaskPlaceType const kBMPlacesTaskPlaceType = BMPlacesTaskPlaceTyp
     return self;
 }
 
+- (GMSAutocompleteSessionToken *)sessionToken
+{
+    if (!_sessionToken)
+    {
+        _sessionToken = [[GMSAutocompleteSessionToken alloc] init];
+    }
+
+    return _sessionToken;
+}
+
+- (GMSAutocompleteFilter *)filter
+{
+    if (!_filter)
+    {
+        _filter = [[GMSAutocompleteFilter alloc] init];
+        _filter.country = @"ES";
+    }
+
+    return _filter;
+}
+
 - (BMPlacesTableViewController *)searchResultsTableViewController
 {
     if (!_searchResultsTableViewController)
     {
         _searchResultsTableViewController = [self.viewControllersAssembly placesTableViewControllerWithDelegate:self];
+        _searchResultsTableViewController.sessionToken = self.sessionToken;
     }
     
     return _searchResultsTableViewController;
@@ -122,10 +144,8 @@ static BMPlacesTaskPlaceType const kBMPlacesTaskPlaceType = BMPlacesTaskPlaceTyp
 - (void)searchPlacesWithInput:(NSString *)input
 {
     CLLocation *location = self.delegate.location;
-    BOOL locationIsValid = location != nil && CLLocationCoordinate2DIsValid(location.coordinate);
-    CLLocationCoordinate2D locationCoordinate = locationIsValid ? location.coordinate : self.delegate.centerCoordinate;
     @weakify(self)
-    [self.placesService placesWithInput:input sensor:locationIsValid location:locationCoordinate radius:kBMSearchControllerRadius offset:kBMSearchControllerOffset type:kBMPlacesTaskPlaceType successBlock:^(NSArray *places) {
+    [self.placesService placesWithInput:input sessionToken:self.sessionToken filter:self.filter bounds:nil boundsMode:kGMSAutocompleteBoundsModeBias successBlock:^(NSArray *places) {
         @strongify(self)
         [self.searchResultsTableViewController reloadDataWithPlaces:places stations:nil input:input];
     } failureBlock:nil];

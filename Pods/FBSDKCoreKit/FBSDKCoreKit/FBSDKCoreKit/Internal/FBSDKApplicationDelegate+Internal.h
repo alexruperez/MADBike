@@ -19,13 +19,18 @@
 #import <Foundation/Foundation.h>
 
 #import <FBSDKCoreKit/FBSDKApplicationDelegate.h>
-#import <FBSDKCoreKit/FBSDKMacros.h>
 
 #import "FBSDKCoreKit+Internal.h"
 
-FBSDK_EXTERN NSString *const FBSDKApplicationDidBecomeActiveNotification;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 
-@class FBSDKApplicationCall;
+FOUNDATION_EXPORT NSNotificationName const FBSDKApplicationDidBecomeActiveNotification;
+
+#else
+
+FOUNDATION_EXPORT NSString *const FBSDKApplicationDidBecomeActiveNotification;
+
+#endif
 
 #if !TARGET_OS_TV
 typedef void(^FBSDKBridgeAPICallbackBlock)(FBSDKBridgeAPIResponse *response);

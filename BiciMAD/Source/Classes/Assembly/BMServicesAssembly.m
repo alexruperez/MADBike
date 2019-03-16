@@ -32,6 +32,8 @@
 #import "BMAllPartnersTask.h"
 #import "BMEMTIncidencesTask.h"
 
+@import GooglePlaces;
+
 @implementation BMServicesAssembly
 
 - (BMHTTPClient *)httpClientEMT
@@ -183,13 +185,13 @@
     }];
 }
 
-- (BMPlacesTask *)placesTaskWithInput:(NSString *)input sensor:(NSNumber *)sensor
+- (BMPlacesTask *)placesTaskWithInput:(NSString *)input sessionToken:(GMSAutocompleteSessionToken *)sessionToken filter:(GMSAutocompleteFilter *)filter
 {
     return [TyphoonDefinition withClass:[BMPlacesTask class] configuration:^(TyphoonDefinition *definition) {
-        [definition useInitializer:@selector(taskWithApiKey:input:sensor:) parameters:^(TyphoonMethod *initializer) {
-            [initializer injectParameterWith:BMAnalyticsManager.keys.googlePlacesAPIKey];
+        [definition useInitializer:@selector(taskWithInput:sessionToken:filter:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:input];
-            [initializer injectParameterWith:sensor];
+            [initializer injectParameterWith:sessionToken];
+            [initializer injectParameterWith:filter];
         }];
         [definition injectProperty:@selector(favoritesManager) with:[self.managersAssembly favoritesManager]];
         [definition injectProperty:@selector(coreDataManager) with:[self.managersAssembly coreDataManager]];
