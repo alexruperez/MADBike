@@ -15,6 +15,9 @@
 "NSLocationWhenInUseUsageDescription" = "We’ll use your location, only whilst you’re using MADBike, in order to find you on the map, search for nearby stations and locate any abandoned bikes that you have reported.";
 
 /*No comment provided by engineer.*/
+"NSLocationAlwaysUsageDescription" = "We’ll use your location, only whilst you’re using MADBike, in order to find you on the map, search for nearby stations and locate any abandoned bikes that you have reported.";
+
+/*No comment provided by engineer.*/
 "NSCameraUsageDescription" = "Here’s where you can report to BiciMAD in just a few seconds any abandoned bikes that you’ve spotted. Do we have your permission to use your camera to take a photo?";
 
 /*No comment provided by engineer.*/

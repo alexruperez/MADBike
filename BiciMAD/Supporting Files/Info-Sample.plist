@@ -87,7 +87,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>3.2.1</string>
+	<string>3.2.2</string>
 	<key>CoreSpotlightContinuation</key>
 	<true/>
 	<key>Fabric</key>
@@ -188,6 +188,8 @@
 	<string>NSCameraUsageDescription</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>NSLocationWhenInUseUsageDescription</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>NSLocationAlwaysUsageDescription</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>NSCameraUsageDescription</string>
 	<key>NSPhotoLibraryUsageDescription</key>
