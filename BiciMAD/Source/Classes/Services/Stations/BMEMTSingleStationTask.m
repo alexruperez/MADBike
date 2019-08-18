@@ -11,6 +11,7 @@
 #import "BMServiceTaskProtocol.h"
 #import "BMStation.h"
 #import "BMAnalyticsManager.h"
+#import "BMUserDefaultsManager.h"
 
 @interface BMEMTSingleStationTask () <BMServiceTask>
 
@@ -21,6 +22,11 @@
 - (NSString *)requestURLString
 {
     return [NSString stringWithFormat:@"%@/%@", kBMRequestSingleStationEMTURLString, self.stationId];
+}
+
+- (void)configureRequest:(BMMutableURLRequest *)request
+{
+    [request addValue:[self.userDefaultsManager storedStringForKey:kBMEMTAccessTokenKey] forHTTPHeaderField:kBMEMTAccessTokenKey];
 }
 
 - (id)parseResponseObject:(NSDictionary *)responseObject error:(NSError **)error

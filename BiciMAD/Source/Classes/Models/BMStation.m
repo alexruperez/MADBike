@@ -136,6 +136,7 @@ static NSString * const kBMMADBikeWebStationURLString = @"https://www.madbikeapp
              NSStringFromSelector(@selector(street)): @[@"direccion", @"address"],
              NSStringFromSelector(@selector(latitude)): @[@"latitud", @"latitude"],
              NSStringFromSelector(@selector(longitude)): @[@"longitud", @"longitude"],
+             NSStringFromSelector(@selector(coordinates)): @[@"geometry.coordinates"],
              NSStringFromSelector(@selector(light)): @[@"luz", @"light"],
              NSStringFromSelector(@selector(unavailable)): @[@"no_disponible", @"no_available"],
              NSStringFromSelector(@selector(percentage)): @[@"porcentaje"]
@@ -174,6 +175,16 @@ static NSString * const kBMMADBikeWebStationURLString = @"https://www.madbikeapp
 - (NSUInteger)unavailableStands
 {
     return self.totalStands - self.freeStands - self.bikesHooked;
+}
+
+- (CLLocationDegrees)latitude
+{
+    return [self.coordinates.lastObject doubleValue];
+}
+
+- (CLLocationDegrees)longitude
+{
+    return [self.coordinates.firstObject doubleValue];
 }
 
 - (CLLocationCoordinate2D)coordinate

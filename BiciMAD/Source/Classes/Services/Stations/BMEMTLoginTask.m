@@ -10,6 +10,7 @@
 
 #import "BMServiceTaskProtocol.h"
 #import "BMAnalyticsManager.h"
+#import "BMUserDefaultsManager.h"
 
 @interface BMEMTLoginTask () <BMServiceTask>
 
@@ -50,6 +51,11 @@
     if ([data isKindOfClass:NSDictionary.class])
     {
         data = data[kBMEMTAccessTokenKey];
+    }
+
+    if ([data isKindOfClass:NSString.class])
+    {
+        [self.userDefaultsManager storeString:data forKey:kBMEMTAccessTokenKey];
     }
     
     return data;

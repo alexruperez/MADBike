@@ -149,6 +149,7 @@
         [definition injectProperty:@selector(coreDataManager) with:[self.managersAssembly coreDataManager]];
         [definition injectProperty:@selector(crashlyticsManager) with:[self.managersAssembly crashlyticsManager]];
         [definition injectProperty:@selector(spotlightManager) with:[self.managersAssembly spotlightManager]];
+        [definition injectProperty:@selector(userDefaultsManager) with:[self.managersAssembly userDefaultsManager]];
         definition.scope = TyphoonScopeSingleton;
     }];
 }
@@ -163,6 +164,7 @@
         [definition injectProperty:@selector(coreDataManager) with:[self.managersAssembly coreDataManager]];
         [definition injectProperty:@selector(crashlyticsManager) with:[self.managersAssembly crashlyticsManager]];
         [definition injectProperty:@selector(spotlightManager) with:[self.managersAssembly spotlightManager]];
+        [definition injectProperty:@selector(userDefaultsManager) with:[self.managersAssembly userDefaultsManager]];
         definition.scope = TyphoonScopeSingleton;
     }];
 }
@@ -177,6 +179,7 @@
         [definition injectProperty:@selector(coreDataManager) with:[self.managersAssembly coreDataManager]];
         [definition injectProperty:@selector(crashlyticsManager) with:[self.managersAssembly crashlyticsManager]];
         [definition injectProperty:@selector(spotlightManager) with:[self.managersAssembly spotlightManager]];
+        [definition injectProperty:@selector(userDefaultsManager) with:[self.managersAssembly userDefaultsManager]];
         [definition injectProperty:@selector(stationId) with:stationId];
     }];
 }
@@ -191,6 +194,7 @@
         [definition injectProperty:@selector(coreDataManager) with:[self.managersAssembly coreDataManager]];
         [definition injectProperty:@selector(crashlyticsManager) with:[self.managersAssembly crashlyticsManager]];
         [definition injectProperty:@selector(spotlightManager) with:[self.managersAssembly spotlightManager]];
+        [definition injectProperty:@selector(userDefaultsManager) with:[self.managersAssembly userDefaultsManager]];
         [definition injectProperty:@selector(phonePreferred) with:phonePreferred];
         [definition injectProperty:@selector(phone) with:phone];
         [definition injectProperty:@selector(email) with:email];
@@ -212,6 +216,7 @@
         [definition injectProperty:@selector(coreDataManager) with:[self.managersAssembly coreDataManager]];
         [definition injectProperty:@selector(crashlyticsManager) with:[self.managersAssembly crashlyticsManager]];
         [definition injectProperty:@selector(spotlightManager) with:[self.managersAssembly spotlightManager]];
+        [definition injectProperty:@selector(userDefaultsManager) with:[self.managersAssembly userDefaultsManager]];
     }];
 }
 
@@ -225,6 +230,7 @@
         [definition injectProperty:@selector(coreDataManager) with:[self.managersAssembly coreDataManager]];
         [definition injectProperty:@selector(crashlyticsManager) with:[self.managersAssembly crashlyticsManager]];
         [definition injectProperty:@selector(spotlightManager) with:[self.managersAssembly spotlightManager]];
+        [definition injectProperty:@selector(userDefaultsManager) with:[self.managersAssembly userDefaultsManager]];
         [definition injectProperty:@selector(currentValues) with:currentValues];
         [definition injectProperty:@selector(onlyAverage) with:onlyAverage];
         [definition injectProperty:@selector(discardAverage) with:discardAverage];
@@ -241,6 +247,7 @@
         [definition injectProperty:@selector(coreDataManager) with:[self.managersAssembly coreDataManager]];
         [definition injectProperty:@selector(crashlyticsManager) with:[self.managersAssembly crashlyticsManager]];
         [definition injectProperty:@selector(spotlightManager) with:[self.managersAssembly spotlightManager]];
+        [definition injectProperty:@selector(userDefaultsManager) with:[self.managersAssembly userDefaultsManager]];
         definition.scope = TyphoonScopeSingleton;
     }];
 }

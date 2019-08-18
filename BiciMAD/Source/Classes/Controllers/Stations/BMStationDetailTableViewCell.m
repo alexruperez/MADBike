@@ -60,6 +60,7 @@
     self.pieChartView.legend.font = [UIFont systemFontOfSize:12.f];
     self.pieChartView.legend.horizontalAlignment = ChartLegendHorizontalAlignmentCenter;
     self.pieChartView.legend.verticalAlignment = ChartLegendVerticalAlignmentCenter;
+    self.pieChartView.legend.orientation = ChartLegendOrientationVertical;
     self.pieChartView.legend.form = ChartLegendFormCircle;
     
     [self configurePieChartView];

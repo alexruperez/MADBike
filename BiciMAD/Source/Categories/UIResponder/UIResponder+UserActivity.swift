@@ -6,6 +6,7 @@ import UIKit
 import CoreSpotlight
 import MobileCoreServices
 import MapKit
+import Intents
 
 @objc public extension UIResponder {
 
