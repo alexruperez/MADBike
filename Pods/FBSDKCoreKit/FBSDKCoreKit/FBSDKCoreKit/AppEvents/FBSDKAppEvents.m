@@ -18,7 +18,7 @@
 
 #import "FBSDKAppEvents.h"
 #import "FBSDKAppEvents+Internal.h"
-
+#import "FBSDKApplicationDelegate+Internal.h"
 #import <objc/runtime.h>
 
 #import <UIKit/UIApplication.h>
@@ -220,6 +220,7 @@ NSString *const FBSDKAppEventParameterShareTrayResult             = @"fb_share_t
 NSString *const FBSDKAppEventParameterLogTime = @"_logTime";
 NSString *const FBSDKAppEventParameterEventName = @"_eventName";
 NSString *const FBSDKAppEventParameterImplicitlyLogged = @"_implicitlyLogged";
+NSString *const FBSDKAppEventParameterInBackground = @"_inBackground";
 
 NSString *const FBSDKAppEventParameterLiveStreamingPrevStatus    = @"live_streaming_prev_status";
 NSString *const FBSDKAppEventParameterLiveStreamingStatus        = @"live_streaming_status";
@@ -1033,6 +1034,7 @@ static NSString *g_overrideAppID = nil;
   }
 
   NSString *currentViewControllerName;
+  UIApplicationState applicationState;
   if ([NSThread isMainThread]) {
     // We only collect the view controller when on the main thread, as the behavior off
     // the main thread is unpredictable.  Besides, UI state for off-main-thread computations
@@ -1043,10 +1045,16 @@ static NSString *g_overrideAppID = nil;
     } else {
       currentViewControllerName = @"no_ui";
     }
+    applicationState = [UIApplication sharedApplication].applicationState;
   } else {
     currentViewControllerName = @"off_thread";
+    applicationState = [FBSDKApplicationDelegate applicationState];
   }
   eventDictionary[@"_ui"] = currentViewControllerName;
+
+  if (applicationState == UIApplicationStateBackground) {
+    eventDictionary[FBSDKAppEventParameterInBackground] = @"1";
+  }
 
   NSString *tokenString = [FBSDKAppEventsUtility tokenStringToUseFor:accessToken];
   NSString *appID = [self appID];

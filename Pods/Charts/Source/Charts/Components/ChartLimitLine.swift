@@ -20,16 +20,16 @@ open class ChartLimitLine: ComponentBase
     @objc(ChartLimitLabelPosition)
     public enum LabelPosition: Int
     {
-        case leftTop
-        case leftBottom
-        case rightTop
-        case rightBottom
+        case topLeft
+        case topRight
+        case bottomLeft
+        case bottomRight
     }
     
     /// limit / maximum (the y-value or xIndex)
     @objc open var limit = Double(0.0)
     
-    fileprivate var _lineWidth = CGFloat(2.0)
+    private var _lineWidth = CGFloat(2.0)
     @objc open var lineColor = NSUIColor(red: 237.0/255.0, green: 91.0/255.0, blue: 91.0/255.0, alpha: 1.0)
     @objc open var lineDashPhase = CGFloat(0.0)
     @objc open var lineDashLengths: [CGFloat]?
@@ -39,7 +39,7 @@ open class ChartLimitLine: ComponentBase
     
     @objc open var drawLabelEnabled = true
     @objc open var label = ""
-    @objc open var labelPosition = LabelPosition.rightTop
+    @objc open var labelPosition = LabelPosition.topRight
     
     public override init()
     {
@@ -68,18 +68,7 @@ open class ChartLimitLine: ComponentBase
         }
         set
         {
-            if newValue < 0.2
-            {
-                _lineWidth = 0.2
-            }
-            else if newValue > 12.0
-            {
-                _lineWidth = 12.0
-            }
-            else
-            {
-                _lineWidth = newValue
-            }
+            _lineWidth = newValue.clamped(to: 0.2...12)
         }
     }
 }

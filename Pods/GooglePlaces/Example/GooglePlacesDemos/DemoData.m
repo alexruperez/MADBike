@@ -82,11 +82,13 @@
       [[Demo alloc] initWithViewControllerClass:[AutocompleteWithTextFieldController class]],
     ];
 
+
     _sections = @[
       [[DemoSection alloc]
           initWithTitle:NSLocalizedString(@"Demo.Section.Title.Autocomplete",
                                           @"Title of the autocomplete demo section")
                   demos:autocompleteDemos],
+
     ];
   }
   return self;

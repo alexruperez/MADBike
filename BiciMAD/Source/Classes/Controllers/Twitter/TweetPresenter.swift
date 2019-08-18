@@ -37,7 +37,7 @@ typealias TweetPresenterCompletion = (_ buttonIndex: UInt, _ error: NSError?) ->
         tweetView.showActionButtons = true
 
         draggableDialogManager.presentCustomView(tweetView, firstButton: NSLocalizedString("Ok", comment: "Ok"), cancelButton: " ", in: view) { buttonIndex in
-            BMAnalyticsManager.logContentView(withName: String(describing: BMDraggableDialogManager.self), contentType: String(describing: TWTRTweet.self), contentId: tweet.tweetID, customAttributes: [FBSDKAppEventParameterNameContentType: String(describing: TWTRTweet.self), FBSDKAppEventParameterNameContentID: tweet.tweetID != .none ? tweet.tweetID : ""])
+            BMAnalyticsManager.logContentView(withName: String(describing: BMDraggableDialogManager.self), contentType: String(describing: TWTRTweet.self), contentId: tweet.tweetID, customAttributes: [FBSDKAppEventParameterNameContentType: String(describing: TWTRTweet.self), FBSDKAppEventParameterNameContentID: tweet.tweetID])
             completion?(buttonIndex, nil)
         }
     }

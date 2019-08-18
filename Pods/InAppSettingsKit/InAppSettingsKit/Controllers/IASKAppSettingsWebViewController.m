@@ -122,7 +122,7 @@
 		[mailViewController setToRecipients:toRecipients];
 
 		mailViewController.navigationBar.barStyle = self.navigationController.navigationBar.barStyle;
-		IASK_IF_IOS7_OR_GREATER(mailViewController.navigationBar.tintColor = self.navigationController.navigationBar.tintColor;);
+		mailViewController.navigationBar.tintColor = self.navigationController.navigationBar.tintColor;
 		mailViewController.navigationBar.titleTextAttributes =  self.navigationController.navigationBar.titleTextAttributes;
 
 		UIStatusBarStyle savedStatusBarStyle = [UIApplication sharedApplication].statusBarStyle;
@@ -133,7 +133,7 @@
 	}
 	
 	// open inline if host is the same, otherwise, pass to the system
-	if (![newURL host] || [[newURL host] isEqualToString:[self.url host]]) {
+	if (![newURL host] || ![self.url host] || [[newURL host] isEqualToString:(NSString *)[self.url host]]) {
 		return YES;
 	}
 	IASK_IF_IOS11_OR_GREATER([UIApplication.sharedApplication openURL:newURL options:@{} completionHandler:nil];);

@@ -9,7 +9,7 @@
 import Foundation
 
 public extension NSURL {
-    @objc public func deepLinkURL() -> URL? {
+    @objc func deepLinkURL() -> URL? {
         guard let scheme = scheme, let host = host, let pathComponents = pathComponents, scheme.hasPrefix("http"), host.contains("madbikeapp") else {
             return nil
         }
@@ -23,17 +23,17 @@ public extension NSURL {
         return URL(string: deepLink)
     }
 
-    public func deepLinkString() -> String? {
+    func deepLinkString() -> String? {
         return deepLinkURL()?.absoluteString
     }
 }
 
 public extension NSString {
-    public func deepLinkURL() -> URL? {
+    func deepLinkURL() -> URL? {
         return NSURL(string: self as String)?.deepLinkURL()
     }
 
-    public func deepLinkString() -> String? {
+    func deepLinkString() -> String? {
         return NSURL(string: self as String)?.deepLinkString()
     }
 }

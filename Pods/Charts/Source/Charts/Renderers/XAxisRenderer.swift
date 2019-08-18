@@ -12,24 +12,16 @@
 import Foundation
 import CoreGraphics
 
-#if !os(OSX)
-    import UIKit
-#endif
-
 @objc(ChartXAxisRenderer)
 open class XAxisRenderer: AxisRendererBase
 {
-    @objc public init(viewPortHandler: ViewPortHandler?, xAxis: XAxis?, transformer: Transformer?)
+    @objc public init(viewPortHandler: ViewPortHandler, xAxis: XAxis?, transformer: Transformer?)
     {
         super.init(viewPortHandler: viewPortHandler, transformer: transformer, axis: xAxis)
     }
     
     open override func computeAxis(min: Double, max: Double, inverted: Bool)
     {
-        guard let
-            viewPortHandler = self.viewPortHandler
-            else { return }
-        
         var min = min, max = max
         
         if let transformer = self.transformer
@@ -72,12 +64,12 @@ open class XAxisRenderer: AxisRendererBase
         
         let longest = xAxis.getLongestLabel()
         
-        let labelSize = longest.size(withAttributes: [NSAttributedStringKey.font: xAxis.labelFont])
+        let labelSize = longest.size(withAttributes: [NSAttributedString.Key.font: xAxis.labelFont])
         
         let labelWidth = labelSize.width
         let labelHeight = labelSize.height
         
-        let labelRotatedSize = ChartUtils.sizeOfRotatedRectangle(labelSize, degrees: xAxis.labelRotationAngle)
+        let labelRotatedSize = labelSize.rotatedBy(degrees: xAxis.labelRotationAngle)
         
         xAxis.labelWidth = labelWidth
         xAxis.labelHeight = labelHeight
@@ -87,10 +79,7 @@ open class XAxisRenderer: AxisRendererBase
     
     open override func renderAxisLabels(context: CGContext)
     {
-        guard let
-            xAxis = self.axis as? XAxis,
-            let viewPortHandler = self.viewPortHandler
-            else { return }
+        guard let xAxis = self.axis as? XAxis else { return }
         
         if !xAxis.isEnabled || !xAxis.isDrawLabelsEnabled
         {
@@ -122,14 +111,11 @@ open class XAxisRenderer: AxisRendererBase
         }
     }
     
-    fileprivate var _axisLineSegmentsBuffer = [CGPoint](repeating: CGPoint(), count: 2)
+    private var _axisLineSegmentsBuffer = [CGPoint](repeating: CGPoint(), count: 2)
     
     open override func renderAxisLine(context: CGContext)
     {
-        guard
-            let xAxis = self.axis as? XAxis,
-            let viewPortHandler = self.viewPortHandler
-            else { return }
+        guard let xAxis = self.axis as? XAxis else { return }
         
         if !xAxis.isEnabled || !xAxis.isDrawAxisLineEnabled
         {
@@ -179,21 +165,18 @@ open class XAxisRenderer: AxisRendererBase
     {
         guard
             let xAxis = self.axis as? XAxis,
-            let viewPortHandler = self.viewPortHandler,
             let transformer = self.transformer
             else { return }
         
-        #if os(OSX)
-            let paraStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
-        #else
-            let paraStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
-        #endif
+        let paraStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         paraStyle.alignment = .center
         
-        let labelAttrs: [NSAttributedStringKey : Any] = [NSAttributedStringKey.font: xAxis.labelFont,
-            NSAttributedStringKey.foregroundColor: xAxis.labelTextColor,
-            NSAttributedStringKey.paragraphStyle: paraStyle]
-        let labelRotationAngleRadians = xAxis.labelRotationAngle * ChartUtils.Math.FDEG2RAD
+        let labelAttrs: [NSAttributedString.Key : Any] = [
+            .font: xAxis.labelFont,
+            .foregroundColor: xAxis.labelTextColor,
+            .paragraphStyle: paraStyle
+        ]
+        let labelRotationAngleRadians = xAxis.labelRotationAngle.DEG2RAD
         
         let centeringEnabled = xAxis.isCenterAxisLabelsEnabled
 
@@ -267,7 +250,7 @@ open class XAxisRenderer: AxisRendererBase
         formattedLabel: String,
         x: CGFloat,
         y: CGFloat,
-        attributes: [NSAttributedStringKey : Any],
+        attributes: [NSAttributedString.Key : Any],
         constrainedToSize: CGSize,
         anchor: CGPoint,
         angleRadians: CGFloat)
@@ -330,7 +313,7 @@ open class XAxisRenderer: AxisRendererBase
     
     @objc open var gridClippingRect: CGRect
     {
-        var contentRect = viewPortHandler?.contentRect ?? CGRect.zero
+        var contentRect = viewPortHandler.contentRect
         let dx = self.axis?.gridLineWidth ?? 0.0
         contentRect.origin.x -= dx / 2.0
         contentRect.size.width += dx
@@ -339,10 +322,6 @@ open class XAxisRenderer: AxisRendererBase
     
     @objc open func drawGridLine(context: CGContext, x: CGFloat, y: CGFloat)
     {
-        guard
-            let viewPortHandler = self.viewPortHandler
-            else { return }
-        
         if x >= viewPortHandler.offsetLeft
             && x <= viewPortHandler.chartWidth
         {
@@ -357,30 +336,16 @@ open class XAxisRenderer: AxisRendererBase
     {
         guard
             let xAxis = self.axis as? XAxis,
-            let viewPortHandler = self.viewPortHandler,
-            let transformer = self.transformer
+            let transformer = self.transformer,
+            !xAxis.limitLines.isEmpty
             else { return }
-        
-        var limitLines = xAxis.limitLines
-        
-        if limitLines.count == 0
-        {
-            return
-        }
         
         let trans = transformer.valueToPixelMatrix
         
         var position = CGPoint(x: 0.0, y: 0.0)
         
-        for i in 0 ..< limitLines.count
+        for l in xAxis.limitLines where l.isEnabled
         {
-            let l = limitLines[i]
-            
-            if !l.isEnabled
-            {
-                continue
-            }
-            
             context.saveGState()
             defer { context.restoreGState() }
             
@@ -400,9 +365,6 @@ open class XAxisRenderer: AxisRendererBase
     
     @objc open func renderLimitLineLine(context: CGContext, limitLine: ChartLimitLine, position: CGPoint)
     {
-        guard
-            let viewPortHandler = self.viewPortHandler
-            else { return }
         
         context.beginPath()
         context.move(to: CGPoint(x: position.x, y: viewPortHandler.contentTop))
@@ -424,60 +386,55 @@ open class XAxisRenderer: AxisRendererBase
     
     @objc open func renderLimitLineLabel(context: CGContext, limitLine: ChartLimitLine, position: CGPoint, yOffset: CGFloat)
     {
-        guard
-            let viewPortHandler = self.viewPortHandler
-            else { return }
         
         let label = limitLine.label
-        
-        // if drawing the limit-value label is enabled
-        if limitLine.drawLabelEnabled && label.characters.count > 0
-        {
-            let labelLineHeight = limitLine.valueFont.lineHeight
-            
-            let xOffset: CGFloat = limitLine.lineWidth + limitLine.xOffset
-            
-            if limitLine.labelPosition == .rightTop
-            {
-                ChartUtils.drawText(context: context,
-                    text: label,
-                    point: CGPoint(
-                        x: position.x + xOffset,
-                        y: viewPortHandler.contentTop + yOffset),
-                    align: .left,
-                    attributes: [NSAttributedStringKey.font: limitLine.valueFont, NSAttributedStringKey.foregroundColor: limitLine.valueTextColor])
-            }
-            else if limitLine.labelPosition == .rightBottom
-            {
-                ChartUtils.drawText(context: context,
-                    text: label,
-                    point: CGPoint(
-                        x: position.x + xOffset,
-                        y: viewPortHandler.contentBottom - labelLineHeight - yOffset),
-                    align: .left,
-                    attributes: [NSAttributedStringKey.font: limitLine.valueFont, NSAttributedStringKey.foregroundColor: limitLine.valueTextColor])
-            }
-            else if limitLine.labelPosition == .leftTop
-            {
-                ChartUtils.drawText(context: context,
-                    text: label,
-                    point: CGPoint(
-                        x: position.x - xOffset,
-                        y: viewPortHandler.contentTop + yOffset),
-                    align: .right,
-                    attributes: [NSAttributedStringKey.font: limitLine.valueFont, NSAttributedStringKey.foregroundColor: limitLine.valueTextColor])
-            }
-            else
-            {
-                ChartUtils.drawText(context: context,
-                    text: label,
-                    point: CGPoint(
-                        x: position.x - xOffset,
-                        y: viewPortHandler.contentBottom - labelLineHeight - yOffset),
-                    align: .right,
-                    attributes: [NSAttributedStringKey.font: limitLine.valueFont, NSAttributedStringKey.foregroundColor: limitLine.valueTextColor])
-            }
-        }
-    }
+        guard limitLine.drawLabelEnabled, !label.isEmpty else { return }
 
+        let labelLineHeight = limitLine.valueFont.lineHeight
+
+        let xOffset: CGFloat = limitLine.lineWidth + limitLine.xOffset
+        let attributes: [NSAttributedString.Key : Any] = [
+            .font : limitLine.valueFont,
+            .foregroundColor : limitLine.valueTextColor
+        ]
+
+        let (point, align): (CGPoint, NSTextAlignment)
+        switch limitLine.labelPosition {
+        case .topRight:
+            point = CGPoint(
+                x: position.x + xOffset,
+                y: viewPortHandler.contentTop + yOffset
+            )
+            align = .left
+
+        case .bottomRight:
+            point = CGPoint(
+                x: position.x + xOffset,
+                y: viewPortHandler.contentBottom - labelLineHeight - yOffset
+            )
+            align = .left
+
+        case .topLeft:
+            point = CGPoint(
+                x: position.x - xOffset,
+                y: viewPortHandler.contentTop + yOffset
+            )
+            align = .right
+
+        case .bottomLeft:
+            point = CGPoint(
+                x: position.x - xOffset,
+                y: viewPortHandler.contentBottom - labelLineHeight - yOffset
+            )
+            align = .right
+        }
+
+        ChartUtils.drawText(
+            context: context,
+            text: label,
+            point: point,
+            align: align,
+            attributes: attributes
+        )
+    }
 }

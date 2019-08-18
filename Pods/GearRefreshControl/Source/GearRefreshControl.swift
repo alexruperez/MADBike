@@ -101,7 +101,7 @@ open class GearRefreshControl: UIRefreshControl {
    
    - Parameter scrollView: The scrollview being observed
    */
-  open func scrollViewDidScroll(_ scrollView: UIScrollView) {
+  @objc open func scrollViewDidScroll(_ scrollView: UIScrollView) {
     var refreshBounds = self.bounds;
     
     // Distance the table has been pulled

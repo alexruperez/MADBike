@@ -1496,7 +1496,7 @@
 			};
 			buildConfigurationList = D5803E971BC586DB000C0E26 /* Build configuration list for PBXProject "BiciMAD" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,

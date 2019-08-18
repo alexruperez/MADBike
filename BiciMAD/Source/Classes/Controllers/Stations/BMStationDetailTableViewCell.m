@@ -53,12 +53,13 @@
     [super awakeFromNib];
     
     self.pieChartView.rotationWithTwoFingers = YES;
-    self.pieChartView.descriptionText = @"";
+    self.pieChartView.chartDescription.text = @"";
     self.pieChartView.transparentCircleColor = nil;
     self.pieChartView.holeColor = nil;
     
     self.pieChartView.legend.font = [UIFont systemFontOfSize:12.f];
-    self.pieChartView.legend.position = ChartLegendPositionPiechartCenter;
+    self.pieChartView.legend.horizontalAlignment = ChartLegendHorizontalAlignmentCenter;
+    self.pieChartView.legend.verticalAlignment = ChartLegendVerticalAlignmentCenter;
     self.pieChartView.legend.form = ChartLegendFormCircle;
     
     [self configurePieChartView];
@@ -131,7 +132,7 @@
             [colors addObject:UIColor.bm_gray];
         }
         
-        PieChartDataSet *dataSet = [[PieChartDataSet alloc] initWithValues:yValues.copy label:nil];
+        PieChartDataSet *dataSet = [[PieChartDataSet alloc] initWithEntries:yValues.copy label:nil];
         
         dataSet.colors = colors.copy;
 

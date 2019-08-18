@@ -9,11 +9,11 @@ import MapKit
 
 @objc public extension UIResponder {
 
-    @objc public func setUserActivity(activityType: String, title: String, description: String?) {
+    @objc func setUserActivity(activityType: String, title: String, description: String?) {
         setUserActivity(activityType, title: title, contentDescription: description)
     }
 
-    @discardableResult public func setUserActivity(_ activityType: String,
+    @discardableResult func setUserActivity(_ activityType: String,
                                                    title: String,
                                                    contentDescription: String? = nil,
                                                    thumbnailData: Data? = nil,

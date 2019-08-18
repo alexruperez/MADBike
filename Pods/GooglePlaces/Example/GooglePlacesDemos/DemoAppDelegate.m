@@ -15,12 +15,10 @@
 
 #import "GooglePlacesDemos/DemoAppDelegate.h"
 
-#import <GoogleMaps/GoogleMaps.h>
 #import <GooglePlaces/GooglePlaces.h>
 #import "GooglePlacesDemos/DemoData.h"
 #import "GooglePlacesDemos/DemoListViewController.h"
 #import "GooglePlacesDemos/SDKDemoAPIKey.h"
-
 
 @implementation DemoAppDelegate
 
@@ -40,17 +38,12 @@
                                  userInfo:nil];
   }
 
-  // Provide the Places API with your API key.
+  // Provide the Places SDK with your API key.
   [GMSPlacesClient provideAPIKey:kAPIKey];
-  // Provide the Maps API with your API key. You may not need this in your app, however we do need
-  // this for the demo app as it uses Maps.
-  [GMSServices provideAPIKey:kAPIKey];
 
   // Log the required open source licenses! Yes, just NSLog-ing them is not enough but is good for
   // a demo.
-  NSLog(@"Google Maps open source licenses:\n%@", [GMSServices openSourceLicenseInfo]);
   NSLog(@"Google Places open source licenses:\n%@", [GMSPlacesClient openSourceLicenseInfo]);
-
 
   // Manually create a window. If you are using a storyboard in your own app you can ignore the rest
   // of this method.

@@ -25,9 +25,7 @@
 //
 
 import Foundation
-#if SWIFT_PACKAGE
-import Cryptor
-#endif
+import CommonCrypto
 
 
 /// The `RNCryptorType` protocol defines generic API to a mutable,
@@ -118,7 +116,7 @@ public enum RNCryptor {
     /// Crashes if `length` is larger than allocatable memory, or if the system random number generator is not available.
     public static func randomData(ofLength length: Int) -> Data {
         var data = Data(count: length)
-        let result = data.withUnsafeMutableBytes { return SecRandomCopyBytes(kSecRandomDefault, length, $0) }
+        let result = data.withUnsafeMutableBytes { SecRandomCopyBytes(kSecRandomDefault, length, $0.baseAddress!) }
         guard result == errSecSuccess else {
             fatalError("SECURITY FAILURE: Could not generate secure random numbers: \(result).")
         }
@@ -230,7 +228,7 @@ public enum RNCryptor {
 // V3 implementaion
 public extension RNCryptor {
     /// V3 format settings
-    public final class FormatV3 {
+    final class FormatV3 {
         /// Size of AES and HMAC keys
         public static let keySize = kCCKeySizeAES256
 
@@ -244,32 +242,28 @@ public extension RNCryptor {
         /// - returns: Key of length FormatV3.keySize
         public static func makeKey(forPassword password: String, withSalt salt: Data) -> Data {
 
-            let passwordData = Data(password.utf8)
+            let passwordArray = password.utf8.map(Int8.init)
+            let saltArray = Array(salt)
 
-            return passwordData.withUnsafeBytes { (passwordPtr : UnsafePointer<Int8>) in
-                salt.withUnsafeBytes { (saltPtr : UnsafePointer<UInt8>) in
-                    var derivedKey = Data(count: keySize)
-                    derivedKey.withUnsafeMutableBytes { (derivedKeyPtr : UnsafeMutablePointer<UInt8>) in
-                        // All the crazy casting because CommonCryptor hates Swift
-                        let algorithm    = CCPBKDFAlgorithm(kCCPBKDF2)
-                        let prf          = CCPseudoRandomAlgorithm(kCCPRFHmacAlgSHA1)
-                        let pbkdf2Rounds = UInt32(10000)
+            var derivedKey = Array<UInt8>(repeating: 0, count: keySize)
 
-                        let result = CCCryptorStatus(
-                            CCKeyDerivationPBKDF(
-                                algorithm,
-                                passwordPtr,   passwordData.count,
-                                saltPtr,       salt.count,
-                                prf,           pbkdf2Rounds,
-                                derivedKeyPtr, keySize)
-                        )
-                        guard result == CCCryptorStatus(kCCSuccess) else {
-                            fatalError("SECURITY FAILURE: Could not derive secure password (\(result))")
-                        }
-                    }
-                    return derivedKey
-                }
+            // All the crazy casting because CommonCryptor hates Swift
+            let algorithm    = CCPBKDFAlgorithm(kCCPBKDF2)
+            let prf          = CCPseudoRandomAlgorithm(kCCPRFHmacAlgSHA1)
+            let pbkdf2Rounds = UInt32(10000)
+
+            let result = CCCryptorStatus(
+                CCKeyDerivationPBKDF(
+                    algorithm,
+                    passwordArray, passwordArray.count,
+                    saltArray,     saltArray.count,
+                    prf,           pbkdf2Rounds,
+                    &derivedKey,   keySize)
+            )
+            guard result == CCCryptorStatus(kCCSuccess) else {
+                fatalError("SECURITY FAILURE: Could not derive secure password (\(result))")
             }
+            return Data(derivedKey)
         }
 
         static let formatVersion = UInt8(3)
@@ -282,7 +276,7 @@ public extension RNCryptor {
     /// Format version 3 encryptor. Use this to ensure a specific format verison
     /// or when using keys (which are inherrently versions-specific). To use
     /// "the latest encryptor" with a password, use `Encryptor` instead.
-    public final class EncryptorV3 : RNCryptorType {
+    final class EncryptorV3 : RNCryptorType {
         private let engine: Engine
         private let hmac: HMACV3
         private var pendingHeader: Data?
@@ -342,7 +336,7 @@ public extension RNCryptor {
         // Expose random numbers for testing
         internal convenience init(encryptionKey: Data, hmacKey: Data, iv: Data) {
             let preamble = [V3.formatVersion, UInt8(0)]
-            var header = Data(bytes: preamble)
+            var header = Data(preamble)
             header.append(iv)
             self.init(encryptionKey: encryptionKey, hmacKey: hmacKey, iv: iv, header: header)
         }
@@ -353,7 +347,7 @@ public extension RNCryptor {
             let hmacKey = V3.makeKey(forPassword: password, withSalt: hmacSalt)
 
             let preamble = [V3.formatVersion, UInt8(1)]
-            var header = Data(bytes: preamble)
+            var header = Data(preamble)
             header.append(encryptionSalt)
             header.append(hmacSalt)
             header.append(iv)
@@ -388,7 +382,7 @@ public extension RNCryptor {
     /// using keys (since key configuration is version-specific). For password
     /// decryption, `Decryptor` is generally preferred, and will call this
     /// if appropriate.
-    public final class DecryptorV3: VersionedDecryptorType {
+    final class DecryptorV3: VersionedDecryptorType {
         //
         // Static methods
         //
@@ -534,15 +528,15 @@ internal final class Engine {
 
     init(operation: CryptorOperation, key: Data, iv: Data) {
 
-        cryptor = key.withUnsafeBytes { (keyPtr: UnsafePointer<UInt8>) in
-            iv.withUnsafeBytes { (ivPtr: UnsafePointer<UInt8>) in
+        cryptor = key.withUnsafeBytes { (keyPtr) in
+            iv.withUnsafeBytes { (ivPtr) in
 
                 var cryptorOut: CCCryptorRef?
                 let result = CCCryptorCreate(
                     operation.rawValue,
                     CCAlgorithm(kCCAlgorithmAES128), CCOptions(kCCOptionPKCS7Padding),
-                    keyPtr, key.count,
-                    ivPtr,
+                    keyPtr.baseAddress!, keyPtr.count,
+                    ivPtr.baseAddress!,
                     &cryptorOut
                 )
 
@@ -575,8 +569,8 @@ internal final class Engine {
             buffer.withUnsafeMutableBytes { bufferPtr in
                 return CCCryptorUpdate(
                     cryptor,
-                    dataPtr, data.count,
-                    bufferPtr, outputLength,
+                    dataPtr.baseAddress!, dataPtr.count,
+                    bufferPtr.baseAddress!, outputLength,
                     &dataOutMoved)
             }
         }
@@ -595,13 +589,13 @@ internal final class Engine {
         let result = buffer.withUnsafeMutableBytes {
             CCCryptorFinal(
                 cryptor,
-                $0, outputLength,
+                $0.baseAddress!, outputLength,
                 &dataOutMoved
             )
         }
 
         // Note that since iOS 6, CCryptor will never return padding errors or other decode errors.
-        // I'm not aware of any non-catestrophic (MemoryAllocation) situation in which this
+        // I'm not aware of any non-catastrophic (MemoryAllocation) situation in which this
         // can fail. Using assert() just in case, but we'll ignore errors in Release.
         // https://devforums.apple.com/message/920802#920802
         assert(result == CCCryptorStatus(kCCSuccess), "RNCRYPTOR BUG. PLEASE REPORT. (\(result)")
@@ -657,19 +651,19 @@ private final class HMACV3 {
             CCHmacInit(
                 &context,
                 CCHmacAlgorithm(kCCHmacAlgSHA256),
-                $0,
+                $0.baseAddress!,
                 key.count
             )
         }
     }
 
     func update(withData data: Data) {
-        data.withUnsafeBytes { CCHmacUpdate(&context, $0, data.count) }
+        data.withUnsafeBytes { CCHmacUpdate(&context, $0.baseAddress!, data.count) }
     }
 
     func finalData() -> Data {
         var hmac = Data(count: V3.hmacSize)
-        hmac.withUnsafeMutableBytes { CCHmacFinal(&context, $0) }
+        hmac.withUnsafeMutableBytes { CCHmacFinal(&context, $0.baseAddress!) }
         return hmac
     }
 }
@@ -749,12 +743,12 @@ internal final class OverflowingBuffer {
 
 /** Compare two Datas in time proportional to the untrusted data
 
-Equatable-based comparisons genreally stop comparing at the first difference.
+Equatable-based comparisons generally stop comparing at the first difference.
 This can be used by attackers, in some situations,
 to determine a secret value by considering the time required to compare the values.
 
 We enumerate over the untrusted values so that the time is proportaional to the attacker's data,
-which provides the attack no informatoin about the length of the secret.
+which provides the attack no information about the length of the secret.
 */
 private func isEqualInConsistentTime(trusted: Data, untrusted: Data) -> Bool {
     // The point of this routine is XOR the bytes of each data and accumulate the results with OR.

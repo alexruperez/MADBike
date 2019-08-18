@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '10.3'
 use_frameworks!
 inhibit_all_warnings!
 
@@ -14,10 +14,10 @@ def app_pods
     pod 'BBBadgeBarButtonItem', '~> 1.2'
     pod 'Branch'
     pod 'CCHMapClusterController', '~> 1.7'
-    pod 'Charts', '3.0.4'
+    pod 'Charts', '3.3'
     pod 'CMMapLauncher', :git => 'https://github.com/alexruperez/CMMapLauncher.git'
     pod 'Crashlytics', '~> 3.10'
-    pod 'DGRunkeeperSwitch', '~> 1.1'
+    pod 'DGRunkeeperSwitch', :git => 'https://github.com/aakpro/DGRunkeeperSwitch.git'
     pod 'DOFavoriteButton', :git => 'https://github.com/okmr-d/DOFavoriteButton.git'
     pod 'DTMHeatmap', '~> 1.0'
     pod 'Fabric', '~> 1.7'
@@ -33,16 +33,16 @@ def app_pods
     pod 'Mantle', '~> 2.1'
     pod 'MTLManagedObjectAdapter', '~> 1.0'
     pod 'OpenInGoogleMaps', '~> 0.1'
-    pod 'Popover', '1.0.6'
+    pod 'Popover', '1.2.2'
     pod 'RESideMenu', '~> 4.0'
-    pod 'RNCryptor', '5.0.3'
+    pod 'RNCryptor', '5.1.0'
     pod 'SFDraggableDialogView', '~> 1.1'
     pod 'SmileWeather', '~> 0.2'
     pod 'SVProgressHUD', '~> 2.2'
     pod 'SVPulsingAnnotationView', :git => 'https://github.com/TransitApp/SVPulsingAnnotationView.git'
     pod 'TwitterKit', '~> 3.4'
     pod 'Typhoon', '~> 3.6'
-    pod 'Zephyr', '3.2.0'
+    pod 'Zephyr', '3.4.1'
     
     plugin 'cocoapods-keys', {
       project: "BiciMAD",

@@ -53,7 +53,7 @@ open class DGRunkeeperSwitch: UIControl {
         get { return titleLabels.map { $0.text! } }
     }
     
-    fileprivate(set) open var selectedIndex: Int = 0
+    @objc fileprivate(set) open var selectedIndex: Int = 0
     
     open var selectedBackgroundInset: CGFloat = 2.0 {
         didSet { setNeedsLayout() }
@@ -71,7 +71,7 @@ open class DGRunkeeperSwitch: UIControl {
     }
     
     @IBInspectable
-    open var selectedTitleColor: UIColor! {
+    @objc open var selectedTitleColor: UIColor! {
         didSet { selectedTitleLabels.forEach { $0.textColor = selectedTitleColor } }
     }
     
@@ -85,7 +85,7 @@ open class DGRunkeeperSwitch: UIControl {
     @IBInspectable
     open var titleFontSize: CGFloat = 18.0
     
-    open var animationDuration: TimeInterval = 0.3
+    @objc open var animationDuration: TimeInterval = 0.3
     open var animationSpringDamping: CGFloat = 0.75
     open var animationInitialSpringVelocity: CGFloat = 0.0
     
@@ -97,7 +97,7 @@ open class DGRunkeeperSwitch: UIControl {
     fileprivate var selectedTitleLabelsContentView = UIView()
     fileprivate var selectedTitleLabels = [UILabel]()
     
-    fileprivate(set) var selectedBackgroundView = UIView()
+    @objc fileprivate(set) var selectedBackgroundView = UIView()
     
     fileprivate var titleMaskView: UIView = UIView()
     
@@ -108,7 +108,7 @@ open class DGRunkeeperSwitch: UIControl {
     
     // MARK: - Constructors
     
-    public init(titles: [String]) {
+    @objc public init(titles: [String]) {
         super.init(frame: CGRect.zero)
         
         self.titles = titles
@@ -208,7 +208,7 @@ open class DGRunkeeperSwitch: UIControl {
         }
     }
     
-    open func setSelectedIndex(_ selectedIndex: Int, animated: Bool) {
+    @objc open func setSelectedIndex(_ selectedIndex: Int, animated: Bool) {
         guard 0..<titleLabels.count ~= selectedIndex else { return }
         
         // Reset switch on half pan gestures
@@ -222,7 +222,7 @@ open class DGRunkeeperSwitch: UIControl {
             if (!catchHalfSwitch) {
                 self.sendActions(for: .valueChanged)
             }
-            UIView.animate(withDuration: animationDuration, delay: 0.0, usingSpringWithDamping: animationSpringDamping, initialSpringVelocity: animationInitialSpringVelocity, options: [UIViewAnimationOptions.beginFromCurrentState, UIViewAnimationOptions.curveEaseOut], animations: { () -> Void in
+            UIView.animate(withDuration: animationDuration, delay: 0.0, usingSpringWithDamping: animationSpringDamping, initialSpringVelocity: animationInitialSpringVelocity, options: [UIView.AnimationOptions.beginFromCurrentState, UIView.AnimationOptions.curveEaseOut], animations: { () -> Void in
                 self.layoutSubviews()
                 }, completion: nil)
         } else {
