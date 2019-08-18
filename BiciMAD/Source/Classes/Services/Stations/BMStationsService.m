@@ -11,9 +11,20 @@
 #import "BMServicesAssembly.h"
 #import "BMCoreDataManager.h"
 #import "BMFavoritesManager.h"
+#import "BMHTTPClientConstants.h"
 #import "BMStation.h"
 
 @implementation BMStationsService
+
+- (void)loginWithSuccessBlock:(BMStationsServiceStringBlock)successBlock failureBlock:(BMStationsServiceErrorBlock)failureBlock {
+    BMServiceTask *taskEMT = [self.servicesAssembly loginEMTTask];
+
+    [taskEMT setSuccessBlock:successBlock];
+
+    [taskEMT setFailureBlock:failureBlock];
+
+    [taskEMT execute];
+}
 
 - (void)allStationsWithSuccessBlock:(BMStationsServiceArrayBlock)successBlock failureBlock:(BMStationsServiceErrorBlock)failureBlock
 {
@@ -24,8 +35,18 @@
     @weakify(self)
     [taskEMT setFailureBlock:^(NSError *errorEMT) {
         @strongify(self)
-        if ([errorEMT.domain isEqualToString:NSURLErrorDomain])
+        if ([errorEMT.domain isEqualToString:kBMEMTErrorDomain])
         {
+            [self loginWithSuccessBlock:^(NSString *string) {
+                [self allStationsWithSuccessBlock:successBlock failureBlock:failureBlock];
+            } failureBlock: failureBlock];
+        }
+        else if ([errorEMT.domain isEqualToString:NSURLErrorDomain])
+        {
+            [self loginWithSuccessBlock:^(NSString *string) {
+                [self allStationsWithSuccessBlock:successBlock failureBlock:nil];
+            } failureBlock: nil];
+
             [self.coreDataManager findAll:BMStation.class completion:^(NSArray *results, NSError *coreDataError) {
                 @strongify(self)
                 if (results && !coreDataError)

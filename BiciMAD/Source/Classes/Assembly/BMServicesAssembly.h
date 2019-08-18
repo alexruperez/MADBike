@@ -54,6 +54,8 @@
 
 - (BMWeatherDownloader *)weatherDownloader;
 
+- (BMServiceTask *)loginEMTTask;
+
 - (BMServiceTask *)allStationsEMTTask;
 
 - (BMServiceTask *)singleStationEMTTaskWithStationId:(NSString *)stationId;

@@ -44,6 +44,7 @@
 		D514D2F01BD6504000E72348 /* BMStationsService.m in Sources */ = {isa = PBXBuildFile; fileRef = D514D2EF1BD6504000E72348 /* BMStationsService.m */; };
 		D514D2F71BD6535D00E72348 /* BMStationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D514D2F61BD6535D00E72348 /* BMStationsViewController.m */; };
 		D514D2FD1BD6956C00E72348 /* BMStation.m in Sources */ = {isa = PBXBuildFile; fileRef = D514D2FC1BD6956C00E72348 /* BMStation.m */; };
+		D5159EEF2309C9A2006ED004 /* BMEMTLoginTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D5159EEE2309C9A2006ED004 /* BMEMTLoginTask.m */; };
 		D51B257C1D07751C00EE30E6 /* BMHeatmapRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D51B257B1D07751C00EE30E6 /* BMHeatmapRenderer.m */; };
 		D522DBB91D999B970001C9A2 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D522DBB81D999B970001C9A2 /* Intents.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D522DBC01D9B03300001C9A2 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D522DBBF1D9B03300001C9A2 /* CoreSpotlight.framework */; };
@@ -246,6 +247,8 @@
 		D514D2F61BD6535D00E72348 /* BMStationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BMStationsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D514D2FB1BD6956C00E72348 /* BMStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BMStation.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		D514D2FC1BD6956C00E72348 /* BMStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMStation.m; sourceTree = "<group>"; };
+		D5159EED2309C9A2006ED004 /* BMEMTLoginTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMEMTLoginTask.h; sourceTree = "<group>"; };
+		D5159EEE2309C9A2006ED004 /* BMEMTLoginTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMEMTLoginTask.m; sourceTree = "<group>"; };
 		D51B257A1D07751C00EE30E6 /* BMHeatmapRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMHeatmapRenderer.h; sourceTree = "<group>"; };
 		D51B257B1D07751C00EE30E6 /* BMHeatmapRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMHeatmapRenderer.m; sourceTree = "<group>"; };
 		D522DBB81D999B970001C9A2 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
@@ -649,6 +652,8 @@
 		D514D2ED1BD6501A00E72348 /* Stations */ = {
 			isa = PBXGroup;
 			children = (
+				D5159EED2309C9A2006ED004 /* BMEMTLoginTask.h */,
+				D5159EEE2309C9A2006ED004 /* BMEMTLoginTask.m */,
 				D514D2EE1BD6504000E72348 /* BMStationsService.h */,
 				D514D2EF1BD6504000E72348 /* BMStationsService.m */,
 				D5A360541DFC3592001634C7 /* BMEMTAllStationsTask.h */,
@@ -1841,6 +1846,7 @@
 				D5E029C61C8F546B00BECBFF /* GQTPointQuadTreeChild.m in Sources */,
 				D5D6251E1C16580500300D4E /* BMBaseViewController.m in Sources */,
 				D5F36BC71CB6F5D3006B6783 /* BMAllPartnersTask.m in Sources */,
+				D5159EEF2309C9A2006ED004 /* BMEMTLoginTask.m in Sources */,
 				D51310581CC571CC00949A6B /* BMStoragesAssembly.m in Sources */,
 				D557319D1D049EE000038CF1 /* BMAirQuality.m in Sources */,
 				D5CD142E1C7CFBB900E33A07 /* BMTwitterTimelineViewController.m in Sources */,
@@ -2011,7 +2017,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 x86_64 i386";
+				VALID_ARCHS = "arm64 x86_64 i386 arm64e";
 			};
 			name = Debug;
 		};
@@ -2082,7 +2088,7 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "arm64 x86_64 i386";
+				VALID_ARCHS = "arm64 x86_64 i386 arm64e";
 			};
 			name = Release;
 		};

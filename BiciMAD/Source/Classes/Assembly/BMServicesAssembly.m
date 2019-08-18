@@ -28,6 +28,7 @@
 
 #import "BMEMTAllStationsTask.h"
 #import "BMEMTSingleStationTask.h"
+#import "BMEMTLoginTask.h"
 #import "BMAirQualityTask.h"
 #import "BMAllPartnersTask.h"
 #import "BMEMTIncidencesTask.h"
@@ -134,6 +135,20 @@
 {
     return [TyphoonDefinition withClass:[BMWeatherDownloader class] configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:@selector(sharedDownloader)];
+        definition.scope = TyphoonScopeSingleton;
+    }];
+}
+
+- (BMServiceTask *)loginEMTTask
+{
+    return [TyphoonDefinition withClass:[BMEMTLoginTask class] configuration:^(TyphoonDefinition *definition) {
+        [definition useInitializer:@selector(taskWithHTTPClient:) parameters:^(TyphoonMethod *initializer) {
+            [initializer injectParameterWith:[self httpClientEMT]];
+        }];
+        [definition injectProperty:@selector(favoritesManager) with:[self.managersAssembly favoritesManager]];
+        [definition injectProperty:@selector(coreDataManager) with:[self.managersAssembly coreDataManager]];
+        [definition injectProperty:@selector(crashlyticsManager) with:[self.managersAssembly crashlyticsManager]];
+        [definition injectProperty:@selector(spotlightManager) with:[self.managersAssembly spotlightManager]];
         definition.scope = TyphoonScopeSingleton;
     }];
 }

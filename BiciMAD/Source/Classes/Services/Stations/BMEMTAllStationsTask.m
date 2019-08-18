@@ -20,7 +20,7 @@
 
 - (NSString *)requestURLString
 {
-    return [NSString stringWithFormat:@"%@/%@/%@/", kBMRequestAllStationsEMTURLString, BMAnalyticsManager.keys.eMTClientId, BMAnalyticsManager.keys.eMTPassKey];
+    return kBMRequestAllStationsEMTURLString;
 }
 
 - (id)parseResponseObject:(NSDictionary *)responseObject error:(NSError **)error

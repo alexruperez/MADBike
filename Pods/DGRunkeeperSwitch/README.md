@@ -1,15 +1,18 @@
 # DGRunkeeperSwitch
-Runkeeper design switch control (two part segment control) developed in Swift 2.0
+Runkeeper design switch control (two part segment control) developed in Swift 2.0 and I (@aakpro) changed it to swift 5.0 and still waiting for main repository owner to merge it.
+#### So here is new version of DGRunkeeper in swift 5
+#
+#
+#
 
 ![Preview 1](https://raw.githubusercontent.com/gontovnik/DGRunkeeperSwitch/master/DGRunkeeperSwitch.png)
 ![Preview 2](https://raw.githubusercontent.com/gontovnik/DGRunkeeperSwitch/master/DGRunkeeperSwitch.gif)
 
 ## Requirements
-* Xcode 7-beta or higher
-* iOS 8.0 or higher (May work on previous versions, just did not test it. Feel free to edit it).
+* Xcode 10.2 or higher
+* iOS 10.0 or higher (May work on previous versions, just did not test it. Feel free to edit it).
 * ARC
-* Swift 3.0 (old versions are in different releases)
-
+* Swift 5.0 
 ## Demo
 
 Open and run the DGRunkeeperSwitchExample project in Xcode to see DGRunkeeperSwitch in action.
@@ -27,7 +30,7 @@ pod "DGRunkeeperSwitch", "~> 1.1.4"
 ```
 
 ## Example usage
-
+### Using DGRunkeeperSwitch as a titleView
 ``` swift
 let runkeeperSwitch = DGRunkeeperSwitch(titles: ["Feed", "Leaderboard"])
 runkeeperSwitch.backgroundColor = UIColor(red: 229.0/255.0, green: 163.0/255.0, blue: 48.0/255.0, alpha: 1.0)
@@ -36,8 +39,22 @@ runkeeperSwitch.titleColor = .white
 runkeeperSwitch.selectedTitleColor = UIColor(red: 255.0/255.0, green: 196.0/255.0, blue: 92.0/255.0, alpha: 1.0)
 runkeeperSwitch.titleFont = UIFont(name: "HelveticaNeue-Medium", size: 13.0)
 runkeeperSwitch.frame = CGRect(x: 30.0, y: 40.0, width: 200.0, height: 30.0)
-runkeeperSwitch.addTarget(self, action: #selector(ViewController.switchValueDidChange(sender:)), for: .touchUpInside)
+runkeeperSwitch.addTarget(self, action: #selector(ViewController.switchValueDidChange(sender:)), for: .valueChanged)
 navigationItem.titleView = runkeeperSwitch
+```
+
+### Using as a stand alone control
+``` swift
+let runkeeperSwitch2 = DGRunkeeperSwitch()
+runkeeperSwitch2.titles = ["Daily", "Weekly", "Monthly", "Yearly"]
+runkeeperSwitch2.backgroundColor = UIColor(red: 239.0/255.0, green: 95.0/255.0, blue: 49.0/255.0, alpha: 1.0)
+runkeeperSwitch2.selectedBackgroundColor = .white
+runkeeperSwitch2.titleColor = .white
+runkeeperSwitch2.selectedTitleColor = UIColor(red: 239.0/255.0, green: 95.0/255.0, blue: 49.0/255.0, alpha: 1.0)
+runkeeperSwitch2.titleFont = UIFont(name: "HelveticaNeue-Medium", size: 13.0)
+runkeeperSwitch2.frame = CGRect(x: 50.0, y: 20.0, width: view.bounds.width - 100.0, height: 30.0)
+runkeeperSwitch2.autoresizingMask = [.flexibleWidth] // This is needed if you want the control to resize
+view.addSubview(runkeeperSwitch2)
 ```
 
 ## Contribution

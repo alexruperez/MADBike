@@ -25,18 +25,20 @@ NSString * const kBMDKErrorDomain = @"org.drunkcode.MADBike.error.drunkcode";
 NSString * const kBMErrorKey = @"error";
 
 // EMT API URL
-NSString * const kBMHTTPClientEMTURLString = @"https://rbdata.emtmadrid.es:8443/BiciMad/";
+NSString * const kBMHTTPClientEMTURLString = @"https://openapi.emtmadrid.es/v1/";
 
 // EMT Protected Methods
-NSString * const kBMRequestAllStationsEMTURLString = @"get_stations";
-NSString * const kBMRequestSingleStationEMTURLString = @"get_single_station";
+NSString * const kBMRequestAllStationsEMTURLString = @"transport/bicimad/stations";
+NSString * const kBMRequestSingleStationEMTURLString = @"transport/bicimad/stations";
 NSString * const kBMRequestIncidencesEMTURLString = @"suggestion";
+NSString * const kBMRequestLoginEMTURLString = @"mobilitylabs/user/login";
 
 // EMT Response Keys
 NSString * const kBMEMTCodeKey = @"code";
 NSString * const kBMEMTDescriptionKey = @"description";
 NSString * const kBMEMTDataKey = @"data";
 NSString * const kBMEMTStationsKey = @"stations";
+NSString * const kBMEMTAccessTokenKey = @"accessToken";
 
 // EMT Error Domain
 NSString * const kBMEMTErrorDomain = @"org.drunkcode.MADBike.error.emt";
@@ -65,6 +67,10 @@ NSString * const kBMHTTPClientAcceptKey = @"Accept";
 // DrunkCode HTTP Header Keys
 NSString * const kBMHTTPClientUserEmailKey = @"X-User-Email";
 NSString * const kBMHTTPClientUserTokenKey = @"X-User-Token";
+
+// EMT HTTP Header Keys
+NSString * const kBMHTTPClientEMTEmailKey = @"email";
+NSString * const kBMHTTPClientEMTPasswordKey = @"password";
 
 // BiciMAD HTTP Header Values
 NSString * const kBMHTTPClientJSONValue = @"application/json; charset=utf-8";
