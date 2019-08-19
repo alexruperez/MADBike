@@ -26,9 +26,8 @@
 #import "BMPointsService.h"
 #import "BMWeatherDownloader.h"
 
-#import "BMEMTAllStationsTask.h"
-#import "BMEMTSingleStationTask.h"
-#import "BMEMTLoginTask.h"
+#import "BMAllStationsTask.h"
+#import "BMSingleStationTask.h"
 #import "BMAirQualityTask.h"
 #import "BMAllPartnersTask.h"
 #import "BMEMTIncidencesTask.h"
@@ -139,9 +138,9 @@
     }];
 }
 
-- (BMServiceTask *)loginEMTTask
+- (BMServiceTask *)allStationsTask
 {
-    return [TyphoonDefinition withClass:[BMEMTLoginTask class] configuration:^(TyphoonDefinition *definition) {
+    return [TyphoonDefinition withClass:[BMAllStationsTask class] configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:@selector(taskWithHTTPClient:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[self httpClientEMT]];
         }];
@@ -154,24 +153,9 @@
     }];
 }
 
-- (BMServiceTask *)allStationsEMTTask
+- (BMServiceTask *)singleStationTaskWithStationId:(NSString *)stationId
 {
-    return [TyphoonDefinition withClass:[BMEMTAllStationsTask class] configuration:^(TyphoonDefinition *definition) {
-        [definition useInitializer:@selector(taskWithHTTPClient:) parameters:^(TyphoonMethod *initializer) {
-            [initializer injectParameterWith:[self httpClientEMT]];
-        }];
-        [definition injectProperty:@selector(favoritesManager) with:[self.managersAssembly favoritesManager]];
-        [definition injectProperty:@selector(coreDataManager) with:[self.managersAssembly coreDataManager]];
-        [definition injectProperty:@selector(crashlyticsManager) with:[self.managersAssembly crashlyticsManager]];
-        [definition injectProperty:@selector(spotlightManager) with:[self.managersAssembly spotlightManager]];
-        [definition injectProperty:@selector(userDefaultsManager) with:[self.managersAssembly userDefaultsManager]];
-        definition.scope = TyphoonScopeSingleton;
-    }];
-}
-
-- (BMServiceTask *)singleStationEMTTaskWithStationId:(NSString *)stationId
-{
-    return [TyphoonDefinition withClass:[BMEMTSingleStationTask class] configuration:^(TyphoonDefinition *definition) {
+    return [TyphoonDefinition withClass:[BMSingleStationTask class] configuration:^(TyphoonDefinition *definition) {
         [definition useInitializer:@selector(taskWithHTTPClient:) parameters:^(TyphoonMethod *initializer) {
             [initializer injectParameterWith:[self httpClientEMT]];
         }];

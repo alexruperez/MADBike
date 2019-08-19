@@ -16,37 +16,17 @@
 
 @implementation BMStationsService
 
-- (void)loginWithSuccessBlock:(BMStationsServiceStringBlock)successBlock failureBlock:(BMStationsServiceErrorBlock)failureBlock {
-    BMServiceTask *taskEMT = [self.servicesAssembly loginEMTTask];
-
-    [taskEMT setSuccessBlock:successBlock];
-
-    [taskEMT setFailureBlock:failureBlock];
-
-    [taskEMT execute];
-}
-
 - (void)allStationsWithSuccessBlock:(BMStationsServiceArrayBlock)successBlock failureBlock:(BMStationsServiceErrorBlock)failureBlock
 {
-    BMServiceTask *taskEMT = [self.servicesAssembly allStationsEMTTask];
+    BMServiceTask *allStationsTask = [self.servicesAssembly allStationsTask];
 
-    [taskEMT setSuccessBlock:successBlock];
+    [allStationsTask setSuccessBlock:successBlock];
 
     @weakify(self)
-    [taskEMT setFailureBlock:^(NSError *errorEMT) {
+    [allStationsTask setFailureBlock:^(NSError *error) {
         @strongify(self)
-        if ([errorEMT.domain isEqualToString:kBMEMTErrorDomain])
+        if ([error.domain isEqualToString:NSURLErrorDomain])
         {
-            [self loginWithSuccessBlock:^(NSString *string) {
-                [self allStationsWithSuccessBlock:successBlock failureBlock:failureBlock];
-            } failureBlock: failureBlock];
-        }
-        else if ([errorEMT.domain isEqualToString:NSURLErrorDomain])
-        {
-            [self loginWithSuccessBlock:^(NSString *string) {
-                [self allStationsWithSuccessBlock:successBlock failureBlock:nil];
-            } failureBlock: nil];
-
             [self.coreDataManager findAll:BMStation.class completion:^(NSArray *results, NSError *coreDataError) {
                 @strongify(self)
                 if (results && !coreDataError)
@@ -61,28 +41,28 @@
                 
                 if (failureBlock)
                 {
-                    failureBlock(errorEMT ? errorEMT : coreDataError);
+                    failureBlock(error ? error : coreDataError);
                 }
             }];
         }
         else if (failureBlock)
         {
-            failureBlock(errorEMT);
+            failureBlock(error);
         }
     }];
 
-    [taskEMT execute];
+    [allStationsTask execute];
 
 }
 
 - (void)singleStationWithStationId:(NSString *)stationId successBlock:(BMStationsServiceStationBlock)successBlock failureBlock:(BMStationsServiceErrorBlock)failureBlock
 {
-    BMServiceTask *task = [self.servicesAssembly singleStationEMTTaskWithStationId:stationId];
+    BMServiceTask *task = [self.servicesAssembly singleStationTaskWithStationId:stationId];
 
-    [task setSuccessBlock:^(NSArray *stations) {
-        if ([stations isKindOfClass:NSArray.class] && successBlock)
+    [task setSuccessBlock:^(BMStation *station) {
+        if ([station isKindOfClass:BMStation.class] && successBlock)
         {
-            successBlock(stations.firstObject);
+            successBlock(station);
         }
     }];
 

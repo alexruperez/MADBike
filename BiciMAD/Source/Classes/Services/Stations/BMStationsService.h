@@ -24,8 +24,6 @@ typedef void (^BMStationsServiceErrorBlock)(NSError *error);
 @property (nonatomic, strong) BMCoreDataManager *coreDataManager;
 @property (nonatomic, strong) BMFavoritesManager *favoritesManager;
 
-- (void)loginWithSuccessBlock:(BMStationsServiceStringBlock)successBlock failureBlock:(BMStationsServiceErrorBlock)failureBlock;
-
 - (void)allStationsWithSuccessBlock:(BMStationsServiceArrayBlock)successBlock failureBlock:(BMStationsServiceErrorBlock)failureBlock;
 
 - (void)singleStationWithStationId:(NSString *)stationId successBlock:(BMStationsServiceStationBlock)successBlock failureBlock:(BMStationsServiceErrorBlock)failureBlock;

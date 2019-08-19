@@ -27,7 +27,6 @@ typedef NS_ENUM(NSUInteger, BMLight) {
 @property (nonatomic, copy, readonly) NSString *stationNumber;
 @property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, copy, readonly) NSString *street;
-@property (nonatomic, copy, readonly) NSArray *coordinates;
 @property (nonatomic, assign, readonly) BOOL active;
 @property (nonatomic, assign, readonly) NSUInteger freeStands;
 @property (nonatomic, assign, readonly) NSUInteger totalStands;

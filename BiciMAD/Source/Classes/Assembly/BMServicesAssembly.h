@@ -54,11 +54,9 @@
 
 - (BMWeatherDownloader *)weatherDownloader;
 
-- (BMServiceTask *)loginEMTTask;
+- (BMServiceTask *)allStationsTask;
 
-- (BMServiceTask *)allStationsEMTTask;
-
-- (BMServiceTask *)singleStationEMTTaskWithStationId:(NSString *)stationId;
+- (BMServiceTask *)singleStationTaskWithStationId:(NSString *)stationId;
 
 - (BMServiceTask *)incidencesEMTTaskWithPhonePreferred:(NSNumber *)phonePreferred phone:(NSString *)phone email:(NSString *)email lastName:(NSString *)lastName subject:(NSString *)subject text:(NSString *)text;
 

@@ -17,6 +17,11 @@ extern NSString * const kBMHTTPClientDrunkcodeStagingURLString;
 // DrunkCode Protected Methods
 extern NSString * const kBMRequestAllPartnersURLString;
 extern NSString * const kBMRequestAirQualityURLString;
+extern NSString * const kBMRequestAllStationsURLString;
+extern NSString * const kBMRequestSingleStationURLString;
+
+// DrunkCode Response Keys
+extern NSString * const kBMStationsKey;
 
 // DrunkCode Error Domain
 extern NSString * const kBMDKErrorDomain;
@@ -28,17 +33,12 @@ extern NSString * const kBMErrorKey;
 extern NSString * const kBMHTTPClientEMTURLString;
 
 // EMT Protected Methods
-extern NSString * const kBMRequestAllStationsEMTURLString;
-extern NSString * const kBMRequestSingleStationEMTURLString;
 extern NSString * const kBMRequestIncidencesEMTURLString;
-extern NSString * const kBMRequestLoginEMTURLString;
 
 // EMT Response Keys
 extern NSString * const kBMEMTCodeKey;
 extern NSString * const kBMEMTDescriptionKey;
-extern NSString * const kBMEMTDataKey;
 extern NSString * const kBMEMTStationsKey;
-extern NSString * const kBMEMTAccessTokenKey;
 
 // EMT Error Domain
 extern NSString * const kBMEMTErrorDomain;
@@ -67,10 +67,6 @@ extern NSString * const kBMHTTPClientAcceptKey;
 // DrunkCode HTTP Header Keys
 extern NSString * const kBMHTTPClientUserEmailKey;
 extern NSString * const kBMHTTPClientUserTokenKey;
-
-// EMT HTTP Header Keys
-extern NSString * const kBMHTTPClientEMTEmailKey;
-extern NSString * const kBMHTTPClientEMTPasswordKey;
 
 // BiciMAD HTTP Header Values
 extern NSString * const kBMHTTPClientJSONValue;
